@@ -35,7 +35,5 @@ namespace PizzariaSemFactory
                 Console.WriteLine("Opção inválida. Por favor, escolha 1 ou 2.");
             }
         }
-
-
     }
 }
