@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PizzaSimpleFactory
 {
-    public class PizzaSimpleFactory
+    sealed class PizzaSimpleFactory
     {
         public static Pizza CriarPizza(string tipoPizza)
         {
