@@ -10,13 +10,23 @@ namespace FactoryMethod
         {
             Console.WriteLine("Bem-vindo à Pizzaria Factory Method!");
 
-            
-            FazerPizza("SP", "C");
-            FazerPizza("SP", "M");
-            FazerPizza("RJ", "C");
-            FazerPizza("RJ", "M");
+            Pizza pizza;
+
+            pizza = FazerPizza("SP", "C");
+            ExibirDetalhes(pizza);
+
+            pizza = FazerPizza("SP", "M");
+            ExibirDetalhes(pizza);
+
+            pizza = FazerPizza("RJ", "C");
+            ExibirDetalhes(pizza);
+
+            pizza = FazerPizza("RJ", "M");
+            ExibirDetalhes(pizza);
 
             Pizza pizzaDesconhecida = FazerPizza("SP", "X");
+            ExibirDetalhes(pizzaDesconhecida);
+
             Console.ReadKey();  
         }
 
@@ -32,10 +42,10 @@ namespace FactoryMethod
         {
             if (pizza != null)
             {
-                Console.WriteLine(pizza.Preparar);
-                Console.WriteLine(pizza.Cozinhar);
-                Console.WriteLine(pizza.Cortar);
-                Console.WriteLine(pizza.Embalar);
+                Console.WriteLine(pizza.Preparar());
+                Console.WriteLine(pizza.Cozinhar());
+                Console.WriteLine(pizza.Cortar());
+                Console.WriteLine(pizza.Embalar());
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine();
             }
