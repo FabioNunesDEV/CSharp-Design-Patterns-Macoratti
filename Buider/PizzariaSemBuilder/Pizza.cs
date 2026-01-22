@@ -26,6 +26,7 @@ public class Pizza
         {
             Console.WriteLine(item);
         }
+        Console.WriteLine("---------------------------");
     }
 
 }
