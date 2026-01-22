@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaBuilder.Product
+namespace PizzaComBuilder.Product
 {
     public enum Tamanho
     {

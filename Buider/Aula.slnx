@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="PizzaBuilder/PizzaBuilder.csproj" Id="e94fd34e-170d-43db-9806-8605ae877986" />
+  <Project Path="PizzaBuilder/PizzaComBuilder.csproj" Id="e94fd34e-170d-43db-9806-8605ae877986" />
   <Project Path="PizzariaSemBuilder/PizzariaSemBuilder.csproj" />
 </Solution>
