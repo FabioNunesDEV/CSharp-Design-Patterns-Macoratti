@@ -1,0 +1,386 @@
+o Olá eu sou uma coragem e hoje eu vou
+continuar a apresentação dos design
+pattern criacionais de hoje eu vou
+apresentar o padrão Ao Total segundo a
+definição do livro da gang of Four
+objetivo do padrão Prototype é
+especificar tipos de objetos a serem
+criados usando uma Instância protótipo e
+criar novos objetos pela cópia desse
+assim esse padrão ele permite a criação
+de novos objetos a partir do modelo
+original que é clonado sem fazer o
+código ficar dependente da sua e o
+padrão na tua delegando o processo de
+clonagem para o próprio objeto que está
+sendo clonado e para fazer isso ele é
+claro uma interface comum para todos os
+objetos que suportam na clonagem e
+permite clonar um objeto sem acoplar o
+seu código a classe e daquele objeto
+geralmente a interface ela contém apenas
+um único método
+a fazer a clonagem o conceito usado pelo
+padrão é copiar um objeto existente em
+vez de criar uma nova Instância do zero
+algo que pode incluir operações gostosas
+em termos de memória e tempo o objeto
+existente ele vai atuar como um
+protótipo e contém o estado do objeto e
+um objeto recém copiado ele pode alterar
+as mesmas propriedades se for necessário
+Então essa abordagem ela economizar
+recursos e tempo Especialmente quando a
+criação do objeto foram processo pesado
+no diagrama o ML do padrão segundo gof
+nós temos os seguintes participar eu
+tenho o Prototype que declaro uma
+Interface para objetos capazes de clonar
+assim mesmo eu tenho os com cliente
+Prototype faz a implementação de
+prototype ou seja ele vai implementar
+uma operação para se clonar e eu tenho
+grande que vai criar um
+o Brasil Prototype que é capaz de fazer
+a clonagem de si mesmo como vantagens de
+uso do padrão pro tá que nós podemos
+citar que o padrão elimina possível
+sobrecarga dispendiosa da inicialização
+de um objeto ele também ajuda na última
+sensação do caso de uso aonde vários
+objetos do mesmo tipo tem dados quase
+semelhantes e fornece uma alternativa
+para a herança quando o objeto tem
+pré-definições que configuração para
+objetos completo e como desvantagem nós
+podemos citar que implementar esse
+padrão em uma hierarquia de classes já
+existentes pode ser difícil pois eles
+devem implementar o método cone e alguns
+objetos podem estar usando objetos
+internos que não suportam cop ou podem
+ter referência circular então quando a
+hierarquia de classes e objeto ou
+complexa ou Profunda implementado o
+padrão Prototype pode acarretar alguns
+problemas e também
+eu não esqueci do padrão pode afetar o
+desempenho já que o próprio objeto do
+protótipo precisa ser instanciado Se
+você usar o registro de protótipos e
+quando nós podemos considerar o uso
+desse padrão quando a criação de novos
+objetos tiveram um grande curso e levar
+muito tempo o padrão pronto tá é
+indicado também quando desejamos evitar
+criar novos objetos utilizando a palavra
+New para diminuir o curso da memória
+toda vez que eu uso um livro que eu
+tenho alto custo de operação e Menor
+também com dois isqueiros necessidade de
+clonar você criar cópias exatas de um
+objeto é muito mais simples eu com Nardo
+que eu prefiro ficar criando novos
+objetos e também quando o sistema tiver
+que ser independente de como seus
+objetos são criados e nesse contexto as
+casas a ser instanciadas foram definidas
+em tempo de execução for mais
+conveniente ou copiar uma Instância do
+do que o criar uma e quando for
+necessário objetos
+os objetos existentes estão nesse
+cenário são algumas das indicações onde
+nós podemos usar o padrão protae agora o
+processo de clonagem de um objeto ele
+pode ser feito usando duas abordagens A
+primeira é conhecida como shallow cop ou
+cópia superficial nessa abordagem existe
+a cópia de todos os tipos de referência
+os tipos de mas não é copiado os objetos
+as quais as referências se referem se eu
+tiver um tipo complexo os valores deles
+não serão copiados apenas a referência
+Então as referências no novo objeto vão
+apontar para os mesmos objetos para os
+quais as referências no objeto original
+aponto as vamos entender isso melhor
+quando eu mostrar o exemplo então aqui
+na xarope somente objeto pai é clonado e
+os tipos de referência e os tipos de
+valor se houver tipos complexos no
+momento os valores deles não serão
+copiados somente as referências e a
+outra abordagem a Deep copy que é
+conhecida como cópia pro
+e nessa abordagem existe a cópia de
+elementos é copiado tudo que o que é
+referenciado no objeto direta ou
+indiretamente pelos elementos do objeto
+então aqui um objeto o pai é clonado
+junto com os objetos que o contém e suas
+referências e os seus valores estão aqui
+a cópia completa que a cópia parcial um
+cenário muito comum de uso desse padrão
+é a clonagem de personagens em jogos
+onde geralmente é necessário usar muitos
+objetos com as mesmas características
+básicas a vendo a repetição de muitos
+personagens com pequenas variações neste
+cenário criar cada objeto usando o
+operador New seria muito Custoso em
+termos de recursos e usá-la clonagem o
+padrão Prototype basta eu criar um
+objeto e fazer a conagem desse objeto
+alterando apenas algumas características
+de alguns dos personagens isso é muito
+mais simples e usa um poucos recursos
+para fazer isso na linguagem C Sharp mas
+podemos
+os recursos que a própria linguagem
+oferece para facilitar a implementação
+da clonagem Como por exemplo o método
+cone da interface como que vai criar um
+novo objeto que é uma cópia da instância
+atual e eu também uso o o método
+memberwiseclone que herda de objeto e
+cria uma cota escrito superficial do
+objeto atual eu vou mostrar a utilização
+desses recursos no exemplo a seguir
+então vamos ver um exemplo de aplicação
+do padrão Prototype onde eu vou mostrar
+a clonagem de um soldado para gerar um
+exército de soldados então inicialmente
+eu vou usar a abordagem da Cópia
+superficial e Shalom cop para fazer isso
+eu vou usar a interface cão na boa da
+linguagem fechar que vai definir um
+contrato para implementar um método cone
+que está fazendo aqui ó o papel de
+prototype a seguir eu vou definir uma
+classe soldado que representa aqui o meu
+convite Prototype aqui eu tenho definido
+três foi
+o nome arma que são Strings são
+propriedades de referência e eu tenho
+uma propriedade que é um tipo complexo
+que eu chamei de acessório e aqui eu tô
+implementando o método cone da interface
+e Chrome para permitir fazer a colagem
+desse objeto soldar então o acessório
+aqui olha ele representa um tipo
+complexo que é uma classe com a
+propriedade nome que me dá o nome do
+acessório esse acessório que vai definir
+acessórios especiais do soldado como
+visão noturna e outros recursos
+especiais então aqui eu tenho um objeto
+complexo e nós veremos como ele vai se
+comportar aqui nessa abordagem do xarope
+e a seguir eu tenho aqui na classe
+programa que representa ao cliente as
+operações onde eu vou criar um objeto
+soldado atribuir valores as suas
+propriedades e fazer a clonagem então
+para fazer isso a vou ter que criar a
+classe soldado e implementar a interface
+e Cromo definir as três propriedades e
+aqui o Note que eu estou implementando o
+método Clone
+e criando uma Nova Instância de soldado
+e aqui nesse Construtora eu recebo essa
+Instância e copio as propriedades de
+soldado eu tenho aqui um Construtor
+vazio porque eu preciso dele para criar
+uma Instância inicial de soldado então
+eu crio essa Instância passo como eu
+consultor que recebem Instância eu Copie
+os valores das propriedades e assim eu
+estou clonando esse objeto então aqui um
+exemplo de xarope e você vai perceber
+que aqui quando eu fizer a clonagem
+apenas os tipos de valor nome arma serão
+copiados por quê que o acessório É um
+tipo complexo que é uma Gracie e por ser
+um tipo complexo os valores das
+propriedades dele não serão copiadas EA
+copiada apenas a referência cultivo e
+nós vamos ver como isso se comporta
+então eu vou abrir aqui o visual Studio
+2019 Eu tenho um projeto console criado
+no ambiente do Net 5 tô usando o fechar
+aqui nove e aqui nesse projeto eu criei
+uma pasta com concreto Type onde eu
+tenho as duas classes
+e aqui para implementar o Prototype o
+acessório onde eu tô definindo o nome do
+acessório que só tem uma propriedade
+nome e a classe soldado Olha aqui eu tô
+usando o recurso da linguagem isso é
+chato que a interface comigo através
+dessa interface ó eu tenho acesso a um
+método cone que eu tô implementando aqui
+então eu tô definido as três
+propriedades estão implementando o
+método Tony por criando uma Instância de
+soldado e tô retornando e aqui no
+Construtora eu recebo essa Instância e
+faça cópia aqui dos valores das
+propriedades esse consultor vazio ele é
+usado para mim entregar a Instância
+Inicial EA seguir o consultor aonde eu
+recebo a Instância de soldado é usado
+para mim copiar as propriedades soldado
+Então é assim que eu faço a clonagem
+vamos ver a implementação aqui na classe
+Tróia aqui olha eu cria uma Instância de
+soldado como eu faria a tribo valores
+para propriedade nome acessório não é
+acessório eu tô atribuindo um valor pela
+propriedade
+em casa que visou Noturno Então esse
+seria meu objeto original e agora eu tô
+fazendo a conaje ou não ficou nenhum eu
+uso a Instância soldado e o usando o
+método do Cone don't cast aqui e com
+nenhum soldado soldado com nenhum
+apliquei o método Clone E aí à toa que a
+bonita alguns valores para nome arma e o
+nome do acessório Note que é diferente
+né soldado com nenhum fuzil Kalashnikov
+colete especial e eu tô fazendo uma
+colagem de um outro objeto soldado cone
+dois ó para mim clonar basta eu vou usar
+o método do Cone e dá um teste para
+soldado eu vou ter um clone aí eu posso
+alterar os valores das propriedades se
+eu quiser então aqui ó tem o nome
+saudade como e dois fuzil ak105 e o
+valor da propriedade nome do Cone dois é
+arma super secreto então aqui como eu tô
+fazendo um chá loucoop os valores as
+propriedades nome arma serão copiar
+agora acessórios
+a referência a pena se você vai ver que
+isso vai fazer com que o último valor
+aponte para referência então sempre o
+último valor vai ser atribuído a todas
+as referências de acessório então aqui
+eu tô exibindo os valores ao do soldado
+original o Toninho um e do ícone dois
+que é cone dois então nós vamos ver a
+execução desse projeto e nós vamos ver o
+comportamento aqui da Cópia superficial
+percebeu olha objeto original foi dado
+um fuzil arma super secreta objeto com
+nenhum soldado com nenhum fuzil
+Kalashnikov arma super secreta percebeu
+a arma subsecretária o último valor que
+o atribui ao acessório tá sendo
+replicado em todos os cones porque aqui
+eu não tenho a cópia do valor mas a
+cópia de referência a pena então se eu
+alterar aqui ó colocar aqui arma mortal
+dois você vai ver que esse valor mas
+replicar para todos os clones são
+executar novamente ó olha aqui ó
+e tal dois tá vendo porque porque aqui
+eu na xarope eu tô copiando apenas a
+referência ao tipo acessório e não tô
+copiando o valor da propriedade nome
+então ela se se replica em todos os
+objetos os sejam os meus objetos com
+relação ao acessório não são
+independentes Esse é o comportamento do
+xarope Então vamos ver agora como
+melhorar isso ou implementar a Deep copy
+Então agora eu vou usar abordagem de
+ipcop para fazer isso eu vou ter que
+alterar a implementação da classe
+acessório e da classe sou da então na
+classe acessório eu vou ter que criar um
+método cone vou usar o momento o método
+memberwiseclone da linguagem fechar que
+herda de objetos e vai permitir eu
+clonar o objeto acessório e aqui na
+classe soldado No método Clone eu vou
+usar o método memberwiseclone fazer uma
+cópia superficial de soldado
+Oi e a seguir Eu Vou Clonar o acessório
+de soldado usando o método cônico
+incrementei aqui e vou retornar essa
+Instância Então vou mostrar essa
+implementação vou abrir aqui o projeto
+vou aqui na classe e acessório então
+aqui olha eu vou criar o método que é da
+de objeto que eu vou chamar de Tony e
+aqui eu vou retornar vou dar um teste
+aqui para acessório ou método
+memberwiseclone então com isso eu vou
+Vou permitir clonar acessório clonagem
+superficial e aqui em soldado No método
+cone eu vou clonar uma Instância de
+soldado né então tenho que dar um teste
+aqui usando o memberwiseclone on a
+seguir eu vou usar essa Instância e na
+propriedade acessório eu tenho que dar
+um cast para acessório e eu vou usar
+acessório vou usar um método só olha eu
+vou usar o método cone que eu
+implementei tocou não do acessório e
+agora basta o retornar
+a distância aqui do soldado Então estou
+clonando o soldado quando a propriedade
+do soldado e retornando essa Instância
+Então agora eu vou executar os o mesmo
+código que eu tinha mostrado e nós vamos
+ver que agora o valor da propriedade
+nome vai ser copiado porque eu tô
+fazendo agora uma clonagem profunda
+então agora além dos valores de nome de
+arma o tipo acessório ele vai ser
+copiado a sua referência e também os
+valores definidos aqui em acessório que
+é o nome do acessório então executando
+você vai ver que agora ó vamos aqui na
+Caça e Chrome Observe que agora a arma
+Mortal 2 e colete especial foram
+atribuídos Então olha aqui o visor
+noturno colete especial arma mortal
+então agora os objetos são independentes
+e alterar qualquer valor aqui de
+acessório Vou colocar aqui ó vou colocar
+aqui gás mostarda só para mostrar que
+agora eu tô copiando o valor não há
+referência
+o Tom o valor da propriedade enorme sem
+independente Olha que eu gás mostarda em
+só se reflete no objeto cone dois aonde
+eu alterei o valor então esse é um
+exemplo de cópia confunda na Copa e
+profunda os objetos são independentes o
+seu os valores das referências e de
+todas as suas propriedades e tipos são
+copiados Diferentemente da abordagem
+xarope então nós acabamos de ver aqui
+mais um padrão de projeto criacional e
+nós podemos fazer uma relação do
+Prototype com uma bizarra fértil e o
+factor aonde o abc Tec ele pode
+armazenar um conjunto de pro táxi a
+partir dos quais ele pode clonar em
+retornar objetos produto Então as cascas
+de habitar Factor pode ser implementadas
+usando o sotaque e na criação do Factor
+método ela é feita por herança e
+enquanto aqui no pro táxi é feito por
+meio de delegação como nós vimos aqui ou
+seja o Prototype ele não requer
+subclasse
+É mas ele precisa de uma inicialização
+lote que eu tive que inicializar o
+objeto aqui ó usando o Construtor e o
+factory método ele precisa de subclasses
+mas não precisa de uma inicialização
+então era isso até a próxima semana
+
