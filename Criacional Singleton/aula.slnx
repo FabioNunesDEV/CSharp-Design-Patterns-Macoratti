@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SingletonMultiThread/SingletonMultiThread.csproj" />
+  <Project Path="SingletonNaoThread/SingletonNaoThread.csproj" />
+</Solution>

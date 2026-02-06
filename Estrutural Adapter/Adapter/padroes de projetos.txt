@@ -1,0 +1,341 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos padrões de
+projetos golpes hoje eu vou iniciar a
+apresentação dos padrões estruturais
+esses padrões de projeto eles dizem
+respeito à composição de classes e
+objetos assim os padrões estruturais
+explicam como montar objetos e classes
+em estruturas maiores mais ainda mantém
+essas estruturas flexíveis e eficientes
+eles se concentram em como as classes
+eram umas das outras e como são
+compostas de outras classes Podemos
+dizer que a característica principal dos
+padrões estruturais é a composição de
+objetos nós temos sete padrões culturais
+goffi o padrão adapter o padrão Brit
+padrão compósito o terror Heitor por
+faceid o frio leite e o proxy para
+ajudar a memorizar os sete padrões
+estruturais goffi nós podemos usar
+é o seguinte mnemônico a ponte Brit
+adaptada adapter é composta composite de
+decorações de cor Heitor na fachada
+faceid para o peso-mosca Freak se
+aproximar proxy é uma forma divertida de
+tentar associar os padrões culturais
+Então vamos iniciar apresentando o
+primeiro padrão estrutural que no nosso
+caso vai ser o padrão a data Vamos
+iniciar com a definição do padrão a dar
+o padrão adapter ele atua como uma ponte
+entre duas interfaces em compatível
+então este padrão envolve uma única
+classe chamada adaptador que é
+responsável pela comunicação entre duas
+interfaces Independentes ou
+incompatíveis assim o padrão adapter ele
+adaptar uma interface em outra de acordo
+com a expectativa do cliente com o
+desejo do cliente e esse padrão também
+permite a colaboração de objetos com
+e compatíveis e ele é conhecido como o
+rapper o invólucro que geralmente você
+usa esse padrão como um invólucro em
+outra interface e dessa forma nós
+podemos relacionar como principais
+intenções do padrão adapter a conversão
+de uma interface de uma classe em outra
+envolver ou seja rap uma classe
+existente com uma nova interface
+introduzir um componente legado um novo
+sistema permitindo que sistemas
+incompatíveis se comuniquem tão seria as
+principais intenções do a dá como
+exemplo de aplicação do adapter nós
+temos um exemplo classe onde nós podemos
+ter um fornecedor de onde são obtidos
+dados no formato XML e esses dados são
+consumidos por uma aplicação então
+geralmente surge a necessidade de
+processar esses dados usando uma
+biblioteca
+como usar os dados para realizar um
+processamento gerar gráficos e realizar
+outras tarefas o detalhe é que essa
+biblioteca ela vai processar os dados no
+formato Jason e não no formato x MM
+Então o que acontece acontece que essas
+duas interface elas são incompatíveis
+pois o formato disponibilizado na
+aplicação fxml e não veio então aqui
+entra o padrão adapter aonde nós podemos
+ir entregar mentar uma da ter na
+aplicação que vai converter os dados do
+formato XML para Jason e vai enviar os
+dados no formato esperado para a
+biblioteca que poderá consumir e
+processar os da assim a aplicação do
+padrão adapter resolve o problema da
+imcompatibilidade entre as duas
+interfaces Esse é um cenário muito comum
+e o padrão adapter é usado geralmente
+para resolver esse tipo de problema
+outro exemplo do
+e tal bem intuitivo e fácil de assimilar
+é quando nós temos conectores e tomadas
+incompatível esse cenário pode ocorrer
+quando você viaja um outro país e
+precisa conectar o seu celular ou um
+dispositivo Eletrônico em uma tomada
+Existe uma grande probabilidade do
+Plugin usado aqui no Brasil seria
+incompatível com o padrão de tomadas
+adotada no país de destino então para
+resolver esse problema basta levaram-no
+adaptador universal que esteja
+compatível como o plugue da tomada assim
+o adaptador aqui ele permite a interação
+de objetos que possuem as interfaces in
+cooperative e é uma ilustração da
+atuação do padrão adapter que faz o
+mesmo papel tão a seguir nós temos o
+diagrama o ML do padrão adapter segundo
+o Golf Aqui nós temos os seguintes
+participantes target define a interface
+do domínio específico que o cliente usa
+essa interface ela é usada pelo cliente
+a gira a funcionalidade desejada ele vai
+usar o target para fazer a seguir nós
+temos aqui o adapte ou adaptado que
+define uma interface existente que
+necessita ser adaptação esta aqui é uma
+classe que possui a funcionalidade
+exigida pelo cliente no entanto a sua
+interface é incompatível com o cliente
+então por isso que nós vamos precisar do
+a dar eu adaptei aqui ele vai adaptar a
+interface e adapte para a interface da
+classe Tiger então o adaptar aqui é um
+invólucro que implementa a interface
+target e modifica a solicitação
+específica disponível na classe adaptam
+ela é responsável pela comunicação entre
+o cliente e o adaptam isso é feito por
+meio do adaptar e o cliente aqui ele
+colabora com os objetos em conformidade
+com Interface target essa classe ela vai
+interagir com tipo que implementa a
+interface ou seja ela interage aqui no
+contag
+bom então Observe que o cliente aqui ele
+enxerga somente o Thales e através do
+tiger ele usa o recurso específico do
+adapte que ele precisa para realizar a
+sua tarefa então Observe que aqui nós
+temos a atualização de vários princípios
+da orientação a objetos como a
+composição de objetos a vinculação do
+cliente como a interface e não como
+implementação temos também a delegação
+usada para vincular o adaptil adapte e a
+herança de interface usada para
+especificar a interface do adaptar e nós
+temos dois tipos de Anápolis que podem
+ser implementar O primeiro é o objeto a
+da ou adaptador de objeto essa
+implementação usa o princípio da
+composição do objeto aonde o adaptador o
+adapter implementa a interface de um
+objeto encobre o botão essa
+implementação é a implementação mais
+popular e pode ser usada na grande
+maioria das linguagens de programação
+nesta implementação
+Oi gente chamou operações em uma
+Instância de adapte que por sua vez
+chama as operações de adaptar que
+executa a solicitação a outra
+implementação do adapte é conhecida como
+cress adaptar ou adaptador de classe
+essa implementação usa a herança então
+aqui o adaptador herda e interfaces de
+ambos os objetos no caso adapte e target
+e isso é conhecido como herança múltipla
+essa implementação geralmente é usada
+por linguagens que dão suporte a herança
+música como ser mais mais então a
+principal diferença entre o objeto
+adaptei o Class adapter é que o traz
+adapter ele utiliza as subclassificação
+do target e do enquanto que no objeto
+adapter nós usamos composição para
+passar o requestparam e quando é
+indicado a utilização do padrão a dá o
+padrão a data ele é indicado quando você
+precisa usar
+e existentes com uma interface
+incompatível ou quando você precisa
+criar uma classe que seja reutilizável e
+que coopere com classes que não possuam
+interfaces compatíveis seriam os dois
+principais cenários de utilização do e a
+seguir nós vamos ver os benefícios de
+usar o padrão adapter apresenta as
+seguintes vantagens ele aumenta a
+reutilização do código assim você pode
+utilizar código e reutilizar código
+entre plataformas distintas e também
+eles permitem a implementação permite a
+interação de dois ou mais objetos
+incompatíveis agora como desvantagem nós
+podemos elencar que a complexidade geral
+do código pode aumentar porque você vai
+precisar em produzir um conjunto de
+novas interfaces e classes esse é mais
+provável de acontecer em um cenário mais
+complexo mas seria uma desvantagem do
+adaptar então a seguir eu vou apresentar
+um exemplo prático de utilização do
+padrão a data Então nesse exemplo nós
+temos um sistema hipotético que é um
+sistema
+o lar que utiliza uma relação de alunos
+no formato de uma de uma rede Strings
+então aqui o que acontece nós precisamos
+realizar o processamento das
+mensalidades dos alunos disponibilizado
+aqui nessa relação de alunos em um
+sistema de mensalidades e esse sistema
+vai receber a lista de alunos e vai
+fazer o cálculo das mensalidades O
+problema é que esse sistema aqui ele
+estará receber olha uma lista de objeto
+alunos como um list e não Array de
+string então o sistema escolar ele
+fornece uma lista de alunos pela qual
+for de mensalidade no formato de uma
+rede Springs enquanto que o sistema
+mensalidades aqui faz o processamento do
+cálculo da mensalidade mais espera
+receber uma lista de alunos com uma
+lista de objetos um list e não um Array
+de string então nós temos aqui que esses
+dois sistemas eles são incompatíveis e
+sistema escolar não pode chamar
+diretamente esses
+e qualidades e enviar a lista de alunos
+para ser processada pois o sistema de
+mensalidades para receber uma lista de
+objetos e não uma rede streamkeys esse
+ano problema que o padrão adapter vai
+resolver então aqui para resolver esse
+problema o que que nós vamos fazer nós
+vamos implementar o padrão adapter E
+permitir que a interface dos dois
+sistemas possam interagir e possam se
+comunicar então na implementação do
+sistema escolar ele vai enviar a
+informação da lista de alunos no formato
+de uma rede de trens para o adapter e o
+adapter vai ver essas informações dos
+alunos no formato recebido vai converter
+uma lista de objetos aluno no formato
+esperado aqui pelo sistema mensalidades
+usando a classe lift e a seguir vai
+enviar essa lista para o método aqui ó
+calcula a mensalidade de sistema e esse
+método vai calcular a mensalidade dos
+alunos Então nós vamos
+o padrão adapter E permitir que a
+interface dos dois sistemas possam
+interagir todas vamos os arquivos
+princípio da composição de objetos onde
+o adaptador ele vai entrar mentar a
+interface de um objeto e vai encobriu o
+então eu vou mostrar essa implementação
+feita aqui no visual Studio 2019 em um
+projeto que o chamei de adapter uma tem
+um projeto do tipo console net sim Então
+nesse projeto eu criei em pastas
+relacionadas aos participantes do padrão
+como foi definido lá no dia de no ML
+apenas para facilitar o entendimento
+então aqui no do homem aluno representa
+o meu modelo de domínio é o meu aluno
+então aqui eu tenho as propriedades aí
+de enorme o curso a mensalidade e o
+Construtor para mim criar esse objeto
+aqui na pasta target eu tenho uma
+interface e target que define o contrato
+que eu chamei de processa cálculo
+mensalidade de processo a lista de
+alunos no formato de Array de string
+Então essa interface
+é implementada pelo adaptar eo cliente o
+vai usar esse método aqui ó para
+calcular as mensalidades aqui na pasta
+Adapt nós temos a classe sistema
+mensalidade que espera receber a lista
+de aluno que é uma lista de objetos
+aluno vai percorrer essa lista e vai
+calcular a mensalidade aqui eu estou
+simplificando né que tem uma loja que
+calcular e essa mensalidade Então essa
+funcionalidade aqui é a funcionalidade
+que o cliente precisa usar para calcular
+a mensalidade dos alunos só que ela é
+incompatível com o sistema que fornece a
+lista a relação de alunos então adapter
+vai usar esta classe para reutilizar a
+essa funcionalidade e vai modificar lá
+para fazer o que nós esperamos que o
+sistema Face que é calcular que o valor
+da mensalidade e aqui na pasta a data eu
+tenho a implementação do padrão adapter
+então aqui eu definir uma classe e
+chamado aluna da ter e ela
+há 30 a interface Itália dança classe
+ela vai entrar entrar sem interface vai
+fornecer a implementação para o método
+processa calcula mensalidade e ela
+também tem uma referência ao sistema
+mensalidades então eu vou ter um objeto
+do tipo sistema mensalidades aqui ó
+então um método aqui processa cálculo
+mensalidade recebe as informações do
+aluno comum a revista clientes e em
+seguida ele converte o ele faz uma
+conversão para uma lista de objeto EA
+seguir ele chama o método calcula
+mensalidade no objeto sistema
+mensalidades passando a lista de alunos
+como argumento então aqui é feita a
+conversão Aqui tá o código da conversão
+e converte a relação de alunos de uma
+rede streams from uma lista de objetos e
+aqui ó ele vai delegar Você tem uma de
+mensalidades o cálculo da mensalidades
+passando a lista convertida e aqui na
+classe programa que faz o papel do meu
+Oi gente né Nós temos a relação de
+alunos como uma rede frio aí eu clico
+uma Instância aqui ó do adapter que é do
+tipo de target e Chamamos o método
+processa cálculo mensalidade passando a
+lista como um argumento então a
+Instância de adapte vai fazer a
+conversão permitindo a comunicação entre
+os dois sistemas que antes eram
+incompatíveis então executando aqui ó
+você vai ver que ao sistema mensalidades
+passo a rede string para o a-darter ou
+adaptar converteu o Array para o licq
+delegou o sistema de mensalidades o
+processamento das mensalidades dos
+alunos e aqui eu tenho um resultado
+final Então esse exemplo embora seja um
+exemplo básico deixar claro atuação eo
+papel do adaptar então era isso que eu
+queria mostrar até a próxima

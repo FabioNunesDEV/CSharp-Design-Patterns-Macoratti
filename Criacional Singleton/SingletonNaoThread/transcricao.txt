@@ -1,0 +1,387 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos design
+Partners criacionais goffi hoje eu vou
+apresentar o padrão tinham o padrão
+singleton é um padrão criacional que
+permite garantir que uma classe tenha
+apenas uma Instância fornecendo um ponto
+de acesso Global à essa nessa definição
+nós destacamos: no padrão sim o primeiro
+é garantir que uma classe que tenha
+somente uma Instância com isso nós
+podemos controlar o acesso de algum
+recurso compartilhado como por exemplo
+um banco de dados um arquivo etc o outro
+destaque é fornecer um ponto de acesso
+Global essa isso permite que você acesse
+um objeto de qualquer lugar do programa
+mas protege a Instância de ser sobre
+escrita por outro corre Então esta é a
+intenção principal do padrão Sininho e a
+seguir nós vamos apresentar o diagrama o
+ML do padrão siga o teu segundo golfe
+neste dia grow ml nós
+tô assistindo Tom que declaram membro
+estático chamado Instância que é do tipo
+sim então o que é usado para tratar a
+referência a única Instância a seguir
+nós temos um Construtor privado e sem
+parâmetros que assim com Tom e dessa
+forma ninguém vai conseguir instanciar a
+classe A não ser o próprio xinga depois
+nós definimos um membro privado estático
+do mesmo tipo da classe chamado instance
+no caso aqui foi implementado com uma
+propriedade esse mesmo que pode ser uma
+propriedade de um metro dependendo da
+implementação vai verificar se a
+Instância foi caso a Instância não tenha
+sido iniciada ele vai fazer a criação da
+instância pela primeira e única vez
+Então esses são os elementos do diagrama
+o ML do padrão 5 a seguir eu vou
+apresentar alguns exemplos de utilização
+do padrão Sininho podemos usar o padrão
+sim o Tom para controlar a concorrência
+de acesso a recursos compartilhados
+um exemplo acessar os recursos de um
+banco de dados ou de arquivo ou ainda
+quando você tiver uma classe que é usada
+por várias partes do sistema e ela não
+gerenciar nenhum estado nós podemos
+aplicar o padrão simples como por
+exemplo em arquivos de log que realiza
+operações de escrita em arquivos um
+outro exemplo seria o compartilhamento
+de dados quando você deseja manter
+valores de configuração comuns em um sim
+um pouco que possam ser acessados por
+outras partes da aplicação esse seria
+alguns exemplos de uso docinho e quando
+nós podemos usar ou não o padrão sim
+para isso nós podemos fazer uma
+verificação a respondendo algumas
+perguntas para ter uma ideia se podemos
+considerar ou não usar esse padrão por
+exemplo faz sentido a classe ter apenas
+uma Instância se você responder sim
+Então pode considerar o uso do padrão
+uma outra pergunta
+o símbolo para substituir variável
+Global se você responder sim então o
+padrão ele não deve ser considerado por
+quê Porque variáveis globais elas não
+são uma boa prática e devem ser evitada
+você não deve usar o padrão cinto para
+substituir variar os globais ou para
+funcionar como um acesso a variável de
+roubar Então nesse caso você não deve
+usar o senhor e ainda a classe poderá
+ter mais de uma Instância se você
+responder sim então não tem sentido você
+usar o sim porque a Cássia vai ter mais
+de uma Instância e nós usamos o Finn
+outro justamente para obter apenas uma
+única Instância Então esse seria uma
+abordagem que você pode adotar para
+decidir quando ou não usar o padrão
+agora eu vou apresentar a implementação
+padrão do cinco Então nesse código nós
+temos a implementação padrão básica do
+padrão sintam aqui olha nós temos uma
+classe que eu chamei de Cingapura mas
+poderia ter outro nome né
+E se nós temos um campo privado olha e
+estático que é do tipo single do que é o
+tido tipo da classe né que garante o
+ponto de acesso do roubao a Instância da
+classe a seguir Eu tenho um consultor
+privado olha ele é privado e vazio como
+ele é privado somente a classe cima vai
+poder acessar esse consultor para poder
+criar uma Instância da depois nós temos
+aqui um membro estático chamado uma
+Instância e retorna a mesma Instância da
+sua própria classe o que que ele faz
+aqui ó ele tá verificando se a variável
+uma Instância representado aqui por este
+Campo já foi iniciada ou seja se for
+igual a no não tem Instância então eu
+creio Instância e retorna uma Instância
+docinho Então essa seria a implementação
+mais básica possível o padrão sim Note
+que nesta implementação o consultor do
+símbolo ele está oculto do cliente é
+prive e a propriedade extensa é o único
+modo de obter a Instância aqui do
+bom então a seguir para fazer essa
+implementação e verificar o
+funcionamento eu vou fazer o seguinte e
+eu tenho aqui o código da implementação
+né eu vou definir aqui uma variável que
+vai contar o número de instâncias que
+nós temos a classe no consultório eu vou
+definir um código para incrementar o
+dobro distâncias e exibe o valor e aqui
+na propriedade em extensa no get dentro
+do bloco wi-fi Eu estou definindo um
+código que vai exibir a primeira
+instância e foi criar então isso aqui é
+um código que eu tô colocando na minha
+implementação para me emprestar e para
+mim testar eu vou usar esse código aqui
+ó é bem simples eu vou ligar uma
+Instância desse encontro usando aqui a
+propriedade em espécie e a seguir eu vou
+repetir o procedimento usando o mesmo
+código depois eu vou aí ficar se a
+Instância S1 = Instância S2 se elas
+forem iguais Então na verdade eu só
+tenho uma única Instância Caso contrário
+eu vou ter instâncias distintas ó essa
+uma implementação básica que eu vou
+mostrar a
+e aqui no visual Studio dois então aqui
+eu tenho um projeto que eu chamei de sim
+é o single Red que é um projeto Tipo
+netcor aonde YouTube definido aqui eu
+sim o Tom então eu tenho a classe o
+campo privado e estático ou com o
+Escultor vazio EA propriedade Instância
+que a estática que é do tipo Sininho ele
+vai verificar assim Instância igual a no
+se for Ele criou uma Instância da classe
+e retorna após a uma Instância ser
+criada então o que que vai acontecer
+isso aqui não vai ser mais igual a no
+então ele não vai criar Instância ele
+vai apenas retornarem estão essa
+existentes Então para mim testar isso
+aqui eu vou definir aqui ó o mal
+variável com definido o número de
+instâncias aqui no Construtor eu vou
+definir um código onde eu vou
+incrementar o contador aqui dessa
+variável e vou exibir o valor dele aqui
+na propriedade em extenso eu vou exibir
+a mensagem que eu tô criando a primeira
+instância aqui ó esse ser
+e da implementação padrão que eu vou
+testar e aqui na caça droga memória eu
+tô apenas emitindo algumas mensagens e
+aqui eu tô criando uma Instância depois
+eu vou tentar criar uma outra Instância
+essa implementação do meu padrão estiver
+correta ele vai retornar uma Instância e
+vai ser a mesma que é ciúme então aqui ó
+você vai ser verdade então eu vou
+executar e nós vamos ver isso
+funcionando Na verdade eu tenho que
+parar aqui né eu tenho que definir esse
+projeto como o estar Tá e agora sim eu
+vou executar e olha aqui ó tentando
+criar ensinasse assim um Ele criou a
+primeira instância instanciando o dentro
+do consultor privado o número distância
+um tentando criar Instância S2 então ele
+criou a Instância assim um s dois e no
+final olha existem somente uma instância
+é assim igual a essa então parece ficar
+mais claro Vamos definir um break-point
+aqui é e Vamos definir o mcpoint aqui
+quando ele creem então aqui na classe
+Cláudia eu vou colocar um rack pote aqui
+depois um outro aqui então vamos lá eu
+vou executar então eu tô criando a
+primeira
+eu vou pressionar f11 ó ele entrou aqui
+ó tá verificando esse Instância igual a
+lua Instância = no então que ele vai
+fazer ele vai criar Instância criou aí
+ele vai chamar o consultor em que
+aumentou o número de distância e
+retornou a Instância agora a minha
+estante e eu tenho uma distância então
+aquele criou Instância por ele vai
+tentar criar segura Insta então ele vai
+repetir o procedimento tá verificando só
+que Instância não é mais igual a no
+então ele vai retornar a própria
+Instância então com isso eu tenho que
+aqui ó ele vai entrar aqui e eu tenho as
+duas instâncias iguais como eu acabei de
+mostrar então essa implementação básica
+e nós vimos que ela funciona acontece
+que essa implementação ela tem um
+pequeno problema e é o seguinte essa
+implementação ela não funciona em
+ambiente multithread código ele não é
+seguro para mais de uma ele não vai
+funcionar um ambiente muito motivo E por
+que isso acontece isso acontece pelo
+seguinte então quando existe mais de uma
+trade a
+a criação aqui da existência da estância
+pode ocorrer simultaneamente como
+geralmente acontece e assim bom ser
+criadas duas instâncias diferentes e
+isso vai violar o padrão então pra
+mostrar isso eu vou fazer o seguinte eu
+vou fazer uma implementação aqui eu
+tenho implementação do sim ou então aqui
+Eu só mudei o nome da variável que é o
+contador pelo incrementando ela aqui e
+aqui ó eu estou usando um código agora
+aonde eu estou usando um método paralelo
+e vou Onde nós estamos paralisando as
+operações eu estou usando o enfoque da
+Library Task Parallel i-ttl então nessa
+implementação nós teremos as duas Cred
+acesso card de um acesso atrás de dois
+na no acesso de um outro criando uma
+Instância do símbolo e não acesso atrás
+de dois eu tô criando uma outra
+Instância do duas instâncias foi o
+vocais isso de forma paralela então elas
+vão ser acessados simultaneamente então
+vou ter duas ted's acessando a mesma
+propriedade incense III
+a distância dos cinco tão mas é que só
+nesse código aqui vai mostrar que essa
+implementação Ela será violada vai
+violar o padrão mas eu não ter duas
+instâncias criadas então eu vou retornar
+aqui o visual Studio vou agora abrir
+aqui esse projeto single multitrat ele
+como está tá aqui o símbolo na
+implementação padrão tá vendo É a mesma
+implementação e aqui ó da classe
+programa eu tô usando o paralelo eo vou
+que eu tô chamando e forma paralela
+acesso traiu um aqui eu vou criar uma
+Instância e as astral de dois aqui eu
+vou criar outra Instância se elas forem
+diferentes Isso vai ser exibido e é o
+que vai acontecer porque eu tô usando
+aqui entre as diferentes e esse código
+aqui ele não é seguro para um ambiente
+multi multi Tray então eu vou executar e
+você vai ver o resultado Olha tá vendo
+Instância a2trade dois distância um
+trade uma eu tenho duas instâncias então
+aqui eu tenho a violação do padrão tá É
+por isso que você deve evitar utilizar
+essa implementação aqui
+a implementação básica porque ela não
+funciona no ambiente multitracking Então
+como é que eu faço para resolver esse
+problema aqui ó para fazer isso eu tenho
+que fazer uma implementação que e
+suporte o ambiente multitracking ou seja
+tem que fazer uma implementação segura
+para trás de forma a garantir que ele
+funciona em ambientes uma que quer essa
+implementação que eu tô mostrando aqui
+ela é segura para trás Então vamos
+entender o que foi feito aqui neste
+código eu estou usando o recurso da
+linguagem fechar essa discussão lote ela
+vai obter o bloqueio de exclusão multa
+para um determinado objeto que no meu
+caso aqui ó é esse o que eu tô criando
+aqui ó como está tio Tô dando um trailer
+estática objeto te chamei de lá que o
+objeto e deu New Hobby então eu vou ter
+um objeto lá que objeto É que eu tô
+usando ó para fazer um bloqueio aqui
+desse objeto Então essa excursão ela vai
+obter o bloqueio de exclusão mutua para
+esse objeto
+a executar esse bloco de instruções em
+seguida vai liberar o bloqueio Então
+nesse exemplo eu tô bloqueando o objeto
+lá que objeto que eu tô criando E aí ele
+vai permitir assim que apenas uma thread
+tem acesso ao código aqui dentro do
+bloco de código então quando executar
+uma vez ele vai entrar vai bloquear e
+vai executar se a outra tentar acessar e
+vai estar bloqueada que não vai
+conseguir acessar somente quando atrás
+do foi liberada então usando o loc aqui
+eu tô sincronizando o acesso à
+propriedade aqui em extenso de forma que
+apenas uma thread vai conseguir acessar
+o código para criar Instância da classe
+sim então é isso que eu tô fazendo aqui
+ó aqui eu tô realizando o bloqueio da
+instância permitindo apenas uma trade
+Acesse aqui o bloco de código então eu
+vou aqui mostrar isso na prática
+alterando e fazendo ajuste aqui nesse
+código para realizar a implementação do
+padrão símbolo de forma segura para trás
+primeiro pingar uma Instância de um
+objeto que eu tô chamando de ló que o
+objeto aqui podia circo
+ó e aqui olha eu vou dar unlock no
+objeto aqui eu posso simplificar esse
+código né E tá aqui a implementação mude
+drive então eu crie uma Instância de um
+objeto que é do tipo homem já e aqui eu
+tô dando unlock no objeto que Estou
+verificando sem estão sendo se for Lu
+ele cria Nova Instância só que aqui está
+fazendo isso não bloqueio quando a outra
+tá tentar acessar para criar Instância
+não vai conseguir Então agora eu vou
+executar novamente ó usando o mesmo
+código aqui ó vou invocar e você vai ver
+que agora olha essa implementação ela é
+segura para trás então executando
+novamente eu não vou ter mais duas trade
+ou Instância um trade outra de dois eu
+só tenho uma Instância para trade Então
+essa seria uma abordagem mais robusta da
+implementação do padrão singleton só que
+aqui nós temos ainda um problema aqui ó
+o que que tá acontecendo aqui ela essa
+implementação aqui ela resolve o
+problema mas ela tem um pequeno detalhe
+ela realiza o bloqueio aqui ó da
+infância toda vez
+a chamada e depois ele fica sem estar
+seis Isso então isso é muito generoso né
+então a gente pode melhorar esse código
+tão para melhorar nós fazemos isso aqui
+ó eu antes de fazer um bloqueio verifico
+se a Instância existe se ela existir eu
+não preciso bloquear né agora se ela não
+resisti Eu bloqueei ele crio ela existir
+eu caio fora então essa abordagem é eu
+crio já tô Lock faço Loki né só que eu
+tô verificando a Instância se ela foi
+criada Então somente sua essência não
+foi criada é que eu faço bloqueio então
+aqui ó eu realizo o bloqueio apenas uma
+vez depois da instância criada o lote
+não ocorre mais então aqui eu tô
+economizando o recurso então isso aqui
+aqui seria feito da seguinte maneira eu
+venho aqui né verifico aqui antes sai
+instância é no que ela foi igual a no
+então eu dou um toque e aqui eu verifico
+de novo sem estacionou como está fazendo
+duas verificações essa implementação Ela
+é conhecida
+com a implementação de verificação dupla
+porque o verifique se a distância no se
+ela for eu bloqueio verifico novamente
+aí eu creio Instância E continuo O
+resultado vai ser o mesmo né Vou ter
+somente uma Instância só que aqui eu
+tenho um código mais robusto ainda então
+dessa forma essas seriam as principais
+abordagens usadas para implementar o
+padrão sim até a próxima semana
+
