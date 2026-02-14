@@ -1,0 +1,72 @@
+Crie um projeto **Console** em **C# / .NET 8** que demonstre o padrão de projeto estrutural **Composite** usando o exemplo de **cálculo de horas trabalhadas** por funcionários em departamentos organizados em **forma hierárquica (árvore)**.
+
+Requisitos do projeto:
+
+1. Estrutura e nomes (sugestão, pode ser igual):
+   - Namespace raiz: `Composite`
+   - Pastas/Namespacess:
+     - `Composite/Component` com `HoraTrabalhada.cs`
+     - `Composite/Leaf` com `Funcionario.cs`
+     - `Composite/Composite` com `Organizacao.cs`
+     - `Program.cs` na raiz
+
+2. `HoraTrabalhada` (Component):
+   - Deve ser uma classe `abstract` em `Composite.Component`
+   - Deve conter:
+     - Propriedade `string Nome { get; set; }`
+     - Método abstrato `int GetHoraTrabalhada()`
+     - Métodos `virtual` `Add(HoraTrabalhada component)` e `Remove(HoraTrabalhada component)` que, por padrão, lancem `NotImplementedException` (para representar que folhas não suportam gerenciamento de filhos, a menos que sobrescrevam)
+
+3. `Funcionario` (Leaf):
+   - Classe em `Composite.Leaf` que herda de `HoraTrabalhada`
+   - Propriedades:
+     - `int Id { get; set; }`
+     - `int Horas { get; set; }`
+   - Override de `GetHoraTrabalhada()` deve:
+     - Escrever no console algo como: `"Fucionário {Id}-{Nome} registrou {Horas} horas trabalhadas."`
+     - Retornar `Horas`
+   - Não deve sobrescrever `Add/Remove` (ou seja, continua herdando o comportamento que lança exceção caso alguém tente)
+
+4. `Organizacao` (Composite):
+   - Classe em `Composite.Composite` que herda de `HoraTrabalhada`
+   - Deve manter uma lista de filhos: `List<HoraTrabalhada>`
+   - Override de:
+     - `Add` para adicionar na lista
+     - `Remove` para remover da lista
+     - `GetHoraTrabalhada()` para:
+       - Percorrer todos os filhos
+       - Somar recursivamente `child.GetHoraTrabalhada()`
+       - Imprimir: `"Organização {Nome} tem {total} horas trabalhadas."`
+       - Retornar o total
+
+5. `Program.cs` (cliente):
+   - Deve montar a árvore exatamente (ou muito próximo) desta estrutura:
+     - Organização raiz: `"Secretária Administrativa"`
+     - Departamento `"Departamento de TI"` com funcionários:
+       - (1) João: 8
+       - (2) Maria: 6
+       - (3) Pedro: 7
+     - Departamento `"Departamento de Compras"` com funcionários:
+       - (4) Ana: 5
+       - (5) Carlos: 4
+       - (6) Luisa: 6
+       - (7) Rafael: 3
+     - Subdepartamento `"Departamento de RH"` com funcionários:
+       - (8) Fernanda: 7
+       - (9) Ricardo: 6
+     - O departamento `"Departamento de RH"` deve ser adicionado como filho de `"Departamento de TI"`
+     - `"Departamento de TI"` e `"Departamento de Compras"` devem ser adicionados na organização raiz
+   - Ao final chamar `organizacao.GetHoraTrabalhada();` e `Console.ReadKey();`
+
+6. Comentários (muito importante):
+   - Adicione comentários em **todas** as classes, métodos e propriedades.
+   - Use preferencialmente comentários XML `/// <summary>` nas classes/métodos/propriedades.
+   - Comentários devem explicar:
+     - O papel de cada classe no padrão Composite (Component / Leaf / Composite / Client)
+     - Onde ocorre a recursão e por que o cliente consegue tratar tudo de forma uniforme
+   - Comentários profundos apenas onde fizer sentido (principalmente na recursão e no polimorfismo); nos demais pontos, comentários simples.
+
+7. Configuração do projeto:
+   - `csproj` com `TargetFramework` `net8.0`, `ImplicitUsings` habilitado e `Nullable` habilitado.
+
+Entregue o código completo dos arquivos (`HoraTrabalhada.cs`, `Funcionario.cs`, `Organizacao.cs`, `Program.cs`) e garanta que compila e executa em .NET 8.

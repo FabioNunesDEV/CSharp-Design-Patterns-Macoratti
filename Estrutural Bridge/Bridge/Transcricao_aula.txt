@@ -1,0 +1,368 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos padrões de
+projetos hoje eu vou apresentar o padrão
+estrutural Bridge o padrão brinde ele
+desacopla uma abstração de sua
+implementação para que as duas possam
+variaram de forma independente para isso
+ele atua de forma a dividir a lógica do
+negócio ou seja ele parte de uma classe
+maior dividir essa classe e hierarquias
+de classes separadas que podem ser
+desenvolvidas independentemente uma da
+outra assim o objetivo principal do
+padrão verde é separar a interface do
+objeto da sua implementação esse padrão
+ele envolve uma interface que atua como
+uma ponte daí o nome Bridge entre a
+classe de abstração e as classes do
+implementador e também torna a
+funcionalidade da classe do
+implementador Independente da classe de
+abstração Rambo
+o tipos de classes eles podem então ser
+modificados sem afetar um ao outro dessa
+forma o padrão Bridge ele permite que a
+abstração Ea implementação sejam
+desenvolvidas de forma independente e o
+código do cliente pode acessar apenas a
+parte da abstração sem se preocupar com
+a parte da implementação ou seja o
+padrão Bridge ele se separa a hierarquia
+de abstração Ea hierarquia de
+implementação em duas camadas diferentes
+para que a mudança em uma hierarquia não
+afete o desenvolvimento ou a
+funcionalidade da outra hierarquia para
+entender melhor esses conceitos vamos
+ver um exemplo para ilustrar isso supõe
+Aqui nós temos em um projeto um
+requisito para salvar ou excluir um
+objeto na persistência aqui nós podemos
+salvar o objeto em um sistema de
+arquivos ou em um banco de dados então
+nós temos aqui dois
+o computadores que são usados para
+implementar a persistência eu tenho o
+Fairy persistência implementor que é
+usado para salvar o objeto em um ano e
+eu tenho o data-base persistência
+incremento que é usado para salvar o
+objeto no banco aqui eu posso então usar
+qualquer um dos implementadores para
+salvar o objeto então de acordo com o
+padrão de abstração Ea implementação ela
+deve estar em uma camada separada e aqui
+a persistência é a camada de abstração
+Ea implementação da persistência é a
+camada de implementação dessa forma
+usando essa abordagem me aplicando o
+para Bleed seu adicionar uma nova
+implementação o seu remover qualquer
+implementação que existir isso não vai
+afetar a camada de abstração Então essa
+é a vantagem do padrão Verde a camada de
+persistência que é uma camada abyss
+e vai usar qualquer um dos
+implementadores para salvar ou excluir
+um objeto e o cliente vai usar apenas A
+ministração para salvar ou excluir
+objeto Então eu tenho aqui um
+desacoplamento da abstração e de sua
+implementação e ambas podem evoluir de
+forma Independente se eu quiser incluir
+mais uma forma de implementação para
+salvar aqui no outro formato eu posso
+fazer isso sem alterar nada na abstração
+então a seguir eu vou apresentar o
+diagrama o ML do padrão Bridge e segundo
+o Golfe e Aqui nós temos os seguintes
+participantes eu tenho aqui abstraction
+que é uma classe abstrata que contém
+menos que define um objeto de negócio
+abstrato EA sua funcionalidade ela
+contém uma referência a um objeto do
+tipo Bridge que é representado aqui pelo
+incremento e ela também pode atuar como
+uma classe base para outras Abstrações a
+seguir nós temos free Fire abstraction
+que é uma que
+a cada the abstraction para implementar
+alguma operação depois nós temos um
+implemento que é uma interface que atua
+como uma ponte umbridge entre a classe
+de abstração e as classes do
+implementador e também torna a
+funcionalidade da classe do
+implementador Independente da abstração
+ela define a interface que as classes
+concretas devem implementar a seguir eu
+tenho concreto implementar e concreto
+entre mentor B que representam as
+classes concretas que implementam aqui
+Intendente Ou seja a minha interface
+Bridge e também fornece detalhes de
+implementação para a classe AB trecho
+que está associada ao implemento então
+nós podemos verificar no diagrama o ML
+as duas e hierarquias de classes que são
+definidas Olha eu tenho aqui a abstração
+e eu tinha aqui em tramitação de forma
+desacoplada e assim essas duas vir aqui
+a vão poder evoluir de forma
+independente agora nós veremos quando
+aqui nós por
+e dar o padrão Bridge as usamos esse
+padrão quando queremos ocultar os
+detalhes de implementação do cliente ou
+quando queremos evitar o forte
+acoplamento entre a abstração Ea sua
+implementação como foi mostrado quando
+queremos alterar a implementação sem
+compilar a abstração e quando queremos
+compartilhar uma implementação entre
+vários objetos e isso deve ser escondido
+do cliente deve ser o culto do crente ao
+cliente aqui só vai acessar abstração a
+seguir nos veremos as vantagens e
+desvantagens em usar o padrão brinde
+como vantagem nós podemos elencar que
+ele estimula o uso de um código
+fracamente acoplado tem um fraco
+acoplamento entre a abstração Ea
+implementação de forma que uma pode ser
+alterada independentemente da outra ele
+aumenta a capacidade de manutenção e
+reutilização do código e reduza a
+duplicação do código ajuda a promover o
+princípio aberto fechado porque eu posso
+a incluir novas administrações ou novas
+implementações de forma independente e
+ele facilita a extensibilidade pois a
+abstração Ea implementação podem ser
+estendidas independente uma da outra
+como desvantagem principal mas podemos
+citar que a utilização deste padrão pode
+aumentar a complexidade do código pela
+criação de um maior Kia de classes
+complexa Além disso você tem que
+considerar que o código que está sendo
+usado para a abstração e para a
+implementação deve ser um código
+separável EA funcionalidade separada
+deve ser capaz de funcionar de forma
+independente e isso pode levar a uma
+complexidade maior no código então agora
+eu vou mostrar um exemplo prático da
+aplicação do padrão Bridge Então vamos
+supor que você precisa processar o
+salário dos funcionários de uma empresa
+e você precisa salvar os dados no
+formato XML e gay Satã
+a peça de salvar os dados em formato
+específico será decidido em tempo de
+execução e o cliente ele pode incluir
+outros formatos para geração do arquivo
+por exemplo o que a gente pode decidir
+que ele quer também gerar os dados no
+formato texto ou no formato PDF ou em
+outro formato E além disso o
+processamento do cálculo do salário pode
+variar um futuro então nós temos aqui um
+cenário típico para usar o padrão Bridge
+nós vamos definir uma abstração para
+calcular o salário e gerar os dados no
+formato XML e nós vamos definir a
+implementação para efetivamente gerar os
+dados no formato XML dias e usando o
+padrão brinde nós vamos separar a
+abstração da implementação de forma que
+elas possam evoluído de forma
+independente o gerar um código
+desacoplado assim se eu precisar
+modificar o cálculo do salário eu não
+vou precisar alterar aqui a mim para
+a esse eu precisar alterar a
+implementação incluindo um novo formato
+para gerar o arquivo eu não vou precisar
+mexer na abstração e assim eu vou ter um
+código desacoplar então agora eu vou
+mostrar como isso foi implementado no
+visual Studio 2019 usando a linguagem
+ser chá eu vou iniciar com um diagrama
+de classe que foi gerado pelo visual
+Studio na implementação que foi feita
+aqui nós temos o funcionário que
+representa o meu do homem depois nós
+temos aqui a interface e gera arquivo
+que representa o incremento Ou seja é o
+nosso Bridge aqui eu tenho as classes
+concretas geradista e gerar XML que
+representa o concreto implemento que
+implementa esta interface e vai gerar os
+arquivos no formato XML eis a seguir eu
+tenho o abstraction gerar arquivo e
+representa o meu abjection que é uma
+classe abstrata onde eu vou ter uma
+Instância de gerar arquivo e o
+a distância é usada para gerar o arquivo
+no formato especificado e eu tenho aqui
+a classe calcula salário que representa
+o refined abstraction essa classe ela
+era the abstraction e recebemos
+consultor um objeto do tipo e gerar
+arquivo em tempo de execução ele vai
+calcular o salário do funcionário
+internamente e vai executar operação
+para persistir os dados do funcionário
+no formato do arquivo especificado
+usando uma extensa recebida que dizer
+arquivo que a classe base vai fornecer e
+a classe programa é o meu cliente onde
+eu vou usar e aplicar o padrão então
+agora eu vou mostrar o código no projeto
+gerado no visual Studio eu vou abrir
+aqui o visual isto 2019 Eu tenho um
+projeto do tipo console net 5 e aqui
+neste projeto eu criei pastas com os
+nomes dos participantes Como foram
+definidos no diagrama 1 m então na pasta
+do meio eu tenho a classe funcionário
+que é o meu modelo
+e representa o funcionário para o qual
+eu vou calcular o salário a seguir eu
+tenho aqui no incremento a interface
+gerar arquivo essa que representa o meu
+Bridge ela que define aqui como os
+arquivos em serão gerados Note que aqui
+eu não tem implementação é só Defina um
+método recebo um tipo do funcionário e
+eu vou gravar o arquivo no formato
+especificar aqui no concreto implementor
+eu tenho as classes de ar Adilson que
+está implementando a interface Olha
+então aqui no método gravar arquivo eu
+recebo o funcionário e aqui fiz uma
+implementação básica para gerar no
+formato Jason Note que eu tô usando aqui
+ó Jason seria lá e eu tô gerando os
+dados do cálculo do salário do
+funcionário no formato Jason eu tenho a
+classe gera XML que faz a mesma coisa
+gerando o cálculo do salário né os dados
+no formato XML aqui eu já estou usando
+aqui ó o XML seria lá ele fairies
+o e implementando a interface No método
+gravar arquivo eu Gero os dados no
+formato XML aqui em abstraction eu tenho
+a classe abstrata Aonde eu tô injetando
+uma variável do tipo e gerar arquivo no
+construtor da classe e no método gravar
+arquivo eu recebo a Instância de
+funcionário com essa Instância de gerar
+arquivo que é a minha ponte Eu uso o
+método gravar arquivo e vou gerar o
+arquivo no formato especificar a seguir
+eu tenho aqui em refinado abstraction eu
+tenho a classe calcula salário que herda
+da minha classe abstract mujer arquivo e
+aqui no Construtor ou ela recebe em
+tempo de execução uma Instância de gerar
+arquivo e passa para a classe base então
+na classe base ó ela obtém a Instância E
+aí usa depois eu vou soube descrever um
+método gravar arquivo para gerar o
+arquivo no formato especificar então
+aqui em calcula salário eu tenho um
+método processa salário do
+é um funcionário para qual eu quero
+gerar o salário E aí ó eu faço um
+cálculo aqui somando o salário-base mais
+um incentivo e aqui ó usando a Instância
+que foi recebida aqui do meu abstraction
+geral arquivo ela foi injetada em
+calcula salário passou para a classe
+base a classe baixa observem Instância
+então com essa Instância eu tô gravando
+o funcionário no formato especificado
+esse formato ele é injetado em tempo de
+execução aqui no consultor e ele usa a
+classe abstrata chama olha para obter
+essa Instância então aqui na classe
+carente eu tenho Olha a aplicação do
+padrão então no método bem Eu tô usando
+aqui com a cola salário que a minha
+redefinir dabs caption tá recebendo via
+Construtora olha em tempo de execução o
+tipo específico eu quero gerar no caso
+aqui xm-l aí eu vou usar a classe base
+para obter uma Instância e gerar arquivo
+que é o meu brinde E aí com os dados do
+funcionário que eu estou definindo aqui
+ó
+o método processo salário para o
+funcionário aqui definido e usando a
+Instância de e gerar arquivo aqui ó
+obtido aqui é o processo o salário do
+funcionário usa o método definido aqui ó
+no implemento gravar arquivo para gerar
+os dados no formato especificado note eu
+posso alterar um valor em tempo de
+execução Posso alterar o formato também
+geração do arquivo em tempo de execução
+então aqui eu tenho como exemplo que eu
+tô gerando os dados do salário do
+funcionário inicialmente no formato XML
+aí eu estou alterando o cálculo do
+operando aqui o valor do incentivo e por
+gerando no formato Jason isso em tempo
+de execução que eu tô passando aqui ó a
+Instância a minha classe calcula salário
+que vai olha passar em Estância do tipo
+em gerar arquivo obtém a Instância e
+fazer o processamento usando o método
+gravar quilos e aqui é o exibe os
+valores então eu vou executar só para
+mostrar
+é isso funcionando valor do salário
+total para o funcionário 101 que é o
+funcionário que eu defini aqui ó e de
+101 uma cor aqui salário base 3 mil
+incentivo 2000 o valor do salário é
+5.000 Inicial tá vendo ó três mais dois
+então ele calculou e gerou os dados no
+nesse arquivos Salário funcionário x ml
+depois eu alterei o valor do incentivo
+olha e calculei novamente então salário
+aumentou para cinco mil quinhentos e os
+dados foram gerado no formato Jason
+então isso está sendo gerado dentro da
+pasta de bug do projeto eu vou abrir a
+pasta olha aqui os dois arquivos gerados
+eu vou abrir aqui o salário do
+funcionário xm-l mostrar um bloco de
+notas olha aqui ó ele gerou no formato
+XML o arquivo e aqui no formato de sou
+eu vou abrir um navegador vou abrir no
+Firefox então eu vou mandar exibido no
+formato jjasond aqui ó os dados no
+formato do Jason
+o signo estou aqui né Essa implementação
+o padrão Bridge ele tem quase a mesma
+estrutura do padrão adapter que nós
+mostramos na aula anterior a diferença é
+que esse padrão ele é usado Quando você
+vai projetar novos sistemas em vez de
+usar o padrão adapter que é usado com
+sistemas que já existe então o padrão
+adapter já existe um sistema pronto você
+precisa fazer algumas adaptações o
+brilho e não é mais usado Quando você
+vai criar um projeto Novo Tão padrão
+Bridge ele é usado quando você tem uma
+nova versão de um software ou um sistema
+está lançando uma nova versão mais a
+versão mais antiga do software ainda
+está em execução em seu cliente vai ter
+que escolher então era isso até a
+próxima seman

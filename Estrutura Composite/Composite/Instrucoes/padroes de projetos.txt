@@ -1,0 +1,303 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos padrões de
+projetos goffi hoje eu vou apresentar o
+padrão estrutural composi o padrão de
+projeto composite ele compõe objetos em
+Estrutura semelhante a uma árvore para
+representar hierarquias parte todo esse
+padrão ele permite que os clientes track
+em objetos individuais e composições de
+objetos de uma maneira uniforme ou seja
+como único objeto assim o padrão
+composite ele permite compor objetos em
+uma estrutura de árvore e em seguida
+permite trabalhar com essa escultura
+como se fosse um único objeto uso esse
+padrão faz sentido quando o problema que
+nós queremos resolver pode ser
+representado como uma estrutura
+semelhante a uma árvore e a aplicação do
+padrão compositio vai permitir executar
+métodos
+recursivamente em toda a estrutura da
+árvore um dos resultados Então vamos a
+um exemplo para entender melhor o padrão
+composite numa tradução livre seria
+composto então composta e significa algo
+que é feito de várias partes ou
+elementos Então vamos pensar nas partes
+de um computador dá um computador ele é
+feito de várias partes ou elementos
+integrados conforme mostra essa figura
+de forma bem resumida é claro né então
+nessa figura nós temos vários objetos
+que juntos formam o computador temos o
+gabinete
+periféricos disco rígido do tamanho
+mouse e o teclado Tão Tudo Aqui são
+objetos que vão compor o computador pão
+Neste contexto um objeto composite ou
+objeto composto fazendo aqui uma
+tradução livre é um objeto que contém
+outros objetos estão nós devemos lembrar
+que um objeto composto também pode
+conter objetos compostos que nem por
+exemplo computador contém gabinete
+gabinete contra com a mãe que a CPU
+agora quando o objeto não com tiver
+nenhum outro objeto como CPU Ram o mouse
+e o teclado ele é simplesmente tratado
+como um objeto primitivo ou lhe fique
+numa tradução livre seria a folha então
+aplicando vez que conceito neste exemplo
+nós podemos identificar aqui ó os
+objetos compostos como sendo o
+computador o gabinete periféricos EA
+placa-mãe são os compósitos objeto e os
+objetos primitivos ou lhe fique numa
+tradução livre pode ser folhas irem lá
+CPU aham o mouse e o teclado nesta
+figura né então a ideia fundamental aqui
+expressa por esta hierarquia é que se eu
+realizar alguma operação um objeto folha
+Olívia aqui a mesma operação poderá ser
+realizada nos objetos compostos por
+exemplo se eu quiser ler o preço de um
+mouse e eu puder fazer isso eu devo ser
+capaz também de ler o preço do espelho
+bom e até mesmo ler ou calcular o preço
+do computador percebeu aqui a navegação
+na ilha Akira tampar implementar esse
+comportamento mas devemos usar o padrão
+de projeto composite exatamente isso que
+o padrão de projeto se propõe a fazer
+então nós vamos ter uma estrutura
+semelhante a uma árvore onde nós podemos
+definir objetos compostos e objetos
+primitivos ou os compostos objetos ou
+livro objeto então assim na estrutura do
+padrão composta nós podemos ir
+identificar três componentes principais
+O componente que é uma interface que
+descreve as operações comuns a elemento
+simples ou complexos da árvore olife ou
+folha que é um único objeto que não
+possui sub-elementos e o composite que é
+um objeto que possui sub-elementos você
+acha que podem ser folhas ou outros
+objetos compostos essa seria uma
+estrutura na hierarquia de árvores do
+composite então nós podemos representar
+no diag Oi Kelly do padrão segundo gof
+os seguintes componente eu tenho aqui o
+componente que pode ser uma interface é
+uma classe abstrata que vai definir as
+funções comuns que precisam ser
+implementadas nos objetos primitivos
+nullify ou nos objetos compostos nos
+composite a seguir eu tenho o like que
+implementa os comportamentos padrões
+aqui ó definido na interface componente
+ou na classe abstrata né Lembrando que o
+lif não contém uma referência nenhum
+tipo composto ele é um objeto filho que
+não contém subir alimento o composite
+aqui contém outros objetos compostos e
+implementa os métodos de componente
+Então essa graça ela contém métodos
+relacionados ao gerenciamento dos
+objetos filhos como mostra aqui ó na
+figura que esse destaque aqui e eu tenho
+crente que vai usar a interface
+componente para acessar os tipos
+compostos executar as operações
+definidas de maneira uniforme em toda a
+hierarquia Então esse diagrama uml do
+com pó e goffi e quando eu posso usar o
+quando eu devo usar este padrão então
+quando precisarmos criar uma escultura
+em árvore para resolver um problema o
+padrão compostos é bem indicado o quando
+precisarmos representado e ele aqui as
+todo parte de objeto ou ainda quando
+queremos que os clientes ignorem a
+diferença entre como posições de objetos
+e objetos individuais e quais são as
+vantagens e desvantagens esse padrão
+como vantagens mas podemos dizer que ele
+ajuda a alcançar a uniformidade ou seja
+o uso de funções semelhantes em toda a
+hierarquia de objetos que contém tipos
+de objetos primitivos e compostos Uma
+Outra vantagem aqui ele torna mais fácil
+para o cliente atingir a funcionalidade
+desejada sem se preocupar com o tipo de
+objeto com o qual está lidando que pode
+ser um objeto composto um objeto simples
+livre como desvantagem eu vou destacar o
+seguinte a sua aplicação pode se tornar
+muito Oi Érica devido a sua uma
+enfermidade tornando assim difícil
+responder objetos que podem ser
+incluídos no grupo composto essa seria
+uma desvantagem desse padrão então a
+seguir eu vou apresentar uma
+implementação prática Então vamos supor
+o seguinte cenário os porque nós temos
+uma organização com diferentes
+departamentos e cada departamento possui
+o seu conjunto de funcionário Então o
+que nós temos que fazer nós precisamos
+coletar as informações das horas
+trabalhadas
+registrada de cada funcionário em cada
+departamento e também precisamos
+calcular o total de Horas de cada
+departamento e o Total Geral de horas
+trabalhadas na organização então aqui
+nós podemos identificar uma hierarquia
+de objetos consiste de organização
+departamentos funcionários e eu preciso
+coletar as horas trabalhadas registradas
+pelos funcionários nos departamentos as
+horas totais dos apartamentos e o total
+da organização a resolver esse problema
+nós vamos implementar o padrão compósito
+então aqui ó eu tenho nós podemos
+identificar a organização como sendo o
+composite que é composto departamento de
+funcionários e os funcionários seriam os
+livros eles não contém nenhum
+sub-elemento tava a seguir eu vou
+mostrar o diagrama de classes que foi
+gerado na implementação feita no visual
+Studio 2019 e aqui nós vamos identificar
+o seguinte foi criado uma classe hora
+trabalhada que representa o componente
+Então essa é a classe base que vai
+declarar a funcionalidade comum que vai
+ser qat hora trabalhada é isso que eu
+preciso fazer obter as horas trabalhadas
+então aqui tá o componente que é uma
+classe abstrata onde eu tô declarando a
+funcionalidade comum que Jet hora
+trabalhada que vai ter que ser aqui
+implementada em funcionário e na
+organização funcionário representa o
+like e organização representa o
+compósito aqui o também o definir os
+métodos ADM remove que poderão ser
+implementados e no nosso exemplo eu só
+vou usar o Hélio eu só mostrei aqui a
+implementação do Remo vi que eu posso
+ter um outro cenário onde eu vou poder
+usar esse método outros netos que eu
+precisar implementar é uma classe
+funcionário ela é um bife ela representa
+o objeto primitivo a folha na estrutura
+de ar que não pode ter filho então essa
+classe ela vai implementar com essa
+bicicleta hora trabalhada vai substituir
+o método o método Pet hora trabalhada
+para retornar a hora de trabalho que foi
+registrada para o funcionário tá aqui ó
+gente hora trabalhada e a classe
+organização ela representa o composite e
+os objetos complexos ou compostos e vão
+seus departamentos e os funcionários que
+são os lifes e aqui na classe praga eu
+tenho meu cliente que vai usar o
+componente criar instâncias aqui de
+departamentos e calcular a hora
+trabalhada de cada funcionário dos
+departamentos de da organização Então
+agora eu vou abrir o visual Studio 2019
+em tentação feita eu criei um projeto
+console no ambiente do Net 5 e ele
+pastas aqui no projeto correspondente
+aos nomes dos objetos definidos no
+diagrama o ML do padrão componente e
+composite lixo para fazer uma associação
+aqui ó na pasta componente eu tenho a
+classe abstrata hora trabalhada então
+aqui eu tô definindo a funcionalidade
+como um peguete hora trabalhada que eu
+vou usar para calcular a hora trabalhar
+definir aqui dois metros O alho e o remo
+eu só vou usar o método AD para mim
+poder incluir os departamentos e os
+funcionários nos departamentos o remo vi
+só coloquei aqui para ilustrar ou esse
+esses a classe representa o meu
+componente então a seguir eu tenho aqui
+na pasta alife a classe funcionário que
+representa o livro aqui eu defini uma ID
+e as horas que esse funcionário vai
+registrar e aqui eu também estou
+substituindo o médico o método doggett
+hora trabalhada e retorno em duas horas
+do funcionário que ó e aqui na pasta
+composto que eu tenho a classe
+organização que é uma classe concreta
+olha e ela representa o meu composite
+então ela herda da classe abstrata hora
+trabalhada que é o cão Pony então aqui
+eu tô querendo uma lista com base na
+hora trabalhada porque eu quero calcular
+as horas trabalhadas né e eu vou fazer
+isso cada departamento e para cada
+funcionário do departamento não é aqui
+eu vou montar a estrutura de árvore na
+organização departamento os funcionários
+E aí eu vou usar o método get e hora
+trabalhada para calcular as horas dos
+funcionais depois das horas dos
+departamentos e no final a hora da
+organização e aqui na graça e próprio eu
+tô usando essa implementação eu crie uma
+Instância da organização definido o seu
+nome e depois o cria um departamento que
+estou usando aqui como exemplo dois
+departamentos o departamento de ti e
+aqui nesse departamento tocando três
+funcionários e definiram as horas
+registradas para cada um deles ao Maria
+oito Miguel c e Samuel outros são
+registradas aqui no departamento é para
+esses funcionários depois eu tô criando
+o outro departamento contabilidade
+definindo dois funcionários e
+registrando as suas horas trabalhadas aí
+eu tô incluindo esses departamentos na
+organização para montar a estrutura de
+árvore e depois Doutor chamando o método
+get e hora trabalhada que vai aqui no
+composite percorrer olha os
+departamentos exibindo as horas dos
+funcionários depois ele tá fazendo aqui
+uma soma das Horas totalizando as horas
+totais os funcionários e no final ele
+vai exibir as horas totais trabalhadas
+na organização todos sempre que uma
+implementação bem simples ao diagrama de
+classes representa isso de forma bem
+simples o meu componente o meu Life e o
+meu composite e aqui a minha classe
+cliente que vai usar a implementação tá
+o seu executar eu vou ver o resultado
+aqui deixa eu tirar esse mecplant que eu
+coloquei aqui e nós vamos resultado ao
+funcionário Maria registro 8:00 Miguel
+sei Samuel 8 o departamento de tem
+resistor 22 horas né 16 mais 6 22 depois
+funcionário b a três vezes com sete
+horas aula registros 5 horas tá
+contabilidade registo 12 horas e no
+total a JCM em Corporation regista um
+total de 34 horas 22 horas + 12 horas 34
+horas então esse é um exemplo assim
+clássico e básico da implementação do
+padrão composite era isso até a semana
+que
+
+Todos
