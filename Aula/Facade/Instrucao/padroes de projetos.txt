@@ -1,0 +1,287 @@
+o Olá eu sou uma corrente e hoje eu vou
+continuar a apresentação dos padrões de
+projetos goffi hoje eu vou apresentar o
+padrão estrutural faceid o padrão faceid
+ele fornece uma interface unificada para
+um conjunto de interfaces em um
+subsistema equipada não define uma
+interface de nível superior que torna o
+subsistema mais fácil de usar o faceid
+ele fica no topo de um grupo de
+subsistema e permite que eles se
+comuniquem de uma maneira unificada de
+uma forma mais simples nós podemos dizer
+que o padrão faceid tem como objetivo
+esconder a complexidade de um sistema
+expondo apenas as interfaces que o
+cliente precisa Enxergar com isso o
+sistema fica mais simples e fornece uma
+coleção de métodos mais fáceis de
+entender e dessa forma o faceid ele
+simplifica o uso de processos mais
+complexos e o que envolvam vários
+subsistema em uma interface simples
+vamos entender como o faz e de atua em
+um exemplo vamos supor que um sistema de
+vendas hipotética Mas precisamos definir
+Quais as etapas envolvidas para realizar
+o registrar um pedido nesse sistema
+então para registrar um pedido nesse
+sistema nós precisamos criar uma classe
+produto para representar o produto e
+assim obter os detalhes do produto
+através de um método get produto detalhe
+a seguir nós precisamos receber o
+pagamento e Para isso precisamos criar
+uma classe pagamento e efetuar o
+pagamento através do método realizar
+pagamento e se o pagamento for
+bem-sucedido nós precisamos criar a
+classe nós Oi e o método enviar nota
+fiscal para enviar a nota fiscal do
+pedido então essa seriam as etapas
+necessárias para registrar um pedido
+nesse sistema assim toda vez que for
+necessário registrar um pedido usuário
+de sistema vai ter que realizar essas
+etapas criando as classes invocando os
+respectivos né então para simplificar o
+acesso a esse sistema nós podemos
+aplicar o padrão faceid e podemos fazer
+isso criando uma classe Extra que vai
+ficar situada no topo das demais castas
+então para isso nós podemos criar a
+classe pedido e o método gravar pedido
+assim agora a classe pedido ter a
+responsabilidade de registrar o pedido
+criando as instâncias das respectivas
+classes e invocando os métodos
+necessários para isso nós temos assim um
+exemplo básico a ação do padrão faceid
+onde o cliente agora apenas precisa usar
+a classe pedido que é o nosso faceid
+Espanha apenas o que o cliente precisa
+usar e oculta assim a complexidade do
+sistema então o faceid através da classe
+pedido acaba representando o subsistema
+inteiro e um detalhe importante é que a
+ati do subsistema ainda fica disponível
+para o cliente então esse seria um
+exemplo básico de aplicação e de
+implementação do padrão fasceite e do
+problema que ele resolve o diagrama 1 ml
+do padrão faceid segundo gof ele possui
+os seguintes participantes nós temos a
+classe faceid que sabe quais classes do
+subsistema são responsáveis por uma
+solicitação e então ela delega as
+solicitações do cliente para os objetos
+do subsistema apropriado
+e daqui as caixas do subsistema que
+implementam as suas respectivas
+funcionalidades
+atribuídas a elas e esse subsistema mas
+não possuiu nenhum conhecimento do faced
+a tradução de faz ele para o português
+Seria algo como uma fachada é assim que
+o padrão atua como uma fachada então nós
+podemos perceber que o cliente ele pode
+acessar o subsistema através da
+interface única representada pelo faceid
+esse padrão ele é muito utilizado muitas
+vezes De forma inconsciente em projetos
+e quando nós podemos usar o padrão
+falsete nós devemos usar o padrão faceid
+quando nós queremos simplificaram uma
+sequência de operações complexas quando
+eu queremos simplificar a interface com
+o usuário quando queremos fornecer uma
+interface única uniforme para as
+diversas funcionalidades de um
+subsistema e quando queremos criar
+sistemas em camadas neste caso um
+paciente prover o ponto de um para cada
+camada do subsistema essa seria algumas
+das situações onde você poderia ficar o
+padrão faceid e a seguir nós vamos ver
+as vantagens e desvantagens do faced
+como vantagens nós podemos dizer que o
+padrão faceid facilita portabilidade do
+sistema e sua interação com o subsistema
+que isola os clientes dos componentes do
+subsistema reduzindo o número de objetos
+com as quais o cliente ele tem que lidar
+que ele promove um acoplamento fraco
+entre o subsistema e seus clientes aqui
+o acoplamento fa permite variar os
+componentes do subsistema sem afetar os
+clientes é um detalhe importante e como
+desvantagem nós podemos elencar os que o
+Face dele introduzo uma camada adicional
+entre o cliente e o subsistema e isso
+contribui para complexidade do código ou
+seja aumenta a complexidade do código
+ele cria uma DP um entre vários
+sub-sistemas pois vai dos métodos são
+chamados a partir dos deles para servir
+o cliente é outro detalhe importante que
+você tem que atentar aqui na
+implementação do faced e as apólices
+específicas dos clientes precisam ser
+introduzidas da classe faceid isso vai
+requerer uma manutenção adicional Então
+essa seria algumas das desvantagens do
+faceid e um outro detalhe importante é
+que um objeto faceid ele pode se tornar
+o que é conhecido como um objeto Deus
+ungada objeto isso é conhecido como um
+ano que padrão Então esse é o morto
+detalhe importante que você tem que
+ficar atento da implementação do faz ET
+então a seguir veremos um exemplo
+prático de implementação do padrão faced
+então para implementar o padrão faceid
+nós vamos usar um exemplo onde nós temos
+um sistema de análise e concessão de
+crédito e potente o que realiza
+operações como cadastro verificação de
+restrições como Serasa Cadin e cálculo
+do limite de crédito para avaliar a
+concessão de crédito a clientes esse
+seria um subsistema de operações
+complexas que eu estou aqui resolvendo
+muito que um cliente ele precisa acessar
+para verificar que vai conceder ou não
+empréstimo aos clientes então aqui nós
+vamos experimentar o Patrão faz Ed
+criando uma classe meu Face com o método
+conceder empréstimos e aqui ou faceid
+representada nesta classe vai fornecer
+uma interface simplificada para acessar
+o subsistema de classes que devem
+realizar as operações de verificação E
+lembra que ele crédito consulta ao Cadin
+e Serasa cadastro do cliente define se o
+crédito deverá ou não ser concedido mas
+teremos assim uma fachada que oculta a
+complexidade embutido aqui no subsistema
+e Vai facilitar é o usuário acessar o
+sistema e assim poder saber se ele pode
+ou não conceder um empréstimo então a
+seguir eu tenho o diagrama de casos que
+foi gerado no visual Studio 2019 como na
+implementação Desse exemplo do padrão
+falsete aqui eu tenho a graça em mim eu
+passei di e utiliza a implementação do
+Face e simplifica a interface com o
+usuário que é aqui representado pelo que
+ela clássica então nós iremos que vai
+poder conceder o nome empréstimo basta o
+usuário criar uma Instância da classe
+meu faceid e usar o método conceder
+empréstimo que vai esconder toda a
+complexidade aqui no subsistema
+representado pelas classes cadastro
+Cadinho limite de crédito e Serasa aqui
+o faceid ele tá ocultando as
+complexidades do sistema e tá fornecendo
+uma interface única a partir de onde o
+quê Como acessar o sistema e seria a
+intenção primordial do faced então a
+seguir eu vou abrir aqui o visual Studio
+2019 onde eu tenho um projeto console
+criado no net Core 5.0 nesse projeto eu
+criei a pasta faceid onde nós temos a
+classe meu faceid e a pasta subsistema
+onde estão as classes de um hipotético
+subsistema para análise e concessão de
+crédito atualmente dos simplificando
+bastante aqui para não tornar essa
+implementação muito complexa Então vamos
+analisar aqui as classes do subsistema
+eu teria o cadastro do cliente e recebe
+aqui um cliente Faz um cadastro abrir
+uma consulta ao Cadin e vai verificar se
+o cliente está incluído no Cadin que é
+um sistema que verifica o risco do
+cliente eu tenho Serasa e verifica se o
+cliente tem alguma pendência no Serasa
+com relação à crédito eu tenho aqui a
+classe limite de crédito que recebe aqui
+um valor e o cliente ele Verifique o
+limite de crédito do cliente aqui eu
+estou simplificando demais hum a lógica
+que essa classe está usando aqui para
+verificar se o cliente tem o limite é
+classe cliente onde apenas eu estou
+definindo que o nome do cliente então
+esse seria o subsistema se o cliente
+fosse usar esse subsistema ele teria
+aqui cadastrar um cliente e depois
+distanciar O Cadinho verificar eu saciar
+o Serasa verificar essencial o limite de
+crédito calcular o limite ou seja teria
+que acessar cada uma das funcionalidades
+que o subsistema exponha implementando
+faceid eu creio aqui uma classe meu face
+and e aqui de forma bem simplificada
+também eu tô criando as instâncias para
+mim acessar cada um do subsistema e aqui
+no método conceder empréstimo eu vou
+expor é fácil ao usuário são usuário só
+vai precisar invocar um método considero
+empréstimo passando uma Instância do
+cliente e o valor que o cliente está
+solicitando como Empresta aí eu vou usar
+todas as funcionalidades do subsistema
+vou ficar encapsuladas aqui ocultas na
+interface da classe meu parceiro e aqui
+eu estou usando aqui a Instância do
+Serasa do Cadinho do limite no final eu
+retorno se o crédito vai ser concedido
+ou não E aqui na classe frango uma
+utilização de faceid aqui por causa um
+representa o usuário do subsistema ele
+só vai em criar uma Instância do faceid
+aqui eu tô criando uma Instância do
+cliente e usar Instância do passei di e
+o método conceder empréstimo e através
+deste método basta ele passar o cliente
+e o valor presenteado e o resultado vai
+ser obtido então eu tô utilizando faz Ed
+e aqui eu tô ocultando toda a compra o
+que está por trás do subsistema de
+análise e concessão de crédito estão
+executando aqui ó eu tenho aqui o
+cliente né que eu criei uma cor ate o
+valor do empréstimo e aqui eu tô
+executando cada um mas as operações do
+subsistema através do faceid Então esse
+seria um exemplo bem simples e básico de
+utilização implementação do faced nós
+podemos reconhecer o padrão a sede em
+uma classe toda vez que essa classe ela
+possui uma interface simples mas delegar
+a maior parte do trabalho para as outras
+classes como tá acontecendo aqui ó o
+passeio aqui ela tem um método simples e
+cada alegando todo o serviço para outras
+casas que ele está distanciado agora um
+detalhe importante o padrão faz Ed ele é
+muito parecido com padrão adapta a
+diferença principal entre os dois
+padrões é a intenção do padrão o padrão
+adapter o objetivo dele é alterar a
+interface para tornar os com e
+compatíveis com aplicação já o faceid
+ele envolve a interface de um subsistema
+de baixo nível com uma interface de alto
+nível para reduzir a complexidade E
+Agora Nós podemos também pensar no
+padrão abstrato Factor que nós já
+apresentamos como um tipo de paz e saúde
+para a criação de objetos da gente
+lembrar da implementação do padrão
+abstrato Vector podemos considerá-lo
+como uma fachada para criar objeto então
+era isso até a semana que vem
