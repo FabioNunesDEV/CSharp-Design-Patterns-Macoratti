@@ -1,0 +1,313 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos padrões de
+projetos hoje eu vou apresentar o padrão
+estrutural faiwei o padrão Freeway é
+usado para criar muitos objetos pequenos
+relacionados sem invocar muito trabalho
+de sobrecarga ao fazer isso melhorando
+assim o desempenho EA capacidade de
+manutenção esse padrão permite que os
+programas suportam em grandes
+quantidades de objetos mantendo baixo o
+consumo de memória o padrão consegue
+fazer isso compartilhando partes do
+estado do objeto entre vários objetos e
+assim ele economizar memória armazenado
+em cache os mesmos dados usados por
+objetos diferentes então o padrão
+Freeway ele é usado quando existe a
+necessidade de criar um grande número de
+objetos parecidos como criar um desenho
+número de objetos consome muita memória
+o padre a web fornece uma solução para
+minimizar o uso dos recursos reduzindo a
+carga na memória e Compartilhando os
+objetos não quer os objetos
+compartilhados neste padrão são chamados
+de frio leite e a chave para criarmos os
+objetos compartilhados é a distinção
+entre o estado
+intrínseco e o estado extensivo de um
+objeto dessa forma cada objeto Freeway
+possui duas partes o estado
+intrínseco ou interior que é constante e
+é armazenado com o próprio objeto caiu e
+e o estado extrínseco ou exterior que
+não é constante e precisa ser calculado
+em tempo de execução e não é armazenado
+na memória então com base nisso o padrão
+cair Wade permite que muitas instâncias
+de um objeto compartilhem o seu estado
+intensifico e assim reduz o custo um
+feriado a sua criação Então vamos
+ilustrar
+atuação do padrão usando um exemplo para
+clarear o nosso entendimento Suponha que
+criamos e armazenando vão objeto círculo
+no estamos representando aqui por esta
+figura objeto círculo armazenado no cash
+ele não tem cor agora Suponha que nós
+temos que criar 50 mil objetos círculo
+com a cor amarela 50 mil objetos círculo
+com a cor vermelha e 50 mil objetos
+físicos com a cor azul então Observe que
+todas as formas são as mesmas nós temos
+somente objetos físicos o que tá mudando
+aqui é apenas a cor então criar todo
+usei esses objetos com certeza vai
+consumir muita memória e isso é um
+problema que nós temos que resolver
+assim este cenário pode ser replicado
+quando você tem um grande número de
+objetos que precisa criar aqui no nosso
+exemplo eu bom então o padre não frio
+hoje ele tenta resolver esse problema e
+melhorar o desempenho da seguinte forma
+ele cria o objeto círculo apenas uma vez
+e reutiliza esse objeto círculo várias
+vezes para criar um objeto com a cor
+diferente assim para obter os 50 mil
+objetos círculo com a cor amarela ao
+invés de eu criar novos objetos círculos
+toda vez e preencher os com a cor
+amarela nós podemos fazer o seguinte nós
+obtemos o objeto círculo do Cash e
+preenchemos esse objeto com a cor
+amarela e fazemos isso para todos os
+demais objetos obtemos o Cash e apenas a
+preenchemos com a cor amarela e nós
+podemos adotar esse procedimento para os
+objetos com a cor vermelha obtendo o
+objeto do Clash preenchendo depois e
+azul obtendo objeto do Cash preenchendo
+Depois dessa forma nós podemos melhorar
+o a aplicação por nós estamos reduzindo
+a criação dos objetos compartilhando
+partes do estado do objeto aqui a forma
+eu estou metendo do Cash a cor que tá
+variando eu tô atribuído em tempo de
+execução então neste exemplo a forma do
+objeto ou seja o circo é constante ela
+não sofre alteração e assim ela está se
+referindo ao estado intrínseco do objeto
+portanto ela é armazenada na memória Ou
+seja no cash já a cor ela não é
+constante ela varia Então ela refere-se
+ao estado extrínseco do objeto e ela é
+calculada em tempo de execução e ela não
+é armazenada na memória vejamos a seguir
+o diagrama uml do padrão firewire e
+segundo o Golf nós temos aqui os
+seguintes participantes Freeway é a
+interface que define os membros os
+objetos caiway essa interface permite o
+compartilhamento mas não em e os objetos
+concretos que implementam essa interface
+podem ser compartilhados ou não
+compartilhado como vemos aqui no
+diagrama o contrato Highway vai
+implementar a interface e adicionar o
+armazenamento para o estado intense
+Então esse objeto ele deve ser
+compartilhado e qualquer estado que nós
+vamos armazenamento objeto deve estar em
+um estado
+intrínseco Ele trabalha com o estado
+intrínseco do objeto a classe concreta
+um Charlie de concreto free Leyde ela
+implementa a interface aí o leite e
+adicione o armazenamento para a
+Instância particular e não é
+compartilhada geralmente o uso dessa
+classe concreta nem sempre vai ser
+necessário isso vai depender dos
+requisitos a seguir nós temos o
+participante Freeway software que vai
+criar e gerenciar os objetos freio é Tom
+essa classe ela assegura que os objetos
+railways são compartilhados de forma
+correta então quando um cliente solicita
+um objeto Freeway o fim E aí ó ativo uma
+Instância existente ou cria uma se ela
+não existir então aqui apenas para
+alertar embora esse padrão utilize uma
+fábrica para criar a correta
+implementação da interface Freeway você
+não deve confundir né com o padrão
+Factor a seguir nós temos o crente que
+vai manter uma referência atrai leite e
+calcular o armazenar o estado extensão
+dos objetos Highway e quando nós podemos
+usar o padrão caiu e podemos usar no
+ficar de leite quando muitos objetos
+semelhantes serão usados e o custo de
+armazenamento por alto ou seja quando eu
+precisar criar objetos e isso vai causar
+um grande consumo de memória quando
+pudermos compartilhar o estado entre
+objetos quando alguns objetos
+compartilhados facilmente substituiriam
+muitos objetos não compartilhados e
+quando precisávamos economizar memória
+usada São alguns cenários para usar o
+Free Way a seguir verem as vantagens
+deste padrão ele reduz o uso de memória
+é compartilhando objetos pesados
+favorece o cache de dados permitindo um
+maior tempo de resposta e aumenta o
+desempenho reduzindo o número de objetos
+pesados na memória e como desvantagem
+nós temos que os objetos railways ele
+pode introduzir custos de tempo de
+execução Associados a transferência
+localização e o computação do Estado
+explico especialmente se ele foi
+anteriormente armazenado como estavam em
+e uma outra desvantagem é que a
+aplicação desse padrão Mas ele tem um
+escopo reduzido o próprio goffi e não
+era cinco condições que você tem que
+considerar para aqui os benefícios em
+usar esse padrão sejam qual pague seja
+um tangíveis então a seguir eu vou
+apresentar um exemplo prático de
+aplicação do padrão caiu Ei Então vamos
+supor que nós precisamos criar 50 mil
+objetos em diferentes cores em uma
+aplicação assim nós vamos ter que criar
+dez mil círculos amarelos 10 mil vezes
+10.000 azuis 10.000 vermelhos e 10 mil
+preto e cada objeto círculo vai possuir
+os seguintes atributos a cor é um
+atributo que não é constante a
+coordenada x y e o raio são constantes
+ou seja são fixos então com base nessas
+informações nós temos que a cor não é
+constante representa o estado extrínseco
+do objeto Freeway e vai ser atribuída em
+tempo de execução e não será
+compartilhada forma coordenadas e o raio
+são constantes e representam o estado
+intransitivo do objeto Freeway e serão
+armazenados no cache Então isso é muito
+importante então com base nessas
+considerações a seguir eu vou mostrar no
+diagrama de classes o ML que foi obtido
+na implementação do padrão para este
+exemplo e Aqui nós temos a interface
+forma e definir os objetos Highway e
+representa o Highway eu tenho aqui a
+classe concreta círculo que representa o
+confit Freeway e implementa a interface
+e forma e adiciona armazenamento para o
+estado intense ou seja as coordenadas XY
+raio e a forma no cash eu tenho aqui a
+classe forma Factory e vai criar e
+compartilhar os objetos railway e eu
+tenho aqui a caça e Cameron que é o meu
+cliente que vai usar implementação do
+padrão com referências a forma Factor
+Então agora eu vou abrir o visual Studio
+2019 com o projeto do tipo console né de
+Fora um ambiente net 5 aonde foi feita a
+implementação do padrão então aqui ó eu
+queria interface forma que representa o
+meu airway e que define o contrato com a
+assinatura do método desenhar que vai
+permitir criar os objetos skyway o nosso
+exemplo terão apenas círculos aqui temos
+também a classe concreta círculo que
+representa o controle Freeway e que
+implementa a interface e forma e o
+método desenhar para criar um objeto
+círculo aqui definimos um método
+setcolor para poder atribuir o valor da
+propriedade couro que representa o meu
+estado extrínseco e não será
+compartilhado e também aqui definimos os
+campos coordenada x y e o raio que
+representam o estado
+intrínseco ou seja são constantes esses
+valores são constantes e serão
+armazenados no cache eu tenho aqui a
+classe e forma Factory que representa o
+meu Freeway Factory aqui nós estamos
+usando um objeto Dictionary estático
+como uma coleção de objetos forma
+representada aqui pela interface e forma
+para armazenar em cache no nosso exemplo
+aqui nós vamos armazenar físicos que
+serão criados eu posso trabalhar com
+qualquer tipo que seja do tipo e forma e
+eu tenho aqui também definido um método
+get forma que é um método estático que
+vai receber a chave e vai ver esse carro
+com base nessa chave se o objeto Freeway
+e está no cash ou seja está aqui no
+dicionário ou não se ele quiser no
+dicionário olha ele vai verificar se
+está aqui no dicionário se ele tiver no
+dicionário ele vai retornar o objeto
+existente se o objeto definido Pela
+chave círculo não existir ele vai ser
+criado adicionado ao Cash e vai ser
+devolvido então da próxima vez eu vou
+usar o objeto que vai estar no cash
+Então essa seria a implementação do
+forma Factor e na classe programa eu vou
+usar implementação do padrão então essa
+classe representa o cliente e aqui nós
+vamos simular a criação de objetos
+usando um laço aqui ó four para criar
+apenas três objetos né apenas para
+vermos a implementação funcionar os 10
+mil objetos aqui então aqui nós estamos
+chamando o método get forma que ele é o
+método estático e passando a chave aqui
+que no meu caso é círculo aí eu dou um
+cast para círculo porque eu quero que a
+sua mente círculo atribuo a cor que vale
+Olha aqui eu tô usando Amarelo aqui
+Verde aqui azul aqui vermelho e aqui
+preto e tô desenhando o círculo usando o
+método desenhar então é aqui eu vou
+verificar se o objeto já foi criado esse
+está no cash se estiver eu vou retornar
+o objeto existente se não eu vou criar
+um novo objeto e vou adicionar no Clash
+Então essa a implementação eu vou
+executar para a gente ver aqui o
+resultado você vai ver que ele vai criar
+os objetos agora vamos ver isso
+Funcionando aqui ó no forma Factor eu
+vou colocar aqui ó vou um Black Point
+para verificar se o objeto tá no cash ou
+não então eu vou executar ele vai
+iniciar tentando criar primeiro aqui ó
+objetos círculo da bom então vamos lá
+hoje para o aqui ó ele ele tá vai
+procurar a chave círculo atualmente ó eu
+não tenho nenhum objeto na memória então
+não existe o objeto ainda então eu vou
+dar S 11 ó ele vai criar o objeto ele
+verificou a chave é círculo então ele
+cria então aqui ele vai criar ó
+adicionou no objeto Dictionary que tá na
+memória e vai retornar agora eu tenho um
+objeto na memória tá vendo Olá meu pai
+hoje na memória então ele vai atribuir a
+cor e vai desenhar agora ele vai pegar o
+outro objeto esse objeto olha ele vai
+ele pegou o primeiro vai criar o segundo
+no segundo objeto ó ele já tem um objeto
+na memória então ele não vai criar aqui
+o ele não vai passar aqui ele vai
+retornar ó ele vai retornar objeto forma
+então ele não precisou criar um objeto
+entendeu E com isso olha agora eu vou
+tirar o black Point nós vemos a criação
+aqui ó e todos os em círculos amarelos
+verdes vermelhos e pretos todas temos
+assim um exemplo básico de implementação
+do padrão frio leite e era isso até a
+próxima semana
