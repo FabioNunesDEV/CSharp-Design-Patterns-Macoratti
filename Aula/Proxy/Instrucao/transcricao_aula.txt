@@ -1,0 +1,361 @@
+o Olá eu sou uma cor aqui hoje eu vou
+continuar a apresentação dos padrões de
+projetos do e hoje eu vou apresentar o
+padrão escultural proxy o padrão proxy é
+um padrão de projeto estrutural que
+fornecem um objeto que atua como um
+substituto Para um objeto de serviço
+real usado por um cliente para controlar
+o acesso a esse objeto este padrão é um
+padrão que permite em cápsula Instância
+de uma classe complexa usando uma
+Instância de outra classe que possui a
+mesma interface com isso nós podemos
+controlar a criação e o acesso aos
+objetos complexos usando objetos mais
+simples boxe significa no lugar de ou em
+nome de dessa forma um proxy ele vai
+receber pedidos do cliente vai realizar
+alguma tarefa fazer um controle de
+acesso fazer um armazenamento em cache e
+vai passar a solicitação o objeto de
+serviço real esse padrão ele é muito
+usado quando nós precisamos criar um
+foco para ocultar na complexidade do
+objeto principal do cliente vejamos a
+seguir um exemplo
+simples e prático do mundo real para
+entender o quando nós emitimos um cheque
+ou usamos o cartão de crédito em uma
+compra ou em um pagamento Neste contexto
+o cheque ou cartão eles atuam como um
+proxy da nossa conta bancária do
+dinheiro ele está na nossa conta
+bancária ou seja o cheque é um cartão
+tem uma procuração para os Fundos em uma
+conta e assim nós podemos usar o cheque
+ou cartão no lugar do dinheiro que está
+na conta e eles fornecem uma maneira de
+acessar o dinheiro na conta quando isso
+for preciso então é exatamente isso que
+o padrão proxy faz ele vai controlar e
+gerenciar o acesso a um objeto que ele
+está representando o subtítulo ele outro
+é muito atual para entender como o boxe
+a tua é o conceito da navegação por
+procuração como nós estamos navegando na
+internet usando este método Neste
+contexto mais usamos um serviço capaz de
+se colocar como intermediário entre o
+nosso computador e o conteúdo na rede
+que desejamos acessar assim neste método
+de navegação o nosso computador se
+conecta a um servidor intermediário que
+pode estar localizado em qualquer lugar
+do mundo e atua como um proxy Então é
+assim que o padrão foxy também a tua é
+uma das formas de atuação do próprio e
+como base nisso Existem três tipos
+principais de proxy o primeiro eu proxy
+virtual que é um espaço reservado para
+objetos que consomem muitos recursos
+para serem criar Nesse contexto objeto
+real ele só é criado como o um cliente
+primeiro solicita o acesso objeto isso
+do toque nós temos também um boxe remoto
+que fornece uma representação local para
+um objeto que reside um espaço de
+endereço diferente o conserto de prótese
+remota é semelhante ao conceito do uso
+de serviços na web no qual o cliente tem
+que acessar o recurso remoto numa outra
+rede usando a Instância da caça e troca
+e último tipo de boxe é o proxy de
+proteção esse tipo de proxy ele controla
+o acesso a um objeto principal da nós
+podemos assim criar um proxy seguro de
+um recurso adicionar algum tipo de
+autenticação para o código do cliente
+acessar e objeto croxe vai verificar se
+o chamador tem as permissões de acesso
+necessária antes de encaminhar a
+solicitação isso é conhecido como proxy
+de proteção porque os recursos eles são
+protegidos pelo proxy e o código do
+cliente tem que passar pelo processo de
+autenticação a seguir nós temos o
+diagrama o ML segundo é só Fi para o
+padrão Fox Aqui nós temos os seguintes
+participantes define a interface comum
+para Realce objeto epóxi para que um pó
+que se possa ser usado em qualquer lugar
+em que um real subject seja esperado eu
+tenho aqui a classe proxy que mantém uma
+referência que permite ao proxy acessar
+o Realce objeto e também pode se referir
+a onça subject que se as interfaces aqui
+de realces objeto epóxi foram iguais
+Além disso ele vai fornecer uma
+interface Idêntica à descrita para que
+um toque se possa ser substituído por um
+Realce sabia ele também vai controlar o
+acesso ao real seu e ele pode ser
+responsável por Criar e também excluir o
+Real saber e a classe Realce objeto ela
+define o objeto real que o boxe está
+representando e quando nós podemos usar
+o padrão pa podemos usar o proxy quando
+precisamos criar objetos sob demanda
+quando suas operações forem um pouco
+quando temos uma classe com dados
+sensíveis que deveriam ser de acesso
+restrito e é necessário fornecer o
+controle de acesso para o objeto
+original quando temos que usar classes
+onde a criação dos objetos é muito
+demorada e consome muitos recursos e
+quando devemos permitir o acesso a um
+objeto remoto usando um objeto local
+referenciando aqui o objeto real a
+seguir vejamos as vantagens em usar o
+padrão proxy como vantagem nós podemos
+enumerar que esse padrão ele evita
+duplicação de objetos grandes e que usam
+muito a memória fazendo isso mas
+aumentamos o desempenho da aplicação
+através do uso de Cash para acessar os
+objetos mais pesados estão essa vantagem
+usar o proxy a outra é que no proxy
+remoto ele garante a segurança
+instalando o proxy de código local que
+conhecido como na máquina do cliente e
+acessando o servidor com ajuda do código
+remoto podemos acrescentar aqui também
+que o coxy ele pode ser usado para
+encastoar o acesso a serviços remotos as
+a internet ou a microsserviços também e
+como desvantagem nós temos que esse
+padrão ele introduz outra camada de
+abstração que às vezes pode ser um
+problema se o código do Real subject
+foram acessados por alguns dos clientes
+diretamente e alguns deles devem acessar
+as classes proxy isso pode causar algum
+comportamento assim não esperado e outra
+desvantagem desse padrão é que
+dependendo do cenário a sua
+implementação ela pode ser um pouco
+complicado então a seguir eu vou
+apresentar um exemplo prático de
+implementação do padrão pronto então
+nesse exemplo o objetivo é controlar o
+acesso a uma pasta compartilhada a
+usuários de uma empresa Então vamos
+supor que uma empresa nós temos um
+computador compartilhado que possuem uma
+pasta e essa pasta lá contem informações
+confidenciais
+esse computador ele pode ser acessado
+pelos usuários que são os funcionários
+da área de ter ido a empresa e Aqui nós
+temos três perfis que podem acessar o e
+compartilhar e também a pasta
+compartilhada aqui com informações
+confidenciais o perfil céu o programador
+e usuário todos eles representam
+funcionários da área de TI acontece que
+existe uma restrição de acesso essa
+pasta compartilhada que neste computador
+e essa é a inscrição ela disse que
+somente o perfil céu pode acessar essas
+informações nessa parte está
+compartilhada Então dessa forma nós
+temos que proteger o acesso essa pasta
+compartilhada no computador para fazer
+isso nós vamos implementar o padrão
+proxy vamos criar uma pasta para o XXI
+onde nós iremos verificar o perfil de
+quem está acessando o computador e fio
+perfil for igual ao céu usuário poderá
+acessar o perfil e tem acesso às
+informações caso contrário ele vai ter o
+acesso negado Então esse é o cenário da
+implementação e esse objetivo da
+implementação do padrão proxy que nós
+vamos solucionar aqui então com base
+nesse cenário nós que a movimentação do
+padrão proxy e a primeira coisa que eu
+vou apresentar são as classes
+participantes que foram usadas eu vou
+mostrar a seguir então as classes que
+foram obtidas a partir da implementação
+feita no visual Studio 2019 eu tenho
+aqui as classes Que Nós criamos eu criei
+uma interface Olha que eu chamei de e
+passa a compartilhada que define os
+membros que serão implementados pelas
+classes concretas real subject e proxy
+para que o proxy possa ser usado em
+qualquer lugar em filme Realce objeto
+seja esperar aqui no nosso exemplo os
+objetos é a interface e passa a
+compartilhar a seguir a classe pasta
+compartilhada é uma classe concreta
+queremos usar de forma mais eficiente
+através da implementação da classe proxy
+tão no nosso exemplo pasta compartilhada
+representa o Real subir e aquela pasta
+compartilhada proxy é uma classe
+concreta que contém uma referência à
+classe Royal se tu já pode acessar os o
+braço Réus objeto conforme for preciso
+ela tem que implementar mesma interface
+de Goiás objeto para que os dois possam
+ser usados de forma intercambiável então
+a classe concreta a pasta compartilhada
+proxy representa o nosso toque aqui
+pasta compartilhada e a pasta
+compartilhada proxy implementam a
+interface e passa a compartilhar e aqui
+é classe programa é o nosso cliente que
+vai consumir essa implementação Então
+agora eu vou abrir o visual estudo 2019
+onde eu tenho um projeto do tipo console
+netcor no ambiente do Net 5 eu chamei
+esse projeto de proxy um e aqui eu vou
+mostrar a implementação feita do padrão
+copos eu tenho aqui a classe funcionário
+que representa um funcionário da área de
+t.i. pode acessar o computador
+compartilhado aquele fininho não a mesma
+senha e um perfil dele assim eu vou
+poder atribuir um nome a senha e o
+perfil que pode ser céu programador ou
+usuário depois nós definimos aqui a
+interface e pasta compartilhada e o
+homem porque eu tô seguindo nomenclatura
+recomendado aquela mais então aqui nessa
+interface eu tô definindo os membros que
+serão implementados por vir ao subtítulo
+blocos então eu defini apenas um método
+aqui que vai ser um contrato né que vai
+que deverá ser implementado que a
+operação de leitura e gravação então
+tanto meu objeto real como o meu box vão
+ter que incrementar esse contrário a
+seguir eu criei aqui a classe pasta
+compartilhada e representa o meu realces
+objeto é esse objeto que eu quero usar
+de forma mais eficiente usando a classe
+proxy Então esse aqui é o meu realces
+objeto ele implementa a interface e aqui
+ele tem que implementar o método
+operação de eleitor a gravação aqui para
+simplificar na eu estou apenas emitindo
+aqui um aviso operação de leitura e
+escrita na pasta compartilhar então é
+que seria a operação que ele vai fazer
+na pasta compartilhar que é a objeto
+real a seguir crie a classe pasta
+compartilhada proxy essa classe aqui
+olha ela arr o boxe ela contém uma
+referência à classe Réus objeto olha
+aqui ó tô dando uniu pasta compartilhada
+e pode acessar os membros da classe real
+subject conforme necessário então aqui é
+que eu coloco a lógica lá no meu caso
+verificar se o funcionário ele vai ter
+acesso ou não a pasta compartilhada para
+isso eu preciso ter aqui uma Instância
+do meu suja representado aqui por e
+pasta compartilhada e aqui eu tenho uma
+Instância de funcionário que eu estou
+injetando no com os cultores da classe
+Olha então eu vou poder acessar as
+informações do funcionário com essa
+Instância ir a implementação do método
+operação de leitura e gravação é que eu
+vou zoar o boxe vai atuar que que ele
+vai fazer ele vai verificar se o perfil
+do Funcionário é igual a céu aqui eu tô
+dando um twapper para mim ver lá aqui e
+não cometer erros de minúsculo ou
+maiúsculo caso o funcionário tem esse
+perfil e eu crie uma Instância do
+realces objeto que é o meu objeto real
+que a pasta compartilhada o piso aqui ó
+que a o boxe da pasta compartilhada tá
+invocando o método ao operação de
+leitura e gravação da do objeto real
+então aqui ó meu proxy tatuando no
+objeto real e ele vai fazer isso somente
+para os usuários com perfis el caso ele
+não tem esse perfil em mito uma mensagem
+indicando que ele não tem permissão para
+acessar essa parte Então essa
+implementação agora vamos ver a
+utilização aqui onde a classe programa
+então aqui para usar eu tô mentindo aqui
+um um texto né implementação do padrão
+então eu tô testando três acessos o
+acesso do programa adoro eu emite uma
+mensagem aqui ó funcionário que o perfil
+problema dor tá tentando acessar pasta
+compartilhada via proxy né aí eu vou
+criar uma Instância de controle de
+programador passando o nome e a senha e
+o perfil dele e com isso olha eu vou
+poder usar aqui ó a minha classe pasta
+compartilhada proxy e eu vou criar uma
+Instância dessa classe passando o
+funcionário Observe que essa classe aqui
+o recebe no consultório funcionário ela
+vai receber no Construtor E aí ela vai
+tentar executar aqui o método operação
+de leitura e gravação e aqui ó eu vou
+verificar o perfil do funcionário
+então eu vou fazer isso por programador
+tô repetindo aqui ó usuário aqui se eu
+tô mudando o perfil a Manda a senha
+perfil dela é o usuário crie uma
+Instância da pasta compartilhada proxy e
+aqui esse próprio vai tentar atuar na
+pasta real usando o método operação de
+leitura e gravação e repita a mesma
+coisa para Selma Então se tudo tiver
+dentro dos conformes somente esse último
+usuário vai conseguir acessar então eu
+vou executar nós vamos ver aqui o
+resultado Olha que eu tô mostrando aqui
+no console Então olha aqui ó o exemplo
+de implementação do padrão proxy e
+funcionários com perfil programador
+acessando a pasta compartilhada via
+proxy então Oxi avisa você não tem
+permissão para acessar a mesma coisa só
+nada o meu perfil usuário programador de
+usuário o proxy pasta a piada avisa você
+não tem permissão para acessar a pasta
+agora não funcionaram o meu perfil céu
+acessando a pasta compartilhada proxy o
+proxy Avisa ele está invocando a pasta
+real usando o método operação de leitura
+e gravação e tá realizando aqui a
+operação lá na pasta compartilhada Então
+esse auxiliar a implementação do padrão
+proxy de uma forma bem simples Então
+como base no que foi apresentado você já
+pode ter notado que o padrão proxy e o
+padrão matar eles possuem uma estrutura
+bastante semelhante mas a finalidade
+deles não é a mesma ambos os padrões do
+proxy o adapter descrevem como fornecer
+um nível de indireção a outro objeto e
+as implementações mantém uma referência
+ao objeto para o qual as solicitações
+foram encaminhadas agora a diferença é
+que o adapte fornece uma interface
+diferente para o subject enquanto o
+proxy ele fornece a mesma interface E
+para isso até a semana que vem
+
