@@ -1,0 +1,303 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar apresentando os padrões
+comportamentais igual veremos hoje o
+padrão comando segundo a definição da
+gang of Four o padrão comando é usado
+para em capsular uma requisição como um
+objeto permitindo que clientes
+parametris em diferente do requisições
+filas ou requisições de log com suporte
+a reverter as operações o padrão Command
+ele atua encapsulando uma solicitação
+como um objeto ou seja um comando e ele
+passa para o invocador e o invocador
+agora sabe como atender a solicitação e
+usa o comando encapsulado para realizar
+uma ação assim este padrão e converte
+solicitações ou operações simples em
+objeto essa conversão permite a execução
+a guiada ou remota de comandos permite
+também o armazenamento do histórico de
+comandos e outras operações e você usa
+esse padrão quando precisa emitir
+solicitações para objetos sem saber nada
+sobre a operação solicitada ou receptor
+da solicitação resolvendo nós podemos
+dizer que a intenção do padrão é
+encapsulado uma solicitação em um objeto
+ter mentira
+parametrização de clientes com
+diferentes solicitações e permite salvar
+as solicitações em uma feira vamos
+entender a definição do padrão com um
+exemplo na definição do padrão
+inicialmente o cliente ele cria o objeto
+coma e esse objeto possui o re Quest que
+é a solicitação do que precisa ser feito
+a referência ao objeto receiver que é
+objeto que vai tratar a solicitação e o
+método Execute esse método ele vai
+chamar o método do objeto receber que
+vai tratar a bom então a seguir o objeto
+como ano será passado para o objeto
+invoker e como invoca ele não sabe lidar
+com a solicitação ele vai chamar o
+método Execute do objeto comando e o
+método Execute objeto como vai chamar o
+método do objeto reciver que o receptor
+que vai Executar a ação necessária para
+lidar com a solicitação Então é assim
+que atua o padrão para tornar mais claro
+esse exemplo Vamos
+materializar esse fluxo pegando como
+exemplo um restaurante Então quando você
+vai num restaurante você faz o pedido
+para o garçom o garçom anota o pedido e
+passo o pedido para o chefe o chefe é
+quem vai preparar um pedido e após isso
+ele vai retornar o pedido pronto para o
+garçom que vai levar até você neste
+exemplo você é quem criou o pedido é o
+cliente o pedido que você fez o seu
+prato essa comida seria o Country e o
+pedido concreto o comando o garçom ele é
+o invoque e ele não sabe como preparar o
+pedido e por isso ele vai passar para o
+chefe que é o receiver é ele quem sabe
+preparar o seu pedido e É ele que vai
+devolver o pedido pronto para oração
+então aqui eu tenho
+identificada os elementos que atuam o
+padrão o cliente o comando ou controle
+comando o invoker e o Recife a seguir
+nós veremos o diagrama o ML do padrão e
+cómodo nesse diagrama nós temos os
+seguintes participantes eu tenho comando
+que vai declarar uma Interface para
+executar uma operação aqui pode ser uma
+interface de uma classe abstrata vai ser
+definido aqui um contrato para executar
+comandos que será usado pelo invoker eu
+tenho o com crítica humano que vai
+definir um vínculo entre um objeto
+receiver e uma Action essa classe ela
+vai implementar o método Execute por que
+ela herda aqui de comando e impre o que
+o Execute ele vai evocar as operações
+correspondentes no receber então aqui eu
+tenho todas as informações que são
+necessárias para executar corretamente a
+ação usando o objeto receiver que está
+vinculado a seguir eu tenho invoker que
+solicita ao comando para executar uma
+requisição então ele vai iniciar a
+execução dos Comandos e eu tenho um
+receiver que sabe como executar as
+operações associadas com execução do
+comando então aqui os objetos receptores
+eles vão conter os métodos que são
+executados quando um ou mais comandos
+foram invocados então isso permite que a
+funcionalidade real ela seja realizadas
+separadamente para as definições de
+cômodo e aqui eu tenho crack também que
+vai criar um objeto com kit comando vai
+definir o seu receiver e ele vai
+consumir aqui as classes do padrão
+comanda e nós podemos usar o padrão como
+no seguinte cenário podemos usar o
+comando por como parametrizar objetos
+por uma ação a ser executada ou quando
+queremos especificar enfileirar e
+executar solicitações em tempos
+diferentes ou quando queremos dar
+suporte a para desfazer operações quando
+queremos estruturar um sistema em torno
+de operações de alto nível por exemplo
+transações quando queremos reduzir o
+acoplamento entre as requisições dos
+clientes e os objetos que as executam e
+para facilitar a implantação de novas
+operações e tornar mais simples a
+manutenção das operações são alguns
+cenários onde nós podemos usar o
+comandante como vantagens do padrão
+comando nós temos que ele diz a cópula o
+objeto que invoca a operação daquele que
+sabe como executá-la ele reduza o
+acoplamento seja dependência entre o
+objeto que chama operação e objeto que
+executa operação os comandos eles são
+objetos de primeira classe ou seja eles
+podem ser manipulados e estendidos como
+qualquer outro objeto e e ele pode ser
+composto por outros comandos e é fácil
+acrescentar novos comandos e eu não
+preciso alterar as classes existentes
+para fazer isso e como desvantagem desse
+padrão nós temos que o código ele pode
+se tornar complexo com o aumento no
+número de classes criadas para cada
+comando dos métodos Actions e das muitas
+associações que isso vai causar então a
+complexidade do código pode aumentar
+dependendo do cenário então a seguir eu
+vou mostrar um exemplo de implementação
+eu vou tomar como exemplo o restaurante
+e vou implementar o padrão Command com
+base nele então um exemplo do
+restaurante nós temos que você faz o
+pedido para o garçom ou garçon Repassa
+para o chefe que preparou o pedido e
+devolvem pedido até você receber o
+pedido pronto então aqui nós já
+identificamos os participantes do padrão
+é o cliente o invoker o receiver o
+contrate calma de incômodo Então como
+base nem hoje eu vou apresentar a seguir
+o diagrama de classes exibindo as
+classes que foram usadas para
+implementar o padrão então eu tenho aqui
+uma classe abstrata que foi usada eu
+poderia ter usado uma interface eu
+chamei essa classe de coma poderia dar
+ter dado outro nome aqui eu definir um
+método abstrato Execute que vai Executar
+a operação da Makita ao meu combate a
+seguir o definir o wi-fi ver que eu
+chamei de chefe que é a classe e chefe
+que representa o Chef do restaurante
+então chefe ao receiver E aí ele quem
+sabe executar as operações com a
+execução do comando então aqui nós
+definimos os dois métodos que serão
+executados na invocação de um comando
+preparando o prato e preparando a
+sobremesa a seguir Nós cremos a classe
+pedido que representa o concreto ela
+herda de comando e nessa classe nós
+vamos criar um vínculo com o recibo que
+é o chefe e definir uma ação então aqui
+nós vamos implementar também o método
+Execute que foi herdado aqui da classe
+abstrata e escrevendo esse método e
+depois nós vamos invocar as ações aqui
+via Instância do Recife nós queremos
+também uma graça e garçom e representa
+um invoca e recebe um objeto pedido e a
+seguir solicita a execução do comando e
+aqui na classe programa Nós criamos uma
+Instância de chef para poder executar o
+comando criamos uma Instância de pedido
+e depois nós passamos o pedido ao garçom
+que passa com o chefe que vai executar e
+preparar o pedido então eu vou abrir a
+implementação que foi feita no visual
+Studio 2019 então aqui eu iniciei
+criando a classe abstrata comando que
+representa o meu comando definir um
+método abstrato Execute que vai executar
+as operações a seguir ao definir a
+classe chefe que representa o receiver e
+aqui eu defini olha dois metros
+preparando o prato e preparando a
+sobremesa então é o receiver que
+efetivamente sabe como executar as
+operações e a seguir o Creia classe
+pedido que representa o meu com tricô mã
+ela herda de comando e aqui ó tá sobre
+escrevendo o método Execute herdado
+usando overwatch aqui eu tô criando um
+vínculo com o receber que é o meu chefe
+definir uma propriedade do tipo chefe e
+todo esse Mimo aqui uma ação como uma
+propriedade e no consultor eu tô
+recebendo uma Instância de chefe e uma
+ação e não é tudo executa eu vou usar
+Instância de chefe e vou executar as
+operações Olha que são os meus comandos
+Então isso é feito aqui no na classe
+pedido que representa o competente
+camada e a classe garçom ela representa
+o meu invocar aqui eu estou injetando
+uma Instância do pedido no consultor
+Olha então eu vou ter uma Instância de
+pedido e eu vou usar esse tem distância
+para chamar o método Execute de comando
+para executar operação e aqui na classe
+programa que é o meu cliente eu tô
+criando uma Instância de chef para poder
+preparar o pedido a ele que sabe fazer
+isso né então preciso de uma Instância
+dele e aqui o teste criando uma
+Instância de pedido e passando a minha
+Instância de chefe que foi criada aqui e
+a operação que eu quero executar eu tô
+definido aqui uma skin de prato e aqui
+no meu pedido Olha quando ele receber
+essa Spring ele vai invocar o método
+preparando prato aqui do meu chefe e
+preparando o prato ele vai estar
+preparando o prato principal que é
+frango marinado com especiarias então
+para isso eu tenho o meu pedido vai
+receber uma Instância de chefe e a ação
+a ser realizada no Construtor vou criar
+uma Instância de garçom que é o meu
+invoque ele vou passar o pedido para ele
+e aí vai chamar o método executar e aqui
+eu tô repetindo a mesma lógica só que
+aqui ao invés de prato eu tô passando
+aqui a ação com uma sobremesa então
+quando eu passar isso para o meu pedido
+para o meu Garção olha ele vai chamar o
+método de executar e aqui preparando
+sobremesa aqui no pedido quando for
+sobremesa você ficou no qualquer é
+diferente de prato ele vai chamar o
+método preparando sobremesa que vai por
+questão de simplicidade Apenas me exibir
+essa mensagem chefe está preparando a
+sobremesa Acredite gastou Então se o
+executar esse projeto nós vamos ver aqui
+ó o resultado padrão como chefe está
+preparando para o prato que é foi o
+primeiro teste que nós fizemos aqui ó
+seria esse código e depois chefe está
+preparando a sobremesa que é esse código
+que nós testamos a seguir então
+colocando um break-point aqui ó e
+executando nós vamos acompanhar e as
+vamos entender Olha eu ganhei uma
+Instância de chefe agora eu vou criar
+uma Instância de pedido olha no
+Construtor eu tô injetando uma Instância
+do Chefe que eu criei e da minha ação
+agora eu vou acionar ou invoque e passou
+o pedido para ele ele recebe o pedido
+atribui a Instância de Angra lá
+entendido e aqui quando eu mandar
+executar o que ele vai fazer ele vai
+executar aqui ó do meu pedido que era de
+comando o método Execute com base na
+ação e vai chamar o método do Chefe que
+é preparando para e vai me exibir o
+resultado Então é assim que funciona
+esse padrão e nós podemos comparar esse
+padrão com o padrão cadeia de
+responsabilidade que foi apresentado na
+semana anterior ou comparando o padrão
+comando então com o padrão quem Nossa
+responsabilidade este padrão comadre ele
+é diferente porque lá no padrão cadeia
+de responsabilidade a requisição ela
+passa por cada uma das classes antes de
+encontrar um objeto que possa assumir a
+responsabilidade e realizar a operação e
+aqui no padrão comi eu tô encontrando um
+objeto específico de acordo com o
+comando que eu tô criando invocando
+apenas aquele objeto olha Então essa é
+uma das diferenças entre o padrão coma e
+o padrão que and of responsability então
+era isso até a semana que vem

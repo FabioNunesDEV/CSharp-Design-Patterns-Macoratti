@@ -1,0 +1,328 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar apresentando os padrões
+comportamentais goffi hoje veremos o
+padrão e thereto segundo a definição da
+gang of Four o padrão Inter eito fornece
+uma maneira de acessar os elementos de
+um objeto agregado sequencialmente sem
+expor a sua representação subjacente ou
+seja esse padrão permite o acesso
+sequencial aos elementos de uma coleção
+que aqui é o objeto agregado sem Expor a
+lógica interna desta coleção então a
+ideia principal deste padrão é extrair o
+comportamento transversal de uma coleção
+para um objeto separado chamado de
+Imperador o Imperador ele vai em
+capsular o acesso e a travessia do
+objeto aí legal então é isso significa
+que e nós usamos o padrão interator nós
+podemos acessar os elementos de uma
+coleção de forma sequencial sem ter que
+conhecer a
+representação interna desta coleção
+Lembrando que na programação orientada a
+objetos as coleções ela se comportam
+como um container que contém mais de um
+objeto então a maioria das coleções vai
+armazenar os seus elementos em listas
+simples No entanto algumas coleções são
+baseadas em pilhas em árvores em
+gráficos ou outras estruturas mais
+complexas e o padrão e terei tu ele vai
+encapsula um iterador que é usado para
+percorrer esse container e objeto e
+acessar os elementos desse container
+sequencialmente temos um exemplo para
+entender melhor o padrão interator vamos
+imaginar uma coleção qualquer que
+armazenar objetos em um container a
+coleção ela pode ser um ao reino Array
+List 1 list
+Dictionary etc então a estrutura de
+dados da lista vai ser diferente da
+estrutura de dados do Array list que vai
+ser diferente das outras coleções e o
+mecanismo de armazenamento de uma lista
+vai ser diferente do mecanismo de
+armazenamento de um Array que pode ser
+diferente das outras coleções o
+principal objetivo do padrão Inter e tu
+é acessar os elementos representados
+aqui por um objeto um objeto dois objeto
+3 até o objeto em de uma coleção seja
+ela uma lista uma Rei list de maneira
+sequencial e para fazer isso o padrão
+usa iteradores nós usamos iteradores com
+bastante frequência na nossa vida de ar
+qualquer controle remoto que nós usamos
+funciona da mesma forma você pega o
+controle e começa a pressionar os as
+teclas para cima ou para baixo e para
+frente ou para trás Então esse é o
+trabalho que operador faz da mesma forma
+que o controle remoto a tua o Imperador
+a tua semelhantemente e na linguagem C
+Sharp nós podemos iterar facilmente em
+uma coleção usando um laço fórum laço
+foreach então eu tenho um código aqui
+que é um exemplo clássico usando uma
+linguagem fechar que é um exemplo de
+Imperador onde eu tô usando um laço for
+Ixi e tô percorrendo sequencialmente os
+elementos de uma coleção isso é feito
+graças a implementação do padrão
+interator que tá disponível na
+plataforma dot net acontece que
+dependendo do tipo da coleção se você
+precisar acessar uma estrutura de dados
+diferente você vai precisar alterar o
+código no cliente quando isso ocorrer
+então quando houver necessidade de
+acessar uma coleção específica nós
+podemos fazer uma implementação
+customizada usando o pai é um exemplo de
+código de uma implementação do padrão
+intereira tu que não eu vou mostrar mais
+adiante no curso vai ser essa aqui ó
+então aqui eu tô usando elementos da
+linguagem tô usando um flores e aqui eu
+estou usando uma implementação feita do
+padrão Inter e tu que vai poder ser
+usado numa coleção mais específica então
+assim nós podemos usar o padrão
+interator para implementações quando
+tivemos uma situação que a implementação
+da plataforma do outlet não atende eu
+como eu falei a plataforma.net ela
+oferece uma implementação do padrão
+meter Ei tu para trabalhar com coleções
+eles têm nessa figura nós temos a
+correspondência entre os recursos
+definidos no padrão e terei tu e os
+usados na implementação feita na
+plataforma.net então por exemplo no
+padrão interator eu tenho aggregate que
+foi definido na implementação da
+plataforma do outlet pela interface e
+enumerei baú de ter aqui eu tô usando
+uma interface já o cliente tem direito
+foi implementado usando o cat e número
+Heitor o Inter e Tu Na plataforma.net
+ele foi implementado usando a interface
+ia número Heitor o fuste é obtido na
+primeira chamada do movie next na
+plataforma.net o Next foi implementado
+com o método movie next eomes done a
+indicar que foi concluída interação é
+feito como winex retorna O valor na
+implementação feita na plataforma.net
+então a plataforma.net oferece uma
+implementação do padrão interator que
+nós podemos usar e fazemos isso para
+acessar a maioria das coleções genéricas
+definidas na plataforma do outlet então
+a seguir mas veremos o diagrama o ML do
+padrão interator segundo grau Aqui nós
+temos os seguintes participantes eu
+tenho aqui a interface direito e aqui
+esse iterei por definir uma interface
+que pode ser implementado como uma
+interface na linguagem isso é chato ou
+como uma classe abstrata
+é necessário percorrer os elementos de
+uma coleção Observe que aqui geralmente
+nós definimos os métodos first next is
+Johnny e corrente item a seguir eu tenho
+o contrato e ter jeito que implementa a
+interface ou classe abstrata e diretoria
+mantém o controle da posição atual
+quando ele vai percorrer o agregado ou a
+coleção temos também o a great definir
+uma Interface para criar um objeto e
+diretor aqui usando o método cliente em
+direito e temos o com Cristian Gate e
+implementa a interface de criação do
+interator para retornar uma Instância de
+concreto e te leitor adequado EA classe
+grande aqui vai usar instâncias de águia
+aqui e direito e aplicar a implementação
+a que foi utilizada pegamos a seguir
+quando usar o padrão me ter ido você
+pode usar o interator quando a sua
+coleção tiveram mais cultura de dados
+complexa e você deseja ocultar a sua
+complexidade você pode usar também para
+reduzir a duplicação do código usada
+para percorrer coleções no seu
+aplicativo ou quando você quiser que o
+seu código seja capaz de percorrer
+diferentes esculturas de dados ou quando
+os tipos dessas esculturas foram
+desconhecidos de antemão então aqui
+quando eu tiver uma estrutura de dados
+que eu não conheço ou quando ela tiver
+uma definição interna mais complexa eu
+posso usar uma implementação do Inter e
+tu porque ele já oferece algumas
+interfaces genéricas para coleções
+iteradores vejamos a seguir algumas das
+vantagens e usar o padrão meteorito uma
+das vantagens é que esse padrão fornece
+suporte interação para estrutura de
+dados que Originalmente não a possui Às
+vezes você tem uma estrutura de dados
+que não pode ser liberada nativamente
+você teria que implementar o padrão E aí
+o padrão da o suporte a interação Outra
+vantagem que ele permite definir mais um
+tipo de ter a dor posso definir quantos
+iteradores eu e esse padrão ele sempre
+fica o código para acessar os diferentes
+tipos de coleções Outra vantagem que ele
+trata as variáveis de todos os tipos
+tamanhos e formas uniformemente cabendo
+na memória ou não e uma Outra vantagem é
+que esse padrão é ele segue os
+princípios da responsabilidade única e
+princípios aberto fechado com isso ao
+implementar esse padrão você vai manter
+o seu código limpo e como desvantagem
+nós podemos citar que esse padrão ele é
+menos eficiente ou percorrer elementos
+de algumas colecções especializadas
+diretamente nesse caso ele vai usar mais
+memória do que fazer o acesso direto ao
+elemento e também esse parou ele não é
+recomendado para coleções simples que
+usa uma estrutura simples de dado fazer
+a implementação do padrão nesse caso não
+é muito recomendado Então agora eu vou
+mostrar um exemplo de implementação do
+padrão e ter e Então nesse exemplo nós
+vamos criar uma coleção de objetos
+clientes que está representado por uma
+classe cliente com duas e vai sair de
+Não amigo não Construtor padrão o nosso
+objetivo Será que tirar uma coleção de
+objetos clientes e usar o padrão e ter
+Heitor para iterar sobre os alimentos
+dessa coleção para isso nós vamos
+implementar o padrão e direito então
+nessa implementação eu vou pegar uma
+interface ter Heitor o nós vamos definir
+os métodos foste que vai retornar o
+primeiro elemento aqui da minha coleção
+o método next que vai percorrer a
+coleção uma propriedade is done para
+indicar se a interação sobre a coleção
+foi concluída ou não e eu voltei a
+também uma classe concreta para tratar a
+coleção aí nessa classe e vou criar os
+seguintes métodos o método que vai criar
+o Imperador e assim permitir iterar na
+coleção e os métodos Counter é contar
+elementos da coleção pede para incluir
+alimentos na coleção e pede para obter
+um elemento da coleção nesta
+implementação o diagrama ou ml obtido no
+visual Studio é o seguinte eu posso
+criamos uma interface e abstrato
+Collection que representa o meu olho
+leite e Akira eu tô definir um método
+Create e direito a classe concreta com
+clipe Collection é o meu convite a great
+e ela implementa esta interface e
+abstrato Collection para retornar uma
+Instância do Espírito tão com a com essa
+classe eu posso gerenciar as coleções
+Olha eu posso incluir Um item na coleção
+obter uma ideia da coleção contará itens
+da coleção e obter uma Instância do
+interator Olha depois nós temos a
+interface e abstrato e ter jeito que
+define a interface que vai permitir
+obter o objeto indireto e a classe
+concreta porque eu chamei de interator a
+implementar essa interface e ela vai
+permitir mão no teu controle da posição
+atual na coleção quando eu vou percorrer
+a coleção Note que aqui eu tenho a
+implementação dos métodos first next da
+propriedade is one e eu tenho aqui a
+Instância do Inter e tu pela classe pro
+a usar instâncias das duas Abstrações
+para mim poder percorrer a coleção de
+objetos clientes então a seguir eu vou
+abrir o visual Studio 2019 com essa
+implementação só eu e o primeiro definir
+a minha classe cliente para mim poder
+gerar uma coleção de objetos clientes e
+fazer a interação nessa coleção usando o
+padrão me direito a seguir o definir ao
+abstrato interator que representa o meu
+interior tu tava aqui o definir os
+métodos first que vai me retornar o
+primeiro cliente next que vai navegar
+para o próximo cliente EA propriedade
+islâmicos me retornar true se eu
+concluir a interação na coleção a sigla
+definia Inter fácil e abstrata
+Collection onde eu definir o método que
+eu chamei de Crente e direito que
+retorna O Inter Itu Esse tereitorio é a
+minha classe concreta que está definida
+aqui e ela implementa minha ali e
+abstrato e ter e tu então Observe o que
+que eu estou injetando uma instância Olá
+Kitty Collection consultor e com essa
+Instância eu estou usando os métodos
+first alto me posicionando no primeiro
+registro aqui o tô usando esses campos
+corrente step Grid para definir o
+registro atual e estepe para indicar o
+passo que eu vou dar não é aqui que eu
+vou controlar a navegação para o próximo
+registro então o método foste me
+posiciono no primeiro objeto e retorna
+esse objeto don't get client da
+instância de Collection o Next e o
+incremento o passo verifica o seu não
+cheguei ao final da coleção e retorna O
+cliente e assim eu vou navegando até
+retornar no e a propriedade de dono
+sempre vai ele verificar se a minha
+posição atual Ela é maior é igual ao
+total que eu tenho na coleção então na
+graça e quando eu tenho aqui a
+utilização dessa implementação aqui olha
+eu creio uma coleção do tipo da minha
+com credit Collection e inclua objeto a
+coleção do tipo cliente usando o método
+da coleção Audi cliente a seguiram eu tô
+retornando nessa coleção uma Instância
+do meu Inter adoro que eu chamei de
+Inter e tu dá uma olhada do tipo e terei
+tu e com ele eu vou poder usar os
+métodos first next is the e assim eu vou
+percorrer a minha coleção representada
+aqui ó por pelo nome coleção então
+Observe aqui a minha coleção aqui ela
+retorna uma Instância do interator e no
+objeto e ter e ele toma aqui eu tô
+encapsulam olha o acesso sequencial a
+coleção então aqui eu vou para o
+primeiro alimento aqui eu vou fazer a
+navegação sempre eu vou verificar se a
+instalação foi concluída ou não então
+executando o projeto eu vou estar aqui ó
+pressionar a tecla eu vou percorrer
+coleção de clientes olha exibindo aqui
+cada um dos seus elementos e isso foi
+feito sequencialmente ó na nossa impre e
+do padrão e querer dessa forma conhecer
+o padrão Inter e tu pode fazer a
+diferença em cenários onde nós temos
+coleções que dependem de um algoritmo
+específico para percorrer os seus
+elementos até a próxima semana

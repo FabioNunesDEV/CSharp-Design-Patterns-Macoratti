@@ -1,0 +1,375 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar a apresentação dos padrões de
+projetos goffi hoje eu vou iniciar a
+apresentação dos padrões comportamentais
+apresentando o padrão Golf Chain of
+responsability que a partir de agora eu
+vou chamar de cadeia de responsabilidade
+então o padrão cadeia de
+responsabilidade ele evita acoplar o
+remetente de uma solicitação a seu
+receptor dando a mais de um objeto a
+chance de lidar com a solicitação esse
+padrão ele em Cadeia os objetos
+receptores e passa a solicitação ao
+longo da cadeia até que um objeto trate
+a solicitação dessa forma esse padrão
+ele cria uma cadeia de objeto receptores
+Para uma determinada a solicitação onde
+cada receptor contém uma referência a
+outro receptor se um receptor não pro
+Boa tarde a solicitação ele vai passar a
+solicitação para o próximo receptor e
+assim por diante Então dessa forma mas
+que padrão ele atua simplificando as
+interconexões de objetos e evitando a
+dependência entre um objeto receptor e
+um objeto solicitante ou destinatário
+neste padrão nós formamos uma cadeia de
+objetos onde cada objeto da cadeia pode
+manipular um tipo específico de
+solicitação aqui no exemplo da figura
+nós temos uma representação de uma
+cadeia com n manipuladores Então se o
+objeto ao receber uma solicitação não
+poder tratar essa solicitação ele vai
+passar a solicitação para o próximo
+objeto existente na cadeia e esse
+processo vai continuar até o fim da
+cadeia Então esse tipo de mecanismo de
+tratamento de solicitações
+oferece a flexibilidade para adicionar
+um objeto no processamento
+a cadeia e um exemplo prático de
+aplicação desse padrão é o pai pe line
+da aspnetcore que usa middleware e onde
+o padrão cadeia de responsabilidade foi
+aproveitado para fornecer um modelo de
+programação e sensível Vamos então
+entender o funcionamento desse padrão
+com um exemplo então na figura Eu tenho
+um cliente um caixa eletrônico e eu
+tenho aqui e Cinco manipuladores de
+notas do caixa eletrônico um manipulador
+para notas de 100 que eu chamei de hum
+dele é sem o manipulador para notas de
+50 D20 D10 e de cinco então o cliente
+ele pretende realizar um saque de 470
+reais do caixa eletrônico e ele quer
+receber duas notas de 100 quatro notas
+de 50 três notas de 22 notas de cinco
+então para atender o pedido do cliente o
+caixa eletrônico recebe o pedido
+autoriza e envia a solicitação ao
+primeiro manipulador de notas o handler
+sem que vai separar as duas notas de 100
+a seguir o manipulador ramblers em vai
+me enviar a solicitação ao manipulador
+Runner 50 que vai receber o pedido vai
+verificar valor restante e vai separar
+quatro notas de 50 a seguir o
+manipulador handler 50 vai encaminhar a
+solicitação para o próximo manipulador o
+handler 20 que vai verificar o valor que
+falta e vai separar três notas de vir a
+seguir o manipulador handler vinde
+encaminha a solicitação para o próximo
+manipulador anda ler 10 que verifica o
+valor restante que a 10 reais aqui como
+o cliente ele pretende receber duas
+notas de cinco esse manipulador não pode
+processar essa solicitação então quê que
+ele faz ele encaminha o pedido para o
+próximo manipulador handler 5 e esse
+manipulador vai calcular o valor
+restante que a 10 e mais separar as duas
+notas assim o procês e vai ser encerrado
+o julgamento do pedido foi feito e o
+valor solicitado vai ser fornecido ao
+cliente alguém este ano exemplo bem
+claro de como o padrão cadeia de
+responsabilidade funciona ele permite
+que você transmita uma solicitação por
+meio de uma série de objetos
+manipuladores e então uma cadeia de
+objetos é formada por um objeto recebe a
+solicitação faz algum trabalho
+específico e passa a solicitação para o
+próximo objeto da cadeia e no final da
+cadeia a solicitação ela vai ser tratada
+com sucesso vai ser encerrada ou vai
+gerar uma exceção aqui nós podemos
+definir esse comportamento Então é assim
+que funciona o padrão teen of
+responsability então a seguir eu vou
+apresentar o diagrama o ML do padrão
+segundo o UOL Aqui nós temos os
+seguintes participantes Eu tenho um
+cliente que é quem inicia a solicitação
+para um objeto com Christian danner na
+cadeia de responsabilidade eu tenho
+também aqui o handler e definir uma e
+para tratar a solicitações aqui eu posso
+ter uma interface uma classe abstrata
+que geralmente vai conter um membro que
+referencia o próximo manipulador na
+cadeia e um método que deve ser
+implementado para manipular a
+solicitação ou passar lá para o próximo
+objeto e eu tenho também as classes
+concretas handler que tratam a
+solicitação da sua responsabilidade ou
+envia a solicitação para o sucessor
+então aqui cada uma dessas classes ela
+vai receber a solicitação se ela podia
+tratar ela vai tratar caso contrário ela
+vai enviar solicitação para o próximo
+manipulador Então esse é o diagrama o ML
+segundo gof do padrão cadeia de
+responsabilidade vejamos agora quando
+usar este padrão nós podemos usar esse
+padrão Quando tivermos mais de um
+manipulador para uma solicitação ou
+quando tivermos motivos pelos quais são
+gerenciador deve passar uma solicitação
+para outro na cadeia ou quando tivermos
+um conjunto de manipuladores que variam
+de forma dinâmica ou se desejarmos
+manter a flexibilidade na atribuição de
+solicitações a manipuladores e também
+quando tivermos uma cadeia muito lógica
+de manipuladores que deve ser executados
+em ordem repetidas vezes Esses são
+alguns dos cenários onde podemos usar o
+padrão cadeia de responsabilidade então
+a seguir veremos as vantagens e
+desvantagens esse padrão com vontade nós
+podemos dizer que usando esse padrão
+você pode controlar a ordem que
+tratamento das solicitações você também
+pode desacoplar classes que invoca
+operações de classes que executam
+operações aqui nós estamos usando o
+princípio da responsabilidade única o
+princípio srp e também você pode
+introduzir novos manipuladores no
+aplicativo sem quebrar o código do
+cliente existente aqui nós estamos
+usando o princípio Open close e também
+esse padrão permite adicionar ou remover
+responsabilidades dinamicamente
+alterando os membros ou a ordem da
+cadeia e como desvantagem nós podemos
+dizer que uma das e aqui algumas
+solicitações podem não serem tratadas
+então não existe uma garantia de que a
+solicitação será tratada porque nós
+podemos chegar ao final da cadeia e ali
+não foi encontrado nenhum receptor para
+fazer o tratamento daquela solicitação
+outra desvantagem é que nós podemos ter
+uma certa dificuldade em observar as
+características em tempo de execução
+como o realizar a decoração devido ao
+encadeamento das chamadas entre os
+manipuladores Então agora eu vou mostrar
+um exemplo de implementação deste padrão
+vamos supor que nós temos uma empresa na
+área de t.i. onde nós temos a seguinte
+hierarquia só nessa empresa eu vou ter
+equipes e nessas equipes eu vou ter o
+desenvolvedor o teu gerente de projeto o
+teu supervisor da equipe e aqui na
+empresa eu vou ter o setor de RH assim
+na hierarquia da empresa para assuntos
+relacionados à férias ou licença
+remunerada o desenvolvedor ele vai se
+reportar ao gerente de projeto e esse
+reportar o supervisor de equipe e o
+supervisor de equipe ele se recorta ao
+setor de RH da empresa então a título de
+exercício Vamos considerar a concessão
+de licenças remuneradas tão considerando
+Esse aspecto o gerente de projeto ele
+vai ter uma usada para provar até cinco
+dias eles o supervisor de equipe tem um
+alçada para aprovar até 15 dias de
+licença e o setor de RH têm uma alçada
+para provar até 30 dias então se um
+desenvolvedor solicitar por exemplo 25
+dias de licença remunerada ele vai
+enviar o pedido ao gerente de projeto
+tão gerente de projeto vai verificar se
+ele pode aprovar o pedido ou não como
+ele só tem uma alçada de 5 dias ele vai
+repassar o pedido para o supervisor o
+supervisor vai verificar o pedido e ver
+se ele pode aprovar essa licença como
+ele só tem alçada para aprovar 15 dias
+de licença ele vai passar o pedido para
+o setor de RH é um setor de RH vai
+receber o pedido a verificar e está
+dentro da sua alçada que é 30 dias e
+neste caso vai liberar o período de
+licença e vai encerrar o processamento
+então aqui deve ficar bem claro que uma
+vez que a sua solicitação foi tratado em
+qualquer um dessas cadeias de
+organização que não pode podemos chamar
+de manipulador ela não deve ser
+encaminhada para o seu sucessor por
+exemplo se chegou aqui tiver na alçada
+do gerente ele vai aprovar e aqui deve
+ser encerrada ele não deve passar mais
+nada para frente então considerando esse
+cenário nós vamos a seguir mostrar uma
+implementação do padrão cadeia de
+responsabilidade então aqui nesse
+cenário nos nós vamos ter que criar uma
+cadeia de autorização usando aqui a
+abordagem do Chain of responsability
+então eu vou abrir aqui o visual Studio
+e vou mostrar em Cametá são aqui foi
+feito então eu criei aqui no visual
+Studio 2019 come noite um projeto
+console netcor um ambiente donate cinco
+olha tô usando net o inicialmente
+Considerando o cenário Nós criamos uma
+classe abstrata chamada de autorizador
+que representa e que faz o papel do
+handler essa classe que vai definir a
+interface para tratar a solicitações e
+nela eu tenho um membro onde eu controlo
+e aonde eu posso passar a solicitação
+para o sucessor do autorizador e aonde
+eu posso fazer o tratamento da
+solicitação que nosso caso é autorizar
+licença então aqui eu defini uma
+Instância de autorizador definir um
+método aonde eu estou recebendo essa
+Instância Então esse método chama
+próximo autorizador eu vou usar esse
+método para passar a solicitação próximo
+autorizador caso eu não consigo a tratar
+a solicitação Isso vai ser feito aqui ó
+com quem ele dá essa classe vai ter que
+entrar amentar e sobrescrever o método
+autorizar Licença aqui eu tô passando o
+nome do funcionário e o número de dias e
+aqui essa caixa vai ter que verificar
+dentro das aos é né se ele pode ou não
+autorizar a licença a seguir eu criei os
+com Chris handley que são gerente de
+projeto supervisor de RH setor RH vamos
+ver a classe gerente de projeto ela
+herda da classe autorizador que é o meu
+handler né E aqui ó eu defino a lógica
+para fazer o tratamento da aprovação da
+licença então no caso do gerente ele tem
+uma alçada de 5 em 5 dias então definir
+aqui uma variável do tipo int chamada
+alçada onde é lá em dias com valor de
+cinco No método autorizar licença eu tô
+recebendo o nome do funcionário o número
+de dias de licença pretendido verifico
+se talento vou dar ossada se tiver eu
+faço o tratamento da solicitação aqui eu
+só tô apenas emitindo uma mensagem né
+que o gerente de projeto aprovou a
+licença remunerada o funcionário caso o
+número de dias esteja fora da sala do
+gerente de projeto olha ele vai passar
+isso por o autorizador o próximo
+manipulador na cadeia Então eu tenho que
+quando eu for eu vou utilizar eu tenho
+que criar uma cadeia de autorização
+Então agora eu vou mostrar o código do
+outro completando like é o supervisor de
+equipe aqui nada muda no código apenas
+eu alterei aqui o valor da variável
+alçada anda lá em dias que no caso do
+supervisor agora é 15 dias ele vai
+verificar né se o número de dias
+pretendido tá dentro da sua alçada Se
+tiver ele vai aprovar senão ele vai
+repassar para o próximo manipulador que
+é o setor RH aqui o código número de um
+pouquinho porque eu sei que o setor RH
+ele é o último o manipulador então aqui
+como desenvolvedor eu posso fazer um
+tratamento aqui então eu defino aqui
+alçada do setor verifico aqui alçada e
+aprova licenças que vem almoçar agora
+aqui o tratamento um pouco diferente se
+eu não tiver alçada eu não tenho mais
+ninguém para fazer o tratamento da
+solicitação então eu vou mentir uma
+mensagem que não foi possível atualizar
+a licença a única de a diretoria então
+aqui eu poderia realizar qualquer outro
+o tratamento é importante é que aqui
+como eu sei que é o final da cadeia eu
+tô fazendo um tratamento diferente aqui
+continua o mesmo e agora para mim usar
+essa implementação como que eu vou fazer
+Olha eu tenho que criar as instâncias
+dos autorizadores e tenho que criar a
+cadeia de autorização olha aqui ó inicia
+com o gerente de projeto o próximo
+autorizador supervisor de equipe e o
+próximo autorizador é o setor RH se eu
+não criar a cadeia de utilização isso
+aqui não vai funcionar então eu criei a
+insistência dos autorizadores eu criei
+EA cadeia de autorização EA seguir eu
+vou enviar a solicitação sempre vai
+começar com o gerente de projeto que ele
+que inicia a cadeia ele vai receber o
+pedido da solicitação e vai ver se ele
+tem alçada autorizar então aqui eu vou
+iniciar sempre com o gerente de projeto
+aqui nesse primeiro exemplo coloquei 9
+eu vou colocar 5 dias então aqui o
+gerente de projeto vai ter alçada aqui
+vai ser o supervisor e aqui já vai ser o
+setor RH aqui vai ser o setor RH e aqui
+como eu tô está pulando alçada de todos
+os manipuladores da minha cadeia de
+autorização eu vou mentir aquela
+mensagem aqui do setor RH Aonde eu tô
+considerando que eu não tenho mais
+nenhum Annie pulador para tratar a
+solicitação então se eu executar esse
+projeto eu vou ter o seguinte resultado
+olha aqui ó o gerente aqui projeta para
+os cinco dias de licença para uma
+coratico supervisor de quinta vovó 14
+dias para Amanda o setor RH para o 18
+Paulo Benedito e 30 para a Janice e o
+último que no nosso caso aqui foi o
+Felipe não foi possível atualizar a
+licença de 50 dias para Filipe porque
+estrapolou e eu não tenho um manipulador
+para fazer o tratamento disso então aqui
+eu como desenvolvedor poderia fazer o
+tratamento que eu quisesse como isso é
+uma demonstração ou resolver apenas
+emitir essa mensagem então agora eu vou
+mostrar o diagrama de classes que foi
+criado aqui para essa implementação
+então nós temos aqui o autorizador é o
+meu handler né O gerente de projeto o
+visor de equipe e o setor RH são classes
+concretas aqui é uma classe abstrata
+elas estão herdando dessa casa descalça
+e aqui eles representam os manipuladores
+que formam a minha cadeia de autorização
+e aqui é o meu cliente que inicia a
+cadeia tô mostrando isso aqui no
+diagrama eu tenho o cliente e o handler
+e os com criticando Então embora essa
+implementação ela seja bem simples e
+possa ser melhoradas em muitos aspectos
+ela exemplifica bem o funcionamento do
+padrão quem responsabilizar até a semana
+que vem
