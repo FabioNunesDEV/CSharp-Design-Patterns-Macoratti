@@ -1,0 +1,349 @@
+Olá eu sou macoratti e hoje eu vou
+continuar apresentando os padrões
+comportamentais gof hoje eu vou
+apresentar o padrão mediator segundo a
+definição da gang of for o padrão
+mediator Define um objeto que
+encapsula como um conjunto de objetos
+interagem o padrão mediator ele promove
+o acoplamento fraco entre os objetos
+evitando que os objetos se refiram
+explicitamente uns aos outros e assim
+ele permite que você varie a sua
+interação de forma independente nós
+podemos dizer que o padrão mediator
+gerencia as interações de objetos
+diferentes e através de uma classe
+mediadora ele centraliza todas as
+interações entre os objetos visando
+diminuir o acoplamento e a dependência
+entre esses objetos e dessa forma no no
+padrão mediator os objetos não conversam
+diretamente entre eles e toda a
+comunicação precisa passar pela classe
+mediadora então o padrão mediator
+permite que um grupo de objetos se
+comunique entre si sem que haja um
+acoplamento entre eles e ele faz isso
+através de um objeto mediador e a
+intenção do padrão medito é definir um
+objeto que
+encapsula como um conjunto de objetos
+interagem então para entender melhor o
+padrão mediator Vamos considerar o
+seguinte cenário Suponha que nós temos
+quatro objetos A B C e D esses quatro
+objetos precisam se comunicar uns com os
+outros então Suponha que o objeto a quer
+se comunicar com o objeto b então o
+objeto a ele tem que conhecer tem que
+ter uma referência ao objeto b e usando
+essa referência o objeto a pode chamar
+o método do objeto B E assim se
+comunicar com ele da mesma forma se o
+objeto B quiser enviar uma mensagem para
+o objeto C então ele deverá conhecer o
+objeto C ter uma referência a esse
+objeto e usando essa referência ele irá
+chamar o método do objeto c e enviar a
+mensagem isso vai se repetir para os
+demais objetos que desejarem interagir o
+objeto c com o objeto d o objeto D com o
+objeto a o objeto a com objeto C objeto
+B com objeto D então este cenário ele
+apresenta um forte acoplamento entre os
+objeto pois nós temos um monte de
+objetos que precisam conhecer e ter
+referência entre si ou seja cada objeto
+precisa conhecer os demais objetos com
+os quais ele deseja se comunicar então
+neste nosso exemplo eu tô usando apenas
+quatro objetos agora imagine num projeto
+real onde nós podemos ter centenas
+milhares de objetos que precisam se
+comunicar uns com os outros Então nesse
+cenário eu vou ter um forte acoplamento
+entre os objetos Então eu tenho esse
+problema neste cenário então como eu
+posso permitir que um grupo de objetos
+se comunique entre si sem que haja
+acoplamento entre eles como mostrado
+nessa figura onde eu tem um forte
+acoplamento aqui cada objeto precisa
+conhecer os objetos com os quais ele
+deseja interagir E como eu posso
+resolver esse problema então aqui é que
+entra em cena o padrão mediator ele que
+vai resolver esse problema de como eu
+posso permitir que um grupo de objetos
+se comunique entre si sem que haja um
+forte acoo entre eles e como que o
+padrão mediator faz isso nós podemos
+resolver esse problema introduzindo um
+objeto que eu tô chamando de mediator
+que será responsável por intermediar a
+comunicação entre os objetos então agora
+cada objeto não precisa mais conhecer os
+demais objetos Basta apenas conhecer o
+mediator aí eles vão Enviar uma mensagem
+para este objeto mediator e o objeto
+mediator vai atuar recebendo a mensagem
+de cada objeto e roteando a mensagem
+para o objeto de destino Então é assim
+que o padrão mediator funciona então com
+esse padrão cada objeto possui uma única
+responsabilidade e consegue se comunicar
+com os demais objetos sem necessidade de
+conhecê-los ou seja cada objeto aqui
+trabalha de forma independente e isolada
+não havendo acoplamento entre eles então
+é assim que o padrão medito resolve esse
+problema do Forte acoplamento E é assim
+que ele atoa vejamos a seguir o diagrama
+uml do padrão mediator segundo o Golf
+nesse padrão nós temos os seguintes
+participantes eu tenho aqui o mediator
+que define uma Interface para
+comunicação entre os objetos colleg
+então aqui medi pode ser uma interface
+ou uma classe abstrata e aqui eu vou
+definir os métodos que podem ser
+chamados por objetos colleg a seguir eu
+tenho o Concrete mediator que é uma
+classe concreta que mantém uma
+referência aos objetos colleg ele
+implementa a comunicação e transferência
+de mensagens entre as classes colog essa
+classe ela implementa o contrato
+definido em mediator e mantém uma
+referência a aos objetos CG eu tenho
+aqui o colg que mantém uma referência ao
+objeto do mediator essa classe aqui
+geralmente é uma classe abstrata e ela
+se comunica com mediator sempre que
+necessário ou também pode se comunicar
+com as implementações feitas aqui em
+Concrete colleg e as classes Concrete
+colg são classes que se comunicam entre
+si por meio do mediator e cada uma erda
+um campo mediator da classe colleg para
+para fazer essa comunicação Então esse é
+o diagrama uml do mediator segundo o
+Golf e quando nós podemos usar o padrão
+medito nós podemos usar esse padrão
+Quando as mudanças no estado de objeto
+afetam muitos outros objetos quando o
+grande número de inter conexões entre os
+objetos torna o sistema pesado difícil
+de mudar quando você deseja ser capaz de
+alterar as partes de um sistema
+independentemente uma das das outras e
+quando Existem muitos relacionamentos
+entre os objeto e um ponto comum de
+controle ou comunicação é necessário e
+agora nós veremos as vantagens do padrão
+medito como vantagens nós podemos dizer
+que esse padrão realiza o desacoplamento
+entre os objetos porque nenhum objeto se
+conhece na comunicação como nós vimos no
+exemplo Outra vantagem é que o fluxo o
+fluxo de comunicação está Centralizado
+com isso as alterações no mediator não
+afetam os ouvintes Outra vantagem é que
+as mudanças podem ser aplicadas
+facilmente nos objetos porque eles são
+independentes e também o padrão mediator
+apresenta a vantagem de eliminar os
+relacionamentos muitos para muitos eles
+são substituídos por relacionamento um
+para muitos que é menos complexo e como
+desvantagem desse padrão nós podemos
+elencar duas principais a centralização
+no objeto mediator pode ser uma fonte de
+gargalos de desempenho de risco para o
+sistema em caso de falha então o medito
+ele vai centralizar todas as mensagens
+dependendo da quantidade de objetos isso
+pode ser um um gargalo no sistema e
+outra desvantagem é que os mediadores
+tende a se tornares mais complexos
+quando eu faço a implementação da classe
+mediadora dependendo do cenário ela pode
+se tornar muito complexa Isso é uma
+desvantagem que eu tenho aqui neste
+padrão então agora eu vou mostrar um
+exemplo de implementação do padrão
+mediator e como exemplo Vamos considerar
+o o ambiente do Facebook eu eu tô
+Resumindo aqui bastante né o cenário
+então no no Facebook nós podemos criar
+grupos específicos no qual podemos
+compartilhar mensagens e recursos então
+um grupo vai ter uma quantidade de
+membros que faz parte daquele grupo e
+vão poder interagir entre si Então vamos
+supor que nós temos um grupo no Facebook
+com alguns membros eu vou considerar
+aqui apenas quatro membros na
+implementação embora eu esteja mostrando
+mais aqui então cada membro ele poderá
+compartilhar mensagens com outros
+membros neste cenário quando qualquer
+membro quiser Compartilhar mensagem na
+implementação nós vamos definir um
+mediator então a mensagem vai ser
+enviada pro mediator que vai repassar a
+mensagem para todos os membros do grupo
+Então esse é um cenário onde o padrão
+mediator atua e pode ser implementado
+para resolver o problema do Forte
+acoplamento que haveria no caso se eu
+tivesse que fazer a implementação do
+envin das mensagens sem usar o mediat
+então no no exemplo da implementação do
+mediato nós definimos as seguintes
+classes Nós criamos uma interface
+Facebook group mediator que é o mediator
+e aqui nós definimos um contrato com
+dois métodos register users Send message
+registrar o usuário no grupo e enviar
+uma mensagem para os usuários a classe
+concreta Concrete Facebook group
+mediator que representa o Concrete
+mediator implementa o mediator né E aqui
+é que eu vou fazer o registro do usuário
+e criar a lista do usuário e definir a
+implementação do método Send message a
+classe user que representa colic foi
+definida como uma classe abstrata onde
+nós definimos aqui os métodos abstratos
+reive e send e definimos um Construtor
+aqui vai usar uma referência ao mediator
+que é o Facebook grupo mediator e o
+Concrete user é o meu usuário concreto
+ela é da classe abstrata user né
+implementa os métodos receive send e
+aqui no Construtor ele vai usar a
+Instância do mediator para poder se
+comunicar e enviar as mensagens usando
+aqui a a o método send e para receber as
+mensagens também então essas foram as
+interfaces e classes Que Nós criamos
+para implementar o padrão definido no
+cenário aqui então agora eu vou abrir o
+visual studo 2019 com o projeto console
+que eu tenho aqui e com essas classes
+que foram implementadas Então vamos
+começar com a nossa nossa interface
+Facebook group mediator ó ela é uma
+interface representa enta o meu mediator
+e aqui eu defin um contrato Send message
+que vai enviar mensagem para todos os
+membros do grupo exceto para quem
+compartilhou a mensagem né quem
+compartilhou não vai receber a mensagem
+que ele mesmo enviou e esse regist US
+vai registrar um usuário no grupo então
+aqui é o meu mediator o Concrete
+Facebook group mediator é o Concrete
+mediator ó ele implementa a interface
+então aqui ó eu tô implementando os
+métodos registre use que vai registrar o
+usuário no grupo ó eu vou ter uma user
+list e aqui ele vai Enviar mensagem para
+esses usuários do grupo ele vai pegar o
+usuário e vai enviar mensagem com
+exceção de quem está enviando então ele
+verifica se o usuário que tá enviando é
+o mesmo do usuário atual então para esse
+ele não vai enviar para todos os demais
+ele vai enviar a mensagem a classe user
+é uma classe abstrata que representa o
+kolig Então essa classe é uma classe
+abstrata ó ela tem uma referência ao
+mediator e aqui no Construtor ela usa a
+referência do mediator e o nome do
+usuário para fazer a vinculação e ela
+define dois métodos abstratos para
+enviar e para receber a mensagem e a
+classe concreta Concrete user ela erda
+da classe abstrata user ó no Construtor
+ela tá usando a classe base que é a
+classe user ó para definir o nome e usar
+a Instância do mediator e é aqui que eu
+implemento os métodos para receber a
+mensagem então eu defino o nome do
+usuário que tá recebendo a mensagem e
+aqui no send eu defino o nome do usuário
+para quem eu enviei a mensagem e eu faço
+isso ó usando a Instância do mediator
+que eu tô recebendo aqui no construtor
+da minha concret user e isso vem aqui da
+classe abstrata que no Construtor eu tô
+injetando uma Instância do mediat então
+na classe program para usar isso eu crio
+uma Instância do mediator e depois eu
+registro os usuários então eu registro
+tô registrando quatro usuários aqui
+macora Miriam e Yuri ó eu passo a
+Instância do mediator e e o nome do
+usuário então ele vai receber ó
+Instância do mediator vai usar aqui ó a
+crx abstrata e vai atribuir a seguir eu
+registro efetivamente esse usuário então
+aqui na verdade eu tô criando usuário e
+aqui eu tô registrando usando mediator
+olha Observe que na implementação aqui ó
+Eu uso esse método registre user e
+depois eu posso usar a Instância do
+usuário o método send ó o concret user
+Eu uso o método send para enviar a
+mensagem então aqui eu eu tô o usuário
+corar tá enviando uma mensagem que vai
+ser recebida por todos os membros do
+grupo então esse método send ele vai ser
+usado aqui ó e ele vai enviar aqui
+através do Send message do mediator que
+tá sendo implementado aqui em concreto
+Facebook grupo medito então vai
+percorrer a lista de usuários e vai
+enviar a mensagem então se eu executar
+Olha eu vou ter esse resultado eu
+registrei os usuários e eu tô vendo aqui
+o Moc corate enviando uma mensagem ó que
+tá sendo recebida ó por todos os
+usuários aí o iu envia uma mensagem que
+todos os usuários recebem e o maora
+envia outra mensagem que todos os
+usuários recebem é exatamente isso que
+eu tô fazendo aqui ó o maora envia uma
+mensagem todos recebem o Yuri envi uma
+mensagem todos recebem depois o maora
+envia uma resposta da mensagem do Yuri
+todos recebem então eu vou colocar um
+make Point aqui pra gente ver aqui a
+atuação deixa eu parar aqui né vou
+executar novamente Então olha aqui ó eu
+vou dar um f11 ó Eu Já criei a Instância
+do mediator agora eu vou criar um
+usuário ó lá ó concret user eu passei o
+nome maate a Instância do mediator Ó ele
+usa o Construtor da classe base e
+constrói o objeto aí ele vai fazer isso
+para mim é pra Jéssica pro Yuri Então
+vamos continuar aqui ó vou registrar o
+usuário então eu tô usando a Instância
+do meu mediator ó e ele inclui o usuário
+na lista do usuário ele vai fazer isso
+pra Miriam pra Jéssica pro Yuri e
+finalmente aqui o macar tá enviando uma
+mensagem ó usando o método send então
+ele vem aqui aqui eu emito a mensagem
+para quem ele tá enviando e eu uso a
+Instância do mediator Ó percorra a lista
+de usuário e envio a mensagem notou que
+para ele ele não enviou e pros demais
+ele vai enviar então é assim que
+funciona e essa é a implementação padrão
+do padrão mediato então até a semana que
+vem
