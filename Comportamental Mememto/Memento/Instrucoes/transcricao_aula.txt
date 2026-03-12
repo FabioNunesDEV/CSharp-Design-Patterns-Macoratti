@@ -1,0 +1,358 @@
+o Olá eu sou uma coragem de hoje eu vou
+continuar apresentando os padrões
+comportamentais hoje eu vou apresentar o
+padrão mesmo em segundo a definição da
+gang of Four o padrão tem a intenção de
+capturar e externalizar um estado
+interno de um objeto sem violar o
+encapsulamento de modo que o mesmo possa
+posteriormente ser restaurado para esse
+estado a palavra alimento traduzida
+significa lembrança recordação está
+relacionada com eventos passados ao usar
+este padrão você pode restaurar um
+objeto ao seu estado anterior e assim
+ele fornece uma maneira
+orientado a objetos de salvar o estado
+de um objeto ou seja o padrão memento
+permite salvar e restaurar o estado de
+um objeto sem quebrar as regras de
+encapsulamento definidas esse padrão ele
+permite tiraram o Snapchat e um retrato
+do Estado de um objeto e restaurá-lo no
+futuro isso e fica que se você deseja
+realizar algum tipo de operação para
+desfazer uma tarefa ou dar um colbeck ou
+então realizar uma recuperação de uma
+falha na sua aplicação você pode usar o
+padrão mesmo em uma forma muito usada na
+linguagem ser chato de aplicar o
+princípio do padrão elemento é usar a
+serialização vejamos um exemplo para
+entender a aplicação do padrão neném
+vamos supor que temos um objeto que
+representa uma Instância de uma classe
+estudante esse objeto possui os
+atributos ai denomidade curso Nossa
+telefone dentre outros e Aqui nós temos
+valores atribuídos a essas propriedades
+podemos dizer que esse é o estado atual
+do objeto seja tô chamando aqui de
+estado agora Suponha que num dado
+momento nós realizamos alterações nos
+valores das propriedades idade nota para
+essa Instância do objeto estudante
+atribuindo Novos Valores a idade Olá
+neste caso nós podemos dizer que nós
+alteramos o estado do objeto que agora
+está representado aqui pelo Estado dois
+se posteriormente nós precisamos
+desfazer o reverter as informações do
+Estudante para o estado anterior ou seja
+se nós precisamos reverter do estado dos
+para o Estado um nós podemos usar o
+padrão elemento e como o padrão à toa
+esse padrão ele atua da seguinte maneira
+ele vai armazenar o estado original do
+objeto em um objeto externo chamado
+neném e como esse objeto ele está
+disponível apenas por objeto os estados
+nós armazenamos Note que ele tá aqui eu
+defini essa proteção uma que ele não
+está exposto ao mundo exterior então
+como isso ocorre nós podemos dizer que o
+padrão momento ele respeita os
+princípios do encapsulamento e assim nós
+podemos restaurar o estado original do
+objeto com base no momento e
+O Senado que nós podemos usar E é assim
+que à toa o padrão né então a seguir nós
+temos o diagrama o ML do padrão memento
+segundo golfe onde nós temos os
+seguintes participantes
+originator é o objeto a ser salvo
+armazenado tão originator é aquela
+classe que eu quero fazer um backup que
+eu quero salvar o está tão esse objeto
+ele cria um elemento contendo um
+SnapShot do Estado interno atual e ele
+usa o memento para restaurar esse estado
+interno então a classe originator ela
+possui dois métodos o cliente mento e
+crie uma Instância do momento e o sétimo
+elemento que retorna O Estado salvo e
+atribui o valor Observe que esse método
+ele aceita o objeto o memento Então essa
+classe ela Instância o objeto o memento
+e definir o estado interno do originator
+para o estado elemento ou seja ela tira
+um instantâneo
+o direito e o coloca no objeto neném e
+esse objeto o memento vai ser salvo no
+quer peiker que quer o zelador para uso
+posterior nós temos aqui o memento que
+representa um estado que foi armazenado
+então o memento armazenar o estado do
+interno do objeto origine tu Então essa
+Gracie ela vai proteger o estado do
+acesso de outros objetos que não
+original para mim não poder expor né A
+minha cópia do estado aqui para os
+outros objetos e ela contém dois métodos
+os sete Stitch que é usado para
+armazenar as informações do estado e o
+get state que é usado para recuperar o
+estado sal depois eu tenho o Kelly
+thacker que é numa tradução é seria o
+zelador é o que vai gerenciar aqui as
+cópias do original então o Kelly take
+ele é responsável por persistir o
+memento e ele fornece um aumento de
+volta à originator para restaurar o
+estado interno a classe ela apenas
+armazenar o estado ela nunca vai poder
+modificar a luz a minar o conteúdo do
+objeto neném então aqui na implementação
+nós devemos tomar cuidado para não expor
+o estado do objeto ao mundo exterior e
+nós podemos usar o padrão memento quando
+o estado de um objeto precisa ser salvo
+e restaurado posteriormente geralmente
+está relacionado com operações e
+desfazer ou mundo ou contra o z ou um
+holback ou uma recuperação de falhas
+dentre outras operações ou podemos usar
+o memento quando o estado de um objeto
+não pode ser exposto diretamente usando
+uma interface sem Expor a implementação
+memento ele atua para resolver esse
+problema e quando eu preciso ou
+desacoplar a responsabilidade de uma
+classe de tomar conta de seus backups
+exatamente o que o querem ter que faz
+aqui na implementação do momento a
+gerencia os BK que como vantagens do
+padrão memento nós é que esse padrão
+permite armazenar o estado dos objetos
+sem comprometer o isolamento ele fornece
+o mecanismo de recuperação em caso de
+falhas e ele fornece uma maneira de
+manter o histórico do ciclo de vida de
+um objeto eu vou salvando os estados e
+depois eu posso recuperar e assim eu
+posso montar um histórico do ciclo de
+vida de um objeto usando o neném como
+desvantagens cabe citar aqui o processo
+de salvar o estado de um objeto e
+restaurá-lo mais tarde pode levar algum
+tempo ou seja Isso pode impactar o
+desempenho do aplicativo se eu precisar
+salvar e restaurar muitos estados né
+Isso pode afetar o desempenho na minha
+pregação Porque dependendo da quantidade
+de informações de estado que deve ser
+armazenada dentro do neném do processo
+de salvar e restaurar vai acabar
+impactando o desempenho da minha
+aplicação transferir uma desvantagem
+desse que padrão então a seguir eu vou
+mostrar um exemplo de implementação bem
+simples do padrão elemento para nós
+vamos implementar o padrão mesmo e no
+seguinte cenário nós vamos recuperar o
+estado de uma Operação realizada com
+dois números inteiros a finalizamos
+realizaram uma operação com dois números
+e vamos ter um resultado depois nós
+vamos realizar o outro operação de obter
+um resultado diferente aqui poderíamos
+simular que houve um eu vou então que eu
+quero restaurar o estado anterior então
+a seguir nós vamos recuperar o resultado
+da primeira operação simulando um contra
+los e operação de desfazer ou então de
+obter o estado anterior de uma operação
+e para isso nós vamos implementar o
+padrão neném então eu vou mostrar a
+seguir o diagrama uml que foi obtido na
+implementação que foi feita no visual
+Studio 2019 então Observe que aqui eu
+tenho o os participantes eu tenho a
+interface e karité que que usa lá dor e
+me representa representa aqui o pele
+take eu tenho uma outra interface que eu
+chamei de ir originator e cujo nome eu
+poderia ter dado outro nome eu não sou
+muito feliz nesse nome aqui mas eu vou
+deixar assim mesmo ela a e definindo
+aqui dois métodos para mim poder é
+recuperar as informações e isso vai ser
+feito aqui no na calculadora e eu tenho
+aqui o momento que é onde eu vou
+armazenar o estado do objeto que tem uma
+interface e calculadora que tá
+preparando aqui os métodos para
+implementação na classe calculadora que
+representa o meu originator então a
+calculadora seria o objeto com que eu
+quero fazer o backup que eu quero poder
+salvar os estados e aqui eu vou salvar
+os dois números primeiro número segundo
+número Vou salvar esse estado para mim
+poder reverter e obter o resultado da
+operação que vai ser a soma de dois
+números então aqui eu objeto que eu
+quero salvar o estado e ele vai ser
+salvo aqui no momento então eu usei três
+interfaces a classe concreta Note que
+memento implementa as duas interfaces
+aqui e karité que ele e originatto e que
+inquérito hacker é uma definido em 1
+metro e eu não quis que aqui essa
+interface pudesse gerar alguma
+implementação que desce acesso as cópias
+nos estados que eu vou fazer aqui de
+calculadora eu pude garoto aumente a
+definido aqui uma data o nome que não
+tivesse relacionado aqui com os campos
+que eu quero armazenar o Estado então
+agora eu vou abrir o visual visto 2019
+Eu tenho um projeto console do tipo
+nightcore hoje foi implementado o padrão
+neném e aqui nós definimos a interface
+keycard que faz o papel do karité e ter
+que é o zelador que vai gerenciar os
+backups aqui nenhuma operação foi
+permitida eu poderia ter definido aqui
+data o nome a seguir nós definimos a
+interface e originator aqui como eu
+falei eu não sou muito feliz esse nome
+que poderia ter dado outro nome aqui eu
+tô definindo um contato com dois métodos
+que vai permitir originator restará o
+seu estado que nosso caso nós vamos
+restaurar o e da operação da soma dos
+dois números E no momento eu tenho aqui
+a implementação da classe concreta que
+eu chamei de elemento que implementa as
+duas interfaces ó aí que é de tiê
+original aqui eu tô representando o
+estado armazenado aqui eu tô armazenando
+o estado do objeto originator Note que
+aqui eu só tenho Beth eu não tenho como
+alterar os dados aqui vou apenas
+armazenar a Ele só sabe armazenar os
+dados então eu enxergo aqui no
+construtor da classe os valores e
+armazenar só isso e eu tenho aqui os
+gates para recuperar os valores depois
+nós definimos a interface e calculadora
+que define uma Interface para
+implementação do originator a que eu tô
+definido a interface com o contrato que
+depois vai ser implementada pelo
+originator e vai permitir eu brigaram o
+método backup do último cálculo que
+representa o crescimento e o restaura o
+último cálculo que representa o 7
+momento e aqui eu tenho serviços do
+originator a atribuir os valores 7
+primeiro número 7 segundo número e obter
+o valor do resultado e no originator que
+a minha classe calculadora e o
+implementa a interface calculator
+definir dois Campos primeiro segundo e
+aqui ó eu tenho a implementação dos
+métodos de backup do último cálculo que
+representa o cliente elemento é aqui eu
+vou criar um objeto mesmo Olha usado
+para restaurar os dois números do
+primeiro e o segundo depois eu vou poder
+obter o resultado aqui eu tô apenas
+retornando o valor da soma e aqui no
+restaura o último cálculo ele
+corresponde Aos sete movimentos aqui
+Executar a lógica para restaurar o
+estado anterior Note que eu precisei dar
+um teste aqui para ir originator porque
+o a restauração do cálculo aqui precisa
+restaurar aqui ó os inteiros primeiro e
+segundo e aqui eu tô trabalhando com o
+memento então foi por isso que eu defini
+originator ó os métodos que vão me
+retornar um inteiro Beat primeiro e aqui
+segundo então no meu original e eu vou
+poder definir os valores obter o
+resultado
+salvar o estado e restaurar o estado e
+aqui na classe droga é onde eu tô
+utilizando aqui ó eu crie uma Instância
+do tipo e calculadora a seguir olha
+usando os métodos certo e primeiros sete
+segundos número eu atribuo os dois
+valores obtém o resultado da soma e aqui
+ó eu vou fazer o backup Vou salvar o
+estado do resultado então pra isso eu
+uso Week LT que a interface então aqui
+tá me retornando olha um tipo e karité
+aqui como ele foi implementado aqui em
+neném tu né eu acesso aqui o método
+backup último cálculo e restauro aqui o
+estado salvo está faça um backup do
+Estado né Depois continuo realizando
+duas operações Eu acho que o novos
+números obtém um novo resultado e aqui
+olha eu vou restaurar restaurar o estado
+realizando a operação para desfazer ao
+bom então nós que eu tô usando a
+Instância de calculadora restaura o
+último cálculo do momento que foi aonde
+eu armazenei o estado do objeto e aí eu
+exemplo o resultado então se eu executar
+eu vou ver Exatamente esse comportamento
+Olha tô calculando a soma de dois
+números ele vai me dar um estado um que
+110 e a seguir Olha eu vou calcular uma
+nova soma depois eu tô restaurando o
+resultado da sua anterior que a 110
+exatamente o que eu tô obtendo aqui foi
+isso que eu fiz aqui ó então aqui usei o
+pé Cap do último cálculo para fazer o
+backup do estado e aqui restará o último
+cálculo que me permite desfazer a
+operação isso foi implementado aqui ó no
+método da classe originator Então essa é
+uma das possíveis e implementação do
+padrão Beleza então esse padrão ele nos
+dá uma na prática de armazenar e
+recuperar o estado do objeto como nós
+mostramos aqui então você pode e para
+realizar operações de reverter ao estado
+original de objeto desfazer dão control
+Z recuperar uma falha no no erro agora
+você tem que tomar cuidado quando for
+usar porque se o objeto foi muito
+comprar que se você tiver muitos estados
+para salvar isso pode afetar o
+desempenho da sua aplicação e também
+você tem que tomar cuidado na
+implementação do CLT que fala não expor
+o backup aqui no momento aqui tô Note
+que aqui eu só tenho variáveis trailer e
+aqui eu não tenho 7 eu só tenho get
+então aqui só vou poder armazenar e
+recuperar Então tem que tomar cuidado
+para não Expor a estrutura interna do
+objeto que eu quero persistir o estado
+aqui no meu caso aqui é a calculadora o
+resultado do cálculo né olha esse padrão
+ele está relacionado com o padrão Comedy
+que geralmente pode usar o neném tu para
+manter o estado para as operações que
+podem ser desfeita nós já falamos do
+padrão cond e nós mencionamos o mundo no
+cômodo que pode e ele pode usar
+novamente para fazer isso o padre
+movimento então ele está relacionado com
+o padrão então era isso até a semana que
+vem
