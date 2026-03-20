@@ -1,0 +1,316 @@
+Introdução
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar apresentando os padrões
+comportamentais goffi hoje nós veremos o
+padrão extrato de segundo a definição da
+gang of Four o padrão estradas definir
+Strategy - Definição
+uma família de algoritmos in cattle a
+cada um e os torna intercambiável vamos
+entender o que isso significa quando
+dizemos que o padrão define uma família
+de algoritmos Isso significa que esse
+padrão fornece um conjunto de algoritmos
+usando um desses algoritmos em tempo de
+execução nós poderemos obter o resultado
+desejado quando dizemos que ele em
+cápsula cada um e significa que esse
+padrão é de permite que você coloca os
+algoritmos em classes diferentes
+encapsulando e aqui os torna
+intercambiáveis significa que nós
+podemos selecionar em tempo de execução
+Qual é o algarismo nós queremos aplicar
+o nosso e também nós podemos substituir
+um algoritmo pelo outro Dessa forma
+participada não permite que o algoritmo
+vary
+independentemente dos clientes que
+utilizam e assim nós podemos dizer que o
+objetivo deste padrão é encapsulado em
+um algoritmo em um objeto e fornecer
+interfaces genéricas o suficiente para
+suportar uma variedade de algoritmos e
+facilitar a escolha e a troca que seria
+o intercâmbio de algoritmos criados com
+a mesma função esse padrão ele é muito
+utilizado no código ser Shark geralmente
+nós usamos
+esse padrão em estruturas para fornecer
+aos usuários uma maneira de alterar o
+comportamento de uma classe sem
+estendê-la para entender melhor vamos
+ver um exemplo de atuação do padrão
+extract vamos supor que nós temos uma
+tarefa a resolver e que nós temos três
+soluções possíveis para resolver esta
+tarefa solução 1 2 e 3 a cada solução
+nós temos representados um comportamento
+em um algoritmo diferente então Aqui nós
+temos a família de algoritmos
+encapsulada cada um em sua classe de
+acordo com o padrão Extra ter a solução
+que deverá ser usada será decidida em
+pelo cliente apenas em tempo de execução
+assim o cliente ele vai decidir se vai
+usar a solução uma dois ou três para
+realizar a tarefa e ele vai fazer isso
+em tempo de execução dessa forma nós
+temos que as soluções que representam a
+família de algoritmos então encapsuladas
+em cada uma em sua classe e elas podem
+ser intercambiáveis e nós podemos fazer
+a seleção de qual usar em tempo de
+execução substituindo uma solução pela
+agora tomando um exemplo do mundo real
+vamos supor que nós temos meios de
+Strategy - Exemplo Real
+transportes por exemplo transpor
+transporte para Aeroporto então aqui eu
+tenho um exemplo do padrão Extra a
+estratégia seria uma estratégia de
+transportes então aqui as opções que eu
+tenho senão diversas eu vou considerar
+apenas três que seria pegar um ônibus
+usar um carro pegar um táxi qualquer um
+desses meios de transporte vai resolver
+o problema que é levar o cliente
+aeroporto e eu posso usar qualquer um
+desses de forma intercambiável e aqui O
+Viajante ele vai fazer a sua escolha com
+base nas compensações entre custo
+conveniência e tempo então aqui eu tenho
+uma estratégia de
+transportes três opções e eu posso usar
+qualquer uma delas de forma
+intercambiável então a seguir nós temos
+Strategy - Diagrama UML
+o diagrama o ML do padrão estratégias
+segundo gof Aqui nós temos os seguintes
+elementos eu tenho o contexto que a
+classe um dos objetos como estratégias
+serão instanciados e esse essa classe
+ela não tem uma referência para o objeto
+extrato a seguir eu tenho aqui o
+strategy que pode ser uma cara o ou uma
+interface e aqui é definida a interface
+comum para todas as classes que são as
+variações concretas as estratégias é
+aqui que são definidos os comportamentos
+esperados para cada uma das soluções
+então contas ele vai usar essa Interface
+para chamar um algoritmo definido por
+uma estratégia definida aqui nessas
+caixas concretas e as caixas concretas
+são as classes que vão experimentar os
+algoritmos que devem atender a cada um
+dos contextos esse padrão Ele é bem
+fácil e simples de entender então aqui
+eu tenho uma interface e chamada Estrada
+acho que vai definir um contrato a ser
+implementado as classes de estratégias
+concretas A B e C que implementam a
+interface e por último a classe acontece
+através da qual nós podemos usar
+diferentes estratégias concretas em
+tempo de execução então a classe contas
+ela vai instanciar os objetos
+estratégias e um vocal método aqui ó que
+no diagrama goffi foi chamado de
+algoritmo interface Fala para ele que eu
+solicitar e quando nós podemos usar o
+Strategy - Quando usar
+padrão abstratos nós podemos usar esse
+padrão quando temos muitas classes
+relacionadas que diferem apenas em seu
+comportamento ou quando nós precisamos
+usar diferentes variantes de um
+algoritmo ou quando nós temos um
+algoritmo que usa dados que os clientes
+não deveriam conhecer o quando uma
+classe define muitos comportamentos e
+eles aparecem como várias instruções
+condicionais em suas operações então
+aqui ao invés de usar instruções
+condicionais e Infiel se nós fazemos
+movê-los condicionais relacionados para
+sua própria classe de estratégia e
+também nós podemos usar o padre meu
+status escondido quando você tiver um
+método que é aplicado em diferentes
+situações nas quais é exigido um
+comportamento específico a seguir nós
+vamos ver as vantagens do padrão
+estratégias nós podemos dizer que o
+padrão strategy ele tem como vantagem
+que ele facilita e simplifica os testes
+de unidade pois o algoritmo tem a sua
+classe e pode ser atestado pela sua
+própria interface ele também Evita o uso
+de condicionais if else Street tornando
+o código mais flexível e fácil de
+entender ele é aderente os princípios da
+alta Coesão e baixo acoplamento quis
+estão relacionados com as boas práticas
+de desenvolvimento Íris orienta a quem
+usa a programar para uma interface é
+usar a composição e como desvantagem nós
+podemos citar o seguinte esse padrão ele
+pode promover o aumento no número de
+classes usadas no projeto e outra
+desvantagem aqui a aplicação ela tem que
+conhecer todas as estratégias para poder
+selecionar qual que vai ser a melhor a
+ser usada E além disso de forma geral o
+aplicativo vai configurar o Contax e o
+objeto strategy necessário e dessa forma
+a aplicação vai ter que manter dois
+objetos no lugar nenhum o Contax e o
+extrato isso pode ser uma desvantagem o
+e cenários mais complexos então a seguir
+eu vou mostrar um exemplo de
+Strategy - Implementação
+implementação desse que padrão vamos
+supor que eu quero poder compactar
+arquivo E para isso eu tenho três
+soluções que são as estratégias que eu
+posso usar para realizar essa tarefa
+como imprimir compactar aqui então aqui
+eu vou considerar três opções apenas
+compactar arquivos usando o formato raro
+e formatos vip e o formato gesipe
+naturalmente eu posso usar compactadores
+diferentes ou usar até o mesmo
+compactador então aqui nós vamos usar o
+padrão estratégico para definir e para
+poder implementar os algoritmos de
+compactação e forma que nós possamos
+escolher o formato em tempo de execução
+então a minha tarefa comprimido os
+arquivos eu tenho três estratégias tenho
+três algoritmos que vão ser encapsulados
+nas suas caixas com três comportamentos
+de distintos nós vamos decidir qual usar
+um tempo de execução e na e pela
+implementação do padrão strategy
+considerando esse cenário a seguir eu
+vou mostrar o diagrama de classes que
+Strategy - Exemplo de Implementação - Diagrama de classes
+foi obtido na implementação deste padrão
+nesse cenário e essa implementação foi
+feita no visual Studio 2019 então Aqui
+nós temos a interface e compressão e
+representa o meu status e nós definimos
+o contrato comprimir arquivo que é um
+método que as caixas concretas
+representada aqui por compressão rar Zip
+compressão gesif vão ter que implementar
+então aqui nós vamos definir três
+soluções para compactação cada uma
+encapsulado em sua classe
+respectivamente compressão rar
+compressão Zip compressão gesipe todas
+elas não implementam estratégias e na
+classe compressão com Tex que representa
+o meu contas nós vamos usar uma
+Instância de estratégias e nós vamos
+definir os métodos criar arquivo
+compactado e vai compactar efetivamente
+o arquivo e definir estratégias que vai
+permitir e em tempo de execução o
+algoritmo que eu quero usar para
+compactar o arquivo Então essa
+implementação a mais simples possível
+então eu vou abrir aqui com visual
+Studio 2019 comigo hoje eu vou mostrar o
+código da implementação Então eu enviei
+definindo aqui ó uma interface que eu
+chamei de ir compressão e representa o
+meu estratégia aqui o teu definindo uma
+assinatura de método comprimir arquivo
+que vai receber um arquivo e vai fazer a
+compressão desse arquivo A compactação
+então a seguir eu criei as classes
+concretas que implementa esta interface
+por exemplo compressão rar ela vai
+implementar a interface que representa
+as o estratégico e vai fazer aqui a
+compactação do arquivo aqui é só tô
+dando uma mensagem que o arquivo tal foi
+compactado usando o formato raro né ele
+tem uma extensão. Raro Zip a mesma coisa
+só tô mudando aqui o texto da mensagem
+aqui naturalmente eu colocaria toda a
+lógica necessária para
+a compactação para e se formar e aqui no
+gengibre é a mesma coisa tão cada uma
+das minhas classes concretas aqui ó
+compreensão rar Zip está implementando a
+interface e compreensão que é o meu
+estratégias e na compressão com Tex que
+representa o meu contexto vou colocar
+ela como Público aqui ela tá interna Vou
+definir ela como o público então aqui
+olha eu tô recebendo uma Instância de
+impressão projetando isso no Construtor
+e com essa Instância recebido Olha eu tô
+Define um método que arquivo compactado
+que recebe o nome do arquivo usa a
+Instância do strategy e os o método
+comprimir arquivo e faz a compactação do
+arquivo e eu tenho um método também olha
+que recebe uma Instância de compressão e
+aqui eu vou usar esse método define
+estratégias para mim poder escolher qual
+é a estratégia que eu vou usar então
+aqui novamente eu recebo uma Instância
+do meu está ter e uso essa Instância
+para realizar compactação e na classe
+programa nós temos aqui o a tentação que
+foi feito Olha eu vou mostrar aqui então
+inicialmente eu defini aqui um texto
+padrão estrategista eu tô iniciando
+criando uma distância da minha casa já
+se compra essa conta onde eu tô
+definindo o algoritmo iniciar o padrão
+que eu vou usar que é compressão rar
+então a seguir eu estou solicitando para
+o usuário informar o nome do arquivo e
+depois eu tô selecionando para escolher
+qual tipo de compressão que ele quer
+usar a que eu recebo opção do usuário e
+aqui eu tô usando um código bem base ser
+escolher dois então eu formato Zip então
+eu aí eu tenho que alterar minha
+estratégia usando uma Instância da
+implementação da compressão use se ele
+escolher a opção 3 aí eu vou ter que
+alterar estratégia em tempo de execução
+e obtém uma Instância da minha
+compressão gesipe caso contrário ele vai
+usar compressa um padrão que usa uma
+Instância da compressão rar E aí ó ele
+vai efetivamente usar o método criado um
+arquivo um lado e vai compactar o
+arquivo então se eu executar aqui esse
+código Olha eu vou ter o seguinte o
+resultado na implementação do padrão
+escrotas informe o nome do arquivo a
+comprimento Vamos colocar aqui ó Teste
+Ponto data informe o tipo de compreensão
+a ser usada vamos supor que eu quero a
+opção no formato gesipe que é o formato
+três aí ele aciona lá o algoritmo então
+é Ele mente a mensagem aquele faria a
+compactação do arquivo então o arquivo
+teste que data foi compactado usando
+Então olha eu vou executar novamente e
+vou selecionar a outra opção nome do
+arquivo teste quanto data vou colocar
+Zip o arquivo teste que data foi
+compactado Zip um arquivo com exceção um
+ponto se foi criado Então dessa forma
+nós temos aqui uma implementação muito
+básica e simples mas que mostra como
+você pode usar de implementar o padrão
+listrado até a semana que vem

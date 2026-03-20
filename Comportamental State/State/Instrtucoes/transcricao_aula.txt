@@ -1,0 +1,337 @@
+o Olá eu sou uma cor aqui hoje eu vou
+continuar apresentando os padrões
+comportamentais goffi hoje eu vou
+apresentar o padrão state o padrão state
+da gang of Four ele permite que um
+objeto altere o seu comportamento quando
+o seu estado interno for alterado nesse
+caso vai parecer que o objeto mudou a
+sua classe esse padrão ele ajuda os
+objetos a mudar o seu estado sem mudar a
+interface que é usada para acessar o
+objeto ou perder o estado atual nesse
+padrão é criado um objeto que representa
+vários estados e um objeto de contexto
+que o comportamento varia conforme o
+estado do objeto for alterado esse
+padrão ele define uma maneira de
+controlar a comunicação entre classes ou
+entidades e ele pode ser usado para
+implementar algoritmos complexos de
+tomada de decisão representados como um
+fluxograma ou diagrama de estado e
+também pode ser implementado
+e tem vários estados e cada estado tem
+uma ação específica para exemplificar a
+atuação desse padrão vamos usar uma
+máquina de venda automática as máquinas
+de venda automática Elas têm estados Com
+base no estoque Ou na quantidade de
+valor depositado assim nós podemos ter
+os seguintes comportamentos conforme
+alteração desses dois estados internos
+quando o dinheiro foi depositado e o
+cliente fizeram uma seleção a máquina
+pode realizar as seguintes operações ela
+pode entregar o produto sem troco
+entregar o produto com pouco não
+entregaram o produto porque o valor foi
+insuficiente e não entregaram o produto
+por falta de estoque Então temos aqui um
+exemplo onde o padrão state pode atuar
+então Aqui nós temos o seguinte eu
+conforme o estado interno mudar o
+comportamento da máquina é alterado e
+assim nós temos um objeto que possuem
+mais de um O interno e o comportamento
+do objeto muda em cada transição de
+estado tão a seguir nós seremos o
+diagrama o ML do padrão recente segundo
+gof onde nós temos os seguintes
+participantes eu tenho o contact que
+define a interface de interesse dos
+clientes e essa classe ela mantém uma
+Instância da subclasse confettis Tate e
+definir o Stitch o estado atual state
+definir uma Interface para incapaz solar
+o comportamento associado a um
+determinado estado de Contax aqui
+geralmente nós implementamos usando uma
+interface uma classe abstrata Então essa
+interface é usada pelo context para
+acessar a funcionalidade que é mutável a
+mudança de estado a transição dos
+estados e eu tenho aqui os confettis
+state que são classes concretas que
+implementam a interface state e fornecem
+a funcionalidade real que vai ser usada
+pelo objeto contém aqui cada classe vai
+implementar o comportamento as OS o
+único estado do objeto com e quando nós
+podemos usar o padrão existente você
+pode usar este padrão quando você tem um
+objeto que se comporta de maneira
+diferente dependendo do seu estado atual
+o número de estados for enorme e o
+código específico do Estado mudar com
+frequência neste cenário o padrão sugere
+que você extrai a o código específico do
+Estado único conjunto de classes
+distintas podemos usar o Stitch quando o
+estado de um objeto não pode ser exposto
+diretamente usando uma interface sem
+Expor a sua implementação e a seguir
+veremos as vantagens e desvantagens do
+padrão existente como vantagens podemos
+dizer que esse padrão ele se beneficia
+da implementação do comportamento
+polimórfica e também é mais fácil
+adicionar status para oferecer suporte a
+comportamentos adicionais ele melhora a
+coesão uma vez que os comportamentos
+específicos de estado e só largados as
+classes com cliques Tate que são
+colocadas em 11 o código Outra vantagem
+aqui na implementação do padrão a
+própria classe define Qual estado não
+necessitando conhecer o valores de
+atributos mas apenas do seu
+comportamento e esse padrão ali reduza o
+uso do código condicional os Infiel seu
+Switch Case porque ele distribui o
+comportamento ele utiliza isso
+atribuindo o comportamento e definindo
+isso nas classes concretas conquistei
+como desvantagem desse padrão nós
+podemos elencar que uso esse padrão
+aumenta o número de classes EA
+utilização desse padrão a repete muito
+código seja inscrito dependendo de
+quantos metros de transição de estados
+diferentes são definidos e de quantos
+estados possíveis um objeto Pode estar
+então se você quiser muitos estados e
+muitas alterações em Estados você vai
+ter que ver muito código isso vai se
+refletir também no aumento do número de
+classes que essa seriam duas
+desvantagens desse padrão então a seguir
+eu vou mostrar um exemplo de a ligação
+do padrão state E para isso eu vou usar
+o exemplo do caixa eletrônico para
+simplificar o cenário eu vou tratar
+apenas com a mudança de dois estados eu
+vou admitir dois estados aqui ó primeiro
+estado é cartão não inserido e o segundo
+estado é o cartão inserir Então vamos
+supor que o estado interno inicial do
+caixa eletrônico é o cartão não inserido
+que significa que o cliente ainda não
+inseriu o cartão no slot do caixa
+eletrônico Então nesse estado eu vou
+admitir que o cliente ele pode realizar
+as seguintes operações ele pode inserir
+o cartão porque o cartão não está
+inserido ele não pode ajeitar o cartão
+porque o cartão não foi inserido ainda
+né ele não pode Inserir a senha porque
+ele não inserir o cartão ele não pode
+sacar o dinheiro eu vou admitir essas
+quatro operações para esse estar agora
+para o estado cartão inserido eu vou
+admitir as seguintes operações Então
+nesse estado quando o cliente inseriu o
+e no caixa eletrônico ele não vai poder
+encher o cartão porque ele já inseriu
+ele vai poder ejetar o cartão porque o
+cartão está inserido vai poder Inserir a
+senha porque o cartão foi inserido e vai
+poder sacar o dinheiro Então nesse
+cenário eu estou simplificando bastante
+a implementação eu não tô definido
+lógica aqui para verificar limites para
+mim simplificar bastante o código aqui
+então vou fazer a implementação prática
+destes cenário considerando esses dois
+estados e essas operações então aqui eu
+tenho um exemplo bem ingênua aqui de do
+padrão state quando eu tô mudando o
+estado interno de um objeto que aqui
+está representado pelo caixa eletrônico
+então o caixa eletrônico aqui ele vai
+ser o meu objeto context quando eu mudar
+o estado interno ele vai mudar o
+comportamento realizando operações
+diferentes então a seguir eu vou mostrar
+o que é diagrama de classes que foi
+obtido na implementação desse padrão no
+visual Studio 2019 e usando a linguagem
+fechar eu criei uma interface que eu
+chamei de ir caixa eletrônico state tava
+esse essa interface representa o meu
+state e aqui eu tô definindo os métodos
+nos métodos que deverão ser implementado
+que representam os comportamentos
+associados ao determinado estado do meu
+contexto então a seguiram define as
+classes concretas representam a
+conquistei ti cartão inserido state e
+cartão não inserido stayed essas classes
+elas são implementam na minha interface
+estão fornecendo funcionalidade real que
+vai ser usado aqui pelo objeto conta
+então cada subclasse Aqui tá
+incrementando o comportamento associado
+a um único estado a ejetar cartão
+informar sem inserir cartão e sacar
+dinheiro que são as operações que eu vou
+poder realizar dependendo do Estado
+interno do caixa eletrônico e aqui eu
+creio a classe caixa eletrônico que é
+uma classe concreta que representa o meu
+Contax então um contendo uma Instância
+de conquistei ti para definir o estado
+atual e eu tô declarando um método que
+podem alterar o comportamento devido a
+mudança de estado é aqui que eu faço a
+definição desses metros Então agora eu
+vou abrir o visual estudo 2019 com o
+projeto criado é um projeto console
+netcor usando aqui ó o ambiente do Net 5
+travando iniciar com a interface e caixa
+eletrônico que representa o meu state né
+onde eu defini aqui o contrato que vai
+ser encomendado pelas classes concretas
+e que representam aqui as operações que
+vão ser realizadas dependendo do Estado
+interno do caixa eletrônico Então eu
+tenho dois estados viu Tive que criar
+duas classes para representar cada
+estado cartão não inserido que é o
+estado Inicial ó ela implementa minha
+interface e aqui para simplificar eu sou
+definir aqui a exibição de texto o
+método e já tá cartão nesse estado vai
+emitir Essa mensagem eu não vou poder e
+essa operação né o cartão não foi
+inserido não posso ajeitar informar a
+senha também não posso fazer inserir o
+cartão aí sim quando ele me ferir eu vou
+informar que o cartão Foi Ferido com
+sucesso e sacar dinheiro também ele não
+pode então seria o estado o cartão não
+inserido o Stitch depois eu criei a
+outra classe concreta que representa o
+outro está o meu estado o cartão
+inserido state que implementa a minha
+interface então aqui cada uma das
+operações mas se comportado de maneira
+diferente né E já tá cartão eu vou poder
+já tá porque eu me seria o cartão
+informassem eu vou poder informar senha
+para inserir o cartão novamente eu não
+vou poder porque o cartão já foi
+inserido e sacar o dinheiro eu vou poder
+então aqui Observe o teu simplifiquei
+bastante o código eu não tô decidindo
+lógica nem limites então se eu quisesse
+definir limites eu definiria aqui na
+minha classe caixa eletrônico que é o
+meu com Tex representa o meu objeto
+contact e que implementa aqui ó a minha
+interface e em Pânico Stitch eu defini
+há limite então no meu contexto que é o
+caixa eletrônico que representa o objeto
+contact Eu defini aqui uma Instância do
+tipo e caixa eletrônico state então
+através dessa Instância eu vou poder
+gerenciar a coca de estado interno do
+caixa eletrônico então eu tô iniciando
+definido que o estado atual é cartão não
+inserido E aí eu vou definir as
+operações inserir cartão e já tá cartão
+informação e sacar dinheiro então aqui
+para simplificar o código eu só tô te
+tratando com dois estados e seria cartão
+então eu uso o método inserir cartão
+então aqui o cartão foi inserido
+significa que o estado mudou para cartão
+inserido aí o que que eu faço eu
+verifico o estado se ele estiver no
+estado não inserido então eu mudo
+estátua e falou estado mudou e não
+ejetar cartão quando eu definir essa
+operação cartão foi ejetado então o
+Estado mudou o cartão não inserido
+porque eu ejetei o cartão então não tem
+mais cartão no caixa eletrônico então o
+que que eu faço quando eu ejetei qual
+era o estado era cartão inserido Porque
+para mim injetar o cartão de que está
+inserido eu verifico se eu tô nesse
+estado se eu tô nesse estado e hoje tem
+então cartão agora passou a não está
+mais inserido então estado dele mudou
+para cartão não inserido e eu recebo
+essa mensagem o estado mudou e aí
+informassem o informo senha e sacar
+dinheiro eu saco o dinheiro essa
+implementação ela é muito simples tá é
+apenas para mostrar de forma bem
+didática a implementação do padrão você
+vai encontrar em implementações mais
+robustas e mais elaboradas do que essa
+não é classificada manda eu ainda tenho
+que mostrar que a implementação então eu
+inicio definindo aqui uma Instância do
+meu objeto contact e quando eu faço isso
+o estado Inicial é cartão não inserido
+porque né olha aqui no Construtor eu
+defini isso cartão não me Siri então Oi
+com cartão não inserido aviso isso e
+realiza as operações então a última
+operação eu tô inserindo o cartão então
+quando eu inserir o cartão tá o estado
+interno dele mudou eu aviso isso realiza
+as operações e ejeta o cartão quando eu
+Jetta o cartão o estado muda novamente
+erro aviso isso usando aqui o console
+Então você executar Olha nós vamos ver o
+resultado aqui exibido no console estado
+atual que o estado Inicial cartão não
+inserido state nesse estado não é
+possível informar senha não é possível
+realizar os aqui não é possível ejetar o
+cartão aí eu inseri o cartão aí eu
+estava interno do caixa eletrônico foi
+alterado para cartão inserido porque o
+inserir o cartão então ao estado atual
+agora cartão inserido aí a senha pode
+ser alterada o saco pode ser feito Se eu
+tentar inserir o cartão novamente Não
+consigo né aí o hegeto o cartão quando
+eu já tô cartão eu mudo o estado ele
+passou para cartão não entendi bom então
+esse aqui é o status interno do meu
+objeto conta e é o caixa eletrônico Ok E
+aí eu exemplo Qual estado final da
+máquina e retornar o estado Inicial
+cartão não inserido skate então nós
+vemos assim que o padrão state ele
+extrai comportamentos relacionados ao
+estado em classes separadas né de estado
+e aí ele força o objeto original a
+delegar o trabalho para uma distância
+dessas classes em vez de agir por conta
+própria é isso que nós implementamos
+aqui então esse padrão é ele é usado na
+linguagem C Sharp bastante né para
+converter máquinas de estados baseadas
+em condicionais para o objeto que é uma
+das vantagens desse padrão né eu ao
+invés de usar o código condicional
+Infiel se switch-case eu clico classes
+que representam os estados e de LEGO
+assim o trabalho para uma Instância
+dessas classes aqui então era isso até a
+semana que vem
