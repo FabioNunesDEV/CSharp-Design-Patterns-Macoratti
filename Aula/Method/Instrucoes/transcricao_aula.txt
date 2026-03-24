@@ -1,0 +1,271 @@
+o Olá eu sou uma cor aqui e hoje eu vou
+continuar apresentando os padrões
+comportamentais goffi e hoje nós iremos
+o padrão template né o padrão template
+método goffi ele define o esqueleto de
+um algoritmo em uma operação na classe
+base adiando algumas etapas para a
+subclass esse padrão vai lhe permite que
+As subclasses
+redefinam certas etapas de um algoritmo
+sem alterar a estrutura do algoritmo a
+chave para este padrão é colocar a
+lógica geral na classe pai abstrata e
+deixar as classes filhas definirem as
+especificações esse padrão ele é útil
+quando você tem um esqueleto de um
+algoritmo definido uma classe base e uma
+pequena parte do algoritmo pode variar e
+essa parte ela é implementada com a
+variação em uma subclasse ou seja uma
+classe comprar esse padrão aqui ele é
+bastante parecido com o padrão e é a
+principal diferença é a capacidade de
+alterar as partes do algoritmo em vez de
+fazer a substituição do algoritmo
+inteiro dessa forma o padrão template
+método ele permite definir a estrutura
+do algoritmo em uma classe base e
+sobrescrever os procedimentos
+específicos nas caixas derivados assim
+nós definimos a estrutura do algoritmo
+com os procedimentos na se base e nas
+classes derivadas nós podemos sobre
+escrever procedimentos específicos que
+podem ser diferentes conforme a classe
+que vai experimentar a classe base então
+a classe Pai ela definir o número EA
+ordem dos procedimentos individuais e
+pode fornecer também uma implementação
+padrão para cada procedimento e as
+classes derivadas elas podem subscrever
+qualquer procedimento que desejaram
+Então agora eu vou mostrar um exemplo
+mais realista para que a ver como que a
+tô esse padrão então vamos supor que
+você quer construir uma casa de concreto
+para isso você precisa seguir uma
+sequência de Passos como construir a
+fundação levantar os pilares e as
+colunas levantaram as paredes colocar as
+janelas instalar o telhado essa
+sequência de procedimento base ela deve
+ser seguida para você construir a casa
+agora vamos supor que você precisa
+construir também uma casa de madeira
+neste caso você terá que seguir a mesma
+sequência de procedimentos que foi
+adotado para construir a casa de
+concreto A única diferença é que invés
+de usar concreto você vai usar o madeira
+então Neste contexto nós podemos definir
+um template um método que vai descrever
+os procedimentos ou Passos comuns que
+nós precisamos seguir para construir a
+casa e usando o template metros mas
+podemos construir qualquer tipo de casa
+então aqui nós estamos definindo um
+esqueleto de um algoritmo
+e
+permitindo que as etapas aqui do
+algoritmo seja redefinida sem alterar a
+estrutura do algoritmo são exemplo bem
+básico de como template método a tua ou
+funciona a seguir nas veremos o diagrama
+o ML do padrão segundo o Golf Aqui nós
+temos os participantes abstract Class
+que uma classe abstrata que implementa o
+template método e que define um
+esqueleto de um algoritmo aqui ou
+template método ele invoca as operações
+primitivas e as operações definidas na
+classe abstrata ou também em outros
+objetos e a Country Class ela vai
+implementar as operações primitivas para
+realizar as etapas específicas da
+subclasse do algarismo aqui naturalmente
+eu posso ter diversas classes concretas
+e incrementando procedimentos
+específicos definidos aqui na classe
+abstrata E quando podemos usar o padrão
+template metro quando temos um grupo de
+algoritmos que consistem dos mesmos
+Passos e quando temos algoritmos que
+diferem somente na implementação de
+Passos específicos ou quando teremos
+tocar de forma transparente
+algoritmos sem ter que alterar o código
+do cliente ou ainda quando queremos
+evitar a duplicação de código na
+estrutura Geral do fluxo de trabalho são
+alguns dos cenários onde podemos usar o
+tempo aí que eu agora veremos a
+vantagens desse padrão ele é fácil de
+implementar de entender ela é flexível
+pois ele dá larga as subclasses decidir
+como implementar os passos do algoritmo
+ele fornece uma forma compacta de
+implementar um grupo de algoritmos
+relacionados e fornece e também uma
+interface genérica para o algoritmo que
+mais caro a implementação e como
+desvantagem nós podemos elencar que
+depurar e compreender a sequência do
+fluxo no padrão template metro Às vezes
+pode ser confuso dependendo da
+complexidade EA manutenção da estrutura
+do template método pode ser um problema
+pois as alterações em qualquer nível
+podem
+o caminho tá são são duas desvantagens
+deste padrão então agora vou mostrar um
+exemplo prático de implementação do
+padrão onde nós vamos considerar um
+reprodutor de vídeo um vídeo player que
+reproduz
+formatos diferentes de vídeos como MKV
+MP4
+avi MP3 Eu Tô considerando aqui apenas
+MKV e MP4 então pra suportar diferentes
+formatos de vídeo não será necessário eu
+usar aqui um decodificador de vídeo
+então Vamos definir a sequência de
+operações ou procedimentos que deram que
+ser realizadas para executaram no Vital
+primeiro para mim executar o vídeo eu
+tenho que carregar o arquivo do vídeo
+Então essa etapa é uma etapa comum a
+todos os formatos de vídeo a seguir após
+o vídeo ser carregado ele terá que ser
+processado usando um decodificador de
+vidro adequado essa etapa aqui ela vai
+variar conforme o formato do vídeo tá E
+então após o vídeo ser decodificado
+então um vídeo freier Pode iniciar a
+execução do vídeo Então essa etapa aqui
+ela é comum a todos os vídeos
+naturalmente eu estou simplificando
+bastante aqui esse cenário né então com
+base nesse cenário nós vamos implementar
+o padrão template método criando uma
+classe abstrata vídeo player onde eu vou
+implementar o template método então aqui
+Vou definir as etapas da ordem de
+execução no template e método e também
+nós vamos fornecer uma implementação do
+padrão para as etapas comuns e as etapas
+que não forem como nós vamos delegar
+para as subclasses implementarem a
+seguir nós vamos criar duas que são
+derivadas da classe vídeo cria o vídeo
+MP4 que fala vai fazer uma implementação
+específica para o formato MP4 e vídeo
+MKV que é uma classe concreta que vai
+implementar aqui uma etapa específica
+para o formato MKV só um exemplo muito
+simples de implementação do padrão
+template mestre Então agora eu vou
+mostrar o diagrama a Assis que foi
+obtido na implementação que foi feita no
+visual Studio usando a linguagem C Sharp
+Então eu tenho a minha classe vídeo aí
+aqui é uma classe abstrata então aqui eu
+definir o template método executar vídeo
+e aqui o definir as etapas e depois fiz
+algumas implementações Observe Observe
+que eu tenho aqui um método abstrato que
+vai ser delegado com as classes concreta
+implementar you vídeo MKV pelo em
+pagamento o decote vídeo formato de
+vídeo MP4 para implementar este método
+do decote dividir formato que é um
+método abstrato porque ele é um método
+específico que cada formato de vídeo
+deve implementar então aqui eu tenho a
+classe abstrata as classes concretas
+então eu vou mostrar agora o código
+dessa implementação no visual Studio
+2019 Então eu tenho aqui um projeto
+console Olha tô usando aqui o net 5
+ainda estou usando net sim e aqui eu
+iniciei definindo aqui ó classe vídeo
+player que é a minha classe ab bom Então
+olha aqui o definir o template método
+que eu chamei de executar vídeo e aqui o
+d-fine ó as etapas carregar um vídeo de
+cor de ficar o formato do vídeo iniciar
+a execução e aqui os procedimentos
+comuns eu fiz a implementação olha e
+para os específicos para definir um
+método como um método abstrato então
+carregar vídeo é comum então fez a
+implementação aqui na classe abstrata
+Então quem herdar essa classe e esse
+método já tá implementar mas aqui eu fiz
+a implementação do procedimento padrão
+agora fazer a decodificação do formato
+do vídeo é um procedimento que será
+sobrescrito nas classes derivadas porque
+ele é específico eu não posso fazer
+implementação dele aqui E esse a
+execução depois que o decodifiquei
+também é comum então fiz a implementação
+na classe abstrata e aqui na Graças
+concretas na classe vídeo MP4 Olha eu
+apenas era do dividiu para ele e faço a
+implementação do método abstrato que é
+específico por MP4 EPO em
+MKV no formato MKV eu queria classe
+vídeo MKV que herda de vídeo player que
+a minha calça listrada preto sobre
+escrevendo aqui ó o de cor de vídeo
+formato que é específico para o formato
+MKV na classe programa Olha eu tô
+definido aqui o o exemplo de
+implementação então eu crie uma
+Instância da minha classe concreta né
+que é do tipo da minha classe abstrata
+EA seguiram eu carrego o vídeo
+decodifica o formato e faço execução
+MP4 e depois do MKV carrega o arquivo
+decodifica e inicia execução então aqui
+não tem segredo né se eu executar aqui ó
+eu te o seguinte resultado exemplo de
+implementação tá aqui ó vídeo MP4 Ele
+carrega o arquivo processa o MP4 inicia
+execução vídeo MKV carrega o arquivo
+processa usando o decodificador MKV e
+esse execução e aqui ó eu tenho o
+diagrama de classe e as caixas usadas
+aqui ó classe abstrata as classes
+concretas então Observe que no padrão
+template metro nós podemos controlar o
+fluxo dos algoritmos e os clientes eles
+não podem alterar os outro ponto
+importante é que as operações comuns
+estarão localizadas e centralizadas na
+classe abstrata e as subclasses elas vão
+poder redefinir apenas as partes que
+variam como eu tô implementando aqui
+fazendo assim você vai evitar duplicação
+de código então se eu fazia fizer uma
+implementação padrão aqui que todos vão
+usar esse código não vai ser duplicado
+aqui pelas classes derivadas se eu
+permitir que um código comum possa ser
+implementado de diferentes maneiras né
+agora como eu falei esse padrão ele se
+parece com o padrão estratos mas ele
+possui as seguintes diferenças o padrão
+não tem preto e método ele usa herança
+para variar a parte do algoritmo como
+nós estamos vendo aqui e o padrão e ele
+usa a delegação para avaliar todo o
+algoritmo outra diferença é que o padrão
+strato JEM ele modifica lógica dos
+objetos individuais e o padrão template
+método ele modifica a lógica de uma
+classe inteira e para concluir nós
+podemos dizer que o factor método é uma
+especialização desse padrão template
+metros então até a semana que
