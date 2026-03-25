@@ -1,0 +1,308 @@
+o Olá eu sou uma Coach e hoje eu vou
+concluir a apresentação dos padrões
+comportamentais goffi hoje eu vou
+apresentar o padrão visitor o padrão
+Victor representa uma operação a ser
+Visitor-Definição
+realizada sobre os elementos da
+estrutura de um objeto ele permite que
+se crie uma nova operação sem que se
+altere a classe dos elementos sobre as
+quais ele está operando e assim esse
+padrão pode ser usado para separar um
+algoritmo da estrutura de um objeto e
+ele permite então adicionar novos
+comportamentos A Hierarquia de classes
+existentes sem alterar o código dessa
+forma o padrão visito separa os
+comportamentos não relacionados do
+objeto e os coloca em um objeto separado
+criando um objeto para cada nova
+funcionalidade que você desejar
+implementar uso desse padrão ele é
+recomendado quando você tem operações
+distintas e não e para executar em uma
+estrutura de objeto EA sua utilização
+evita adicionar código em toda a
+estrutura do objeto ele não é um padrão
+muito comum devido à sua complexidade e
+a aplicabilidade limitada esse padrão
+ele é aderente aos seguintes princípios
+Solid ao princípio da responsabilidade
+única e ao princípio aberto fechado e na
+sua implementação o seu objeto pode
+delegar
+responsabilidades a diferentes objetos
+como exemplo de aplicação do visitor
+vamos supor que você tem objeto
+funcionário responsável pelas operações
+de cliente e optei ti de Elite e Rio
+Claro de base aí você precisa adicionar
+uma outra responsabilidade a esse objeto
+como por exemplo gerar relatórios usando
+o padrão de Victor Você pode adicionar
+comportamentos para gerar relatório sem
+modificar o objeto E como que você faz
+isso você cria uma interface visitor e
+definir a nova funcionalidade Que
+desejam experimentar na classe
+funcionário e assim o seu objeto
+funcionário está seguindo o princípio
+aberto fechado pois nós estamos
+incluindo uma nova funcionalidade um
+novo comportamento sem ter que alterar o
+código do objeto para tentar clarear as
+ideias com relação à atuação do padrão
+Visitor - Problema a resolver
+visito vamos ver um exemplo vamos supor
+que você possui um tipo de estrutura de
+dados que consiste em um grande número
+de inox na figura que eu tô
+representando apenas quatro nós de
+elementos do tipo X então você deseja
+realizar muitas operações distintas e
+não relacionadas em cada um desses nome
+dessa escultura de objetos você pode
+fazer isso aplicando o padrão interator
+e usando uma instrução Switch para
+acessar cada Nossa sequencialmente
+verificar o tipo de Cada nó então a
+operação correspondente ao tipo do Norte
+mas você não pode ou não quer realizar a
+secagem do tipo para cada elemento para
+evitar uma sobrecarga nas operações de
+secagem dos fios e assim as operações
+específicas que precisam ser realizado
+em cada nó vão depender de dois fatores
+vai depender do tipo de operação a ser
+realizada e do tipo do nó do objeto
+Então esse cenário é conhecido como o
+duplo despacho despacho duplo ou tomou
+desperte esse despacho duplo duplo
+despacho é um recurso que você pode usar
+uma linguagem em fechar para controlar a
+comunicação entre dois objetos
+geralmente nos ser chefe nós usamos aqui
+o duplo despacho passando o diz para uma
+função em outra classe e permitindo que
+essa classe se comunique de volta ou
+manipule a Instância do objeto de
+chamada Então nesse cenário é preciso
+resolver esse problema e nós temos essa
+situação Qual é a é a solução aqui é
+aplicar o padrão de vida então o padrão
+Visitor - Solução
+de Victor ele vai usar uma classe
+especial chamada de Victor que pode
+realizar uma operação em cada não então
+a classe ela tem um método visite que
+recebe um nó como um argumento que
+realiza a operação requerida no da
+escultura de objeto Então vai existir
+uma subclasse visitor para cada operação
+que você precisa realizar ir Isso também
+uma estrutura de dados complexa
+consistindo de uma ou mais nós onde o
+visitor vai atuar tão cada não é chamada
+Helen e possui o único método asséptico
+é fornecido para o visita e o método
+asséptico ele recebe o visitor como
+argumento e chama o seu método visite
+com este ponteiro como um argumento
+então Aqui nós temos representados o
+primeiro despacho que é quando o cliente
+chama o método virtual elemento afeto e
+o segundo o despacho Quando Ele mente
+chama o método polimórfico visitor
+visite e assim objeto visito irá visitar
+cada ele a cultura do objeto vai
+realizar a operação comum Lembrando que
+é possível variar a operação conforme a
+variação do visito cada operação vai
+exigir um visitor diferente então a
+seguir nós temos o diagrama o ML do
+padrão segundo o Golf Aqui nós temos os
+Visitor-Diagrama UML
+seguintes participantes eu tenho o
+visitor que declara a uma operação
+visite para cada classe de concr ET
+elemento na estrutura do objeto Eu tenho
+um cliente visitors e implementa cada
+operação declarado aqui em visita Eu
+tenho um elemento que define uma
+operação asséptica retorna um visitor
+como um argumento eu tenho uso com kit
+Element quem vai implementar uma
+operação A7 eleva um visitor com o
+argumento e eu tenho aqui o objeto
+structure que vai poder enumerar os
+elementos sobre qual o visitor vai
+operar e vai fornecer uma interface
+permitindo que o visito visite os seus
+elementos então é aqui que nós fazemos a
+aplicação de cada um dos visita ele em
+cada um dos elementos segundo a
+definição do e nós podemos usar o padrão
+visito nós podemos usar o visito quando
+uma estrutura de objeto tem muitas
+operações não relacionadas para ser
+executada ou quando a estrutura de uma
+não puder ser alterada mas você precisa
+realizar novas operações nela ou quando
+as operações precisam ser executadas nas
+classes concretas de uma estrutura de um
+objeto ou ainda quando as operações
+devem ser capazes de operar em múltiplas
+esculturas de objetos que implementam a
+mesma interface e agora vamos ver as
+vantagens do padrão visita uma delas
+adicionar uma ação a todos os objetos
+elementos de uma estrutura isso é uma
+coisa fácil de fazer pois você só tem
+que implementar a interface visita então
+não tem necessidade de modificar todos
+os objetos Element para adicionar uma
+ação Outra vantagem é que ele permite
+régua operações comuns a muitos objetos
+Element em uma única classe visito
+quando você tem uma estrutura de objetos
+apenas o código para esta ação está
+nessa classe visita eu tenho que definir
+se em cada Ellen e como desvantagem mas
+podemos dizer que o código dos objetos
+alimente eles estão espalhados em todos
+os objetos visitam e a lógica do objeto
+elemento vai estar em muitas classes
+isso torna o código mais difícil de ler
+se você quiser examinar o código dos
+objetos elemento outra desvantagem que
+para cada ação Você vai precisar de uma
+classe visita para cada nova
+funcionalidade você tem que criar um
+vizinho e dependendo do cenário Você
+pode ter muitas graças no seu projeto
+então a seguiram vou mostrar uma
+implementação do padrão visito Vamos
+Visitor-Implementação
+pensar no seguinte cenário vamos supor
+que nós temos uma concessionária uma
+loja de veículos que possuem uma coleção
+de veículos estou chamando de carro aqui
+onde cada objeto carro tem um nome o
+modelo e o preço o preço é o preço
+normal então nós podemos obter o preço
+normal do veículo usando a classical
+então agora nós precisamos aplicar um
+desconto
+é o preço dos carros só que eu quero
+fazer isso sem ter que alterar a
+classificar então aqui que que eu vou
+fazer eu vou implementar o padrão visita
+eu vou criar um preço visitor que vai
+visitar o preço do carro e vai calcular
+e retornar o preço do veículo com
+desconto então aqui nós vamos incluir
+uma nova operação na classe sem
+alterá-la seguindo o princípio aberto
+fechado o diagrama de Kansas que foi
+obtido na implementação do projeto no
+visual Studio
+2019 usando a linguagem fechar foi o
+seguinte nós queremos duas interfaces e
+Visitor-Exemplo de Implementação - Diagrama de classes
+loja que é concessionária e visito a
+interface loja ela tem apenas um único
+método visite que eu levo o parâmetro da
+interface e visita cada classe derivada
+de loja por exemplo carro aqui é uma ela
+tá implementando e loja aqui eu poderia
+também ter usado classes abstratas né
+então cada classe derivada de lá já vai
+implementar o método visite e nessa e
+vai chamar o método visite accept usando
+o parâmetro disso então no método
+asséptico aqui de preço visito ele vai
+ser chamado e a seguir nós podemos
+realizar o processamento aqui ó da
+funcionalidade desejada então aqui eu
+vou definir o desconto que eu quero dar
+no preço do carro e vou aplicar isso
+aqui e quando o visitar o meu Element
+aqui no preço eu vou retornar o valor
+com desconto então aqui eu tenho loja ou
+é mente o evisitor é o visitou o carro é
+o compre Element e o preço visitor é o
+conflito dizer e a classe programa aqui
+é uma o cliente seria o meu objeto
+Street Onde eu vou enumerar a lista de
+objetos carros então a seguir eu vou
+abrir o visual estudo 2019 com a
+implementação feita usando a linguagem
+ser chato Então olha eu criei aqui a
+interface visitor com o método asséptico
+aceitando tipo o carro a seguir eu criei
+a classe concreta preço visito que
+implementa a interface a tentação do
+método acerto eu tô definindo o desconto
+no preço para isso tem uma Instância de
+carro que é o concreto elemento e aqui
+na classe carro eu vou definir aqui as
+propriedades do carro e vou definir um
+método visite e recebe o um objeto do
+tipo êxito e chama o método asséptico e
+passando diz então aí loja e o meu
+elemento aonde eu defini aqui um contato
+para implementar avise o método visite
+que recebe um tipo e visito e no carro
+eu tô implementando essa interface então
+Legacy próprio eu tenho a implementação
+do código onde eu estou efetivamente
+usando o padrão então aqui olha tô meio
+tem uma lista de objetos carro definir
+aqui apenas três objetos naturalmente o
+teu simplificando essa implementação é o
+código não ficar muito extenso né então
+aqui ó eu tô querendo três objetos carro
+EA seguiram eu tô criando uma lista de
+elementos e loja que eu chamei loja
+então eu vou aproveitar aqui vou exibir
+os preços normais os ah e também vou
+intuir o meu objeto carro na minha lista
+de
+hidrobio jetos do tipo e loja que vão
+ser os meus alemã EA seguir Olha eu crie
+uma Instância do preço visito e é o meu
+concreto devisitor aonde eu vou calcular
+o preço com desconto eu clico uma
+Instância dele né e a seguir para cada
+elemento em lojas que é o meu elemento
+eu uso né faço a chamada do método
+vizinho Voco a uma Instância de preço
+visita dessa forma eu vou aqui ó que é
+uma preço visita estou passando aqui a
+Instância do carro e ele vai pegar o
+preço do carro vai calcular o desconto
+né E vai subtrair e vai exibir o preço
+do carro com desconto então seu executar
+esse projeto que eu botei o seguinte
+resultado então aqui eu tô exibindo o
+preço normal do carro Mercedes Ferrari e
+Porsche agora eu vou aplicar o padrão
+visitor e vou exibir os pra e com
+desconto vou ter que há algo pronto ele
+já calculou o desconto então Observe que
+aqui a minha classe carro não foi
+alterada eu apenas incluir aqui ó a
+funcionalidade que eu queria obter no
+visito então é basicamente para isso que
+serve esse padrão então dessa forma mas
+concluímos essa série de vídeo-aulas
+onde nós abordamos todos os padrões de
+projeto gof os criacionais os
+estruturais e os comportamentais eu
+abordei aqui essa série apresentando
+aqui uma abordagem introdutória e os
+principais conceitos e mostrando uma
+implementação básica de cada padrão
+então até a próxima semana se Deus
+quiser
